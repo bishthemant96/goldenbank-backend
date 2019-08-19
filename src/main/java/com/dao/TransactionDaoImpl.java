@@ -19,18 +19,18 @@ public class TransactionDaoImpl implements TransactionDao {
 	}
 
 	public Transaction readTransaction(Transaction transaction) {
-		Transaction reTransaction = em.find(Transaction.class, 1 ); //Replace 1 with getID function.
+		Transaction reTransaction = em.find(Transaction.class, transaction.getTransId() ); //Replace 1 with getID function.
 		return reTransaction;
 	}
 
 	public Transaction updateTransaction(Transaction transaction) {
-		Transaction reTransaction = em.find(Transaction.class, 1); //Replace 1 with getID function
-		//Call setter functions over here.
+		Transaction reTransaction = em.find(Transaction.class, transaction.getTransId()); //Replace 1 with getID function
+		
 		return reTransaction;
 	}
 
 	public Transaction deleteTransaction(Transaction transaction) {
-		Transaction reTransaction = em.find(Transaction.class, 1); //Replace 1 with getID function
+		Transaction reTransaction = em.find(Transaction.class, transaction.getTransId()); //Replace 1 with getID function
 		em.remove(reTransaction);
 		return transaction;
 	}

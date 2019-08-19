@@ -19,13 +19,16 @@ public class AccountDaoImpl implements AccountDao {
 	}
 
 	public Account readAccount(Account account) {
-		Account reAccount = em.find(Account.class, 1 ); //Replace 1 with getID function.
+		Account reAccount = em.find(Account.class, account.getAccNo() ); //Replace 1 with getID function.
 		return reAccount;
 	}
 
 	public Account updateAccount(Account account) {
-		Account reAccount = em.find(Account.class, 1); //Replace 1 with getID function
-		//Call setter functions over here.
+		Account reAccount = em.find(Account.class, account.getAccNo()); //Replace 1 with getID function
+		reAccount.setBranch(account.getBranch());
+		reAccount.setAccNominee(account.getAccNominee());
+		reAccount.setAmount(account.getAmount());
+		reAccount.setAccType(account.getAccType());
 		return reAccount;
 	}
 

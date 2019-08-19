@@ -45,8 +45,8 @@ public class Customer {
 	@Column(name = "cusEmail")
 	private String cusEmail;
 
-	@Column(name = "empJoiningDate")
-	private String empJoiningDate;
+	@Column(name = "cusAddress")
+	private String cusAddress;
 
 	@OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
 	List<LoanAccount> loanAccount;
@@ -126,12 +126,12 @@ public class Customer {
 		this.cusEmail = cusEmail;
 	}
 
-	public String getEmpJoiningDate() {
-		return empJoiningDate;
+	public String getCusAddress() {
+		return cusAddress;
 	}
 
-	public void setEmpJoiningDate(String empJoiningDate) {
-		this.empJoiningDate = empJoiningDate;
+	public void setCusAddress(String cusAddress) {
+		this.cusAddress = cusAddress;
 	}
 
 	public List<LoanAccount> getLoanAccount() {
