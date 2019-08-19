@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import com.entity.CustomerEntity;
 
 @Service
-public class CustomerDaoImpl {
+public class CustomerDaoImpl implements CustomerDao {
 
 	@PersistenceContext
 	EntityManager em;
