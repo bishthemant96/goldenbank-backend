@@ -3,8 +3,11 @@ package com.dao;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import org.springframework.stereotype.Service;
+
 import com.entity.AccountEntity;
 
+@Service
 public class AccountDaoImpl implements AccountDao {
 
 	@PersistenceContext
