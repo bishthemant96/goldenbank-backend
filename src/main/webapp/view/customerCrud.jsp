@@ -24,14 +24,13 @@
   
   <li style="float:right"><a href="index">Logout</a></li>
 </ul>
-      
-      <p>this is customer crud</p><br><br><br>
-              <p>this is customer crud</p><br><br><br>
-      <p>this is customer crud</p><br><br><br>
-      <p>this is customer crud</p><br><br><br>
-      <p>this is customer crud</p><br><br><br>
-      <p>this is customer crud</p><br><br><br>
-
+     <form>
+     <br><br>
+     Create New Entry<br> <a href="newCustomer"><input type="button" name="add" value="Add Customer"></a> <br><br>
+     Delete Existing Record <br> <a href="deleteCustomer"><input type="button" name="delete" value="Delete Customer"></a> <br><br>
+     Edit/Update Record<br> <a href="editCustomer"><input type="button" name="update" value="Update Customer"></a> <br><br>
+     Read/View Record<br> <a href="viewCustomer"><input type="button" name="view" value="View Customer"></a> <br>
+     </form>
   
 
 </body>

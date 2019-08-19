@@ -25,13 +25,11 @@
   <li style="float:right"><a href="index">Logout</a></li>
 </ul>
       
-      <p>this is transaction</p><br><br><br>
-             <p>this is transaction</p><br><br><br>
-      <p>this is transaction</p><br><br><br>
-      <p>this is transaction</p><br><br><br>
-      <p>this is transaction</p><br><br><br>
-      <p>this is transaction</p><br><br><br>
-      <p>this is transaction</p><br><br><br>
+     <form>
+     <br><br>
+     Make New Transaction<br> <a href=""><input type="button" name="add" value="Create"></a> <br><br>
+     View Transaction<br> <a href=""><input type="button" name="view" value="View"></a> <br>
+     </form>
 
   
 

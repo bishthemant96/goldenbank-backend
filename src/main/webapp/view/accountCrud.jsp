@@ -25,12 +25,15 @@
   <li style="float:right"><a href="index">Logout</a></li>
 </ul>
       
-      <p>this is account Crud</p><br><br><br>
-             <p>this is account Crud</p><br><br><br>
-      <p>this is account Crud</p><br><br><br>
-      <p>this is account Crud</p><br><br><br>
-      <p>this is account Crud</p><br><br><br>
-      <p>this is account Crud</p><br><br><br>
+     <form>
+     <br><br>
+     Create New Account<br> <a href=""><input type="button" name="add" value="Create"></a> <br><br>
+     Delete Existing Account<br> <a href=""><input type="button" name="delete" value="Delete"></a> <br><br>
+     Update Account Info<br> <a href=""><input type="button" name="update" value="Update"></a> <br><br>
+     View Account Info<br> <a href=""><input type="button" name="view" value="View"></a> <br>
+     </form>
+     
+     
 
 
 </body>

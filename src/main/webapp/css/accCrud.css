@@ -44,3 +44,38 @@ li a.active {
   color: white;
   background-color: #FFBF00;
 }
+
+form {
+margin: 20px auto;
+width: 320px;
+color: black;
+text-align: center;
+font-size: 18px;
+	margin: auto;
+}
+
+
+input {
+padding: 10px;
+font-size: inherit;
+}
+
+input[type="button"] {
+width: 344px;
+height: 45px;
+border: none;
+background: #FFBF00;
+color: white;
+}
+
+input[type="button"]:focus {
+width: 344px;
+height: 45px;
+border: solid #FFBF00;
+background: white;
+color: #FFBF00;
+}
+
+input:focus {
+background: white;
+}

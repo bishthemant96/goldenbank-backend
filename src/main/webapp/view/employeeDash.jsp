@@ -24,6 +24,7 @@
   
   <li style="float:right"><a href="index">Logout</a></li>
 </ul>
+      <h2>Welcome  </h2>
       
       <p>this is employee dashboard</p><br><br><br>
         <p>this is employee dashboard</p><br><br><br>
