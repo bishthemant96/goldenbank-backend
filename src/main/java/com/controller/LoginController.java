@@ -35,11 +35,11 @@ public class LoginController {
 	        ModelAndView model= null;
 	        try
 	        {						// authenticateUser is a method in service class
-	            boolean isValidUser = customerService.authenticateUser(customerModel.getUsername(), customerModel.getPassword());
+	            boolean isValidUser = customerService.authenticateUser(customerModel.getCusName(), customerModel.getCusPassword());
 	            if(isValidUser)
 	            {
 	                System.out.println("User Login Successful");
-	                request.setAttribute("loggedInUser", customerModel.getUsername());
+	                request.setAttribute("loggedInUser", customerModel.getCusName());
 	                model = new ModelAndView("");
 	            }
 	            else

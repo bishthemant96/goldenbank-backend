@@ -19,13 +19,14 @@ public class CustomerManagementController {
 	@RequestMapping(value = "/customerManagement/addCustomer", method = RequestMethod.POST)
 	public ModelAndView addCustomer(@ModelAttribute CustomerModel customerModel) {
 		ModelAndView mv = new ModelAndView("redirect:/dashboard");
-		boolean isAdded =customerService.addCustomer(model);
+		boolean isAdded =customerService.addCustomer(customerModel);
 		if (isAdded) {
 			mv.addObject("message", "New user successfully added");
 			//return new ModelAndView("redirect:/dashboard");
 		} else {
 			return new ModelAndView("error");
 		}
+		return mv;
 		
 	}
 
