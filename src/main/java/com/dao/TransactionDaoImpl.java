@@ -5,7 +5,7 @@ import javax.persistence.PersistenceContext;
 
 import org.springframework.stereotype.Service;
 
-import com.entity.TransactionEntity;
+import com.entity.Transaction;
 
 @Service
 public class TransactionDaoImpl implements TransactionDao {
@@ -13,24 +13,24 @@ public class TransactionDaoImpl implements TransactionDao {
 	@PersistenceContext
 	EntityManager em;
 	
-	public TransactionEntity createTransaction(TransactionEntity transaction) {
+	public Transaction createTransaction(Transaction transaction) {
 		em.persist(transaction);
 		return transaction;
 	}
 
-	public TransactionEntity readTransaction(TransactionEntity transaction) {
-		TransactionEntity reTransaction = em.find(TransactionEntity.class, 1 ); //Replace 1 with getID function.
+	public Transaction readTransaction(Transaction transaction) {
+		Transaction reTransaction = em.find(Transaction.class, 1 ); //Replace 1 with getID function.
 		return reTransaction;
 	}
 
-	public TransactionEntity updateTransaction(TransactionEntity transaction) {
-		TransactionEntity reTransaction = em.find(TransactionEntity.class, 1); //Replace 1 with getID function
+	public Transaction updateTransaction(Transaction transaction) {
+		Transaction reTransaction = em.find(Transaction.class, 1); //Replace 1 with getID function
 		//Call setter functions over here.
 		return reTransaction;
 	}
 
-	public TransactionEntity deleteTransaction(TransactionEntity transaction) {
-		TransactionEntity reTransaction = em.find(TransactionEntity.class, 1); //Replace 1 with getID function
+	public Transaction deleteTransaction(Transaction transaction) {
+		Transaction reTransaction = em.find(Transaction.class, 1); //Replace 1 with getID function
 		em.remove(reTransaction);
 		return transaction;
 	}

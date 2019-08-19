@@ -2,14 +2,14 @@ package com.dao;
 
 import java.util.List;
 
-import com.entity.CustomerEntity;
+import com.entity.Customer;
 
 public interface CustomerDao {
 
-	CustomerEntity createCustomer(CustomerEntity customer);
-	CustomerEntity readCustomer(CustomerEntity customer);
-	CustomerEntity updateCustomer(CustomerEntity customer);
-	CustomerEntity deleteCustomer(CustomerEntity customer);
+	Customer createCustomer(Customer customer);
+	Customer readCustomer(Customer customer);
+	Customer updateCustomer(Customer customer);
+	Customer deleteCustomer(Customer customer);
 	
-	List<CustomerEntity> displayAllCustomer(CustomerEntity customer);	
+	List<Customer> displayAllCustomer(Customer customer);	
 }

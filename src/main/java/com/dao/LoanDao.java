@@ -1,12 +1,12 @@
 package com.dao;
 
-import com.entity.LoanEntity;
+import com.entity.LoanAccount;
 
 public interface LoanDao {
 
-	LoanEntity createLoan(LoanEntity emp);
-	LoanEntity readLoan(LoanEntity emp);
-	LoanEntity updateLoan(LoanEntity emp);
-	LoanEntity deleteLoan(LoanEntity emp);
+	LoanAccount createLoan(LoanAccount emp);
+	LoanAccount readLoan(LoanAccount emp);
+	LoanAccount updateLoan(LoanAccount emp);
+	LoanAccount deleteLoan(LoanAccount emp);
 	
 }

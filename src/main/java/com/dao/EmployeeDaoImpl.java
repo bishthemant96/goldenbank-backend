@@ -8,7 +8,7 @@ import javax.persistence.PersistenceContext;
 
 import org.springframework.stereotype.Service;
 
-import com.entity.EmployeeEntity;
+import com.entity.Employee;
 
 @Service
 public class EmployeeDaoImpl implements EmployeeDao {
@@ -16,34 +16,34 @@ public class EmployeeDaoImpl implements EmployeeDao {
 	@PersistenceContext
 	EntityManager em;
 	
-	public EmployeeEntity createEmployee(EmployeeEntity employee) {
+	public Employee createEmployee(Employee employee) {
 		em.persist(employee);
 		return employee;
 	}
 
-	public EmployeeEntity readEmployee(EmployeeEntity employee) {
-		EmployeeEntity reEmployee = em.find(EmployeeEntity.class, 1 ); //Replace 1 with getID function.
+	public Employee readEmployee(Employee employee) {
+		Employee reEmployee = em.find(Employee.class, 1 ); //Replace 1 with getID function.
 		return reEmployee;
 	}
 
-	public EmployeeEntity updateEmployee(EmployeeEntity employee) {
-		EmployeeEntity reEmployee = em.find(EmployeeEntity.class, 1); //Replace 1 with getID function
+	public Employee updateEmployee(Employee employee) {
+		Employee reEmployee = em.find(Employee.class, 1); //Replace 1 with getID function
 		//Call setter functions over here.
 		return reEmployee;
 	}
 
-	public EmployeeEntity deleteEmployee(EmployeeEntity employee) {
-		EmployeeEntity reEmployee = em.find(EmployeeEntity.class, 1); //Replace 1 with getID function
+	public Employee deleteEmployee(Employee employee) {
+		Employee reEmployee = em.find(Employee.class, 1); //Replace 1 with getID function
 		em.remove(reEmployee);
 		return employee;
 	}
 
-	public List<EmployeeEntity> displayAllEmployee(EmployeeEntity emp) {
+	public List<Employee> displayAllEmployee(Employee emp) {
 		List<?> temp = em.createQuery("Select e from Employee e").getResultList();
-		List<EmployeeEntity> employeeList = new ArrayList<EmployeeEntity>(temp.size());
+		List<Employee> employeeList = new ArrayList<Employee>(temp.size());
 		
 		for(Object obj: temp)
-			employeeList.add(((EmployeeEntity)obj));	
+			employeeList.add(((Employee)obj));	
 
 		return employeeList;
 	}
