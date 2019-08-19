@@ -19,6 +19,15 @@ public class CustomerModel {
 	private String cusAddress;
 	private List<LoanAccount> loanAccount;
 	private List<Account> account;
+	private boolean status;
+
+	public boolean isStatus() {
+		return status;
+	}
+
+	public void setStatus(boolean status) {
+		this.status = status;
+	}
 
 	public int getCusID() {
 		return cusID;

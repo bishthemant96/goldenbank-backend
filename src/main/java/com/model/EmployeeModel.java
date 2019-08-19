@@ -11,7 +11,18 @@ public class EmployeeModel {
 	private long empNo;
 	private String empEmail;
 	private String empJoiningDate;
+	private boolean status;
 
+	
+	public boolean isStatus() {
+		return status;
+	}
+
+	public void setStatus(boolean status) {
+		this.status = status;
+	}
+	
+	
 	public int getEmpID() {
 		return empID;
 	}

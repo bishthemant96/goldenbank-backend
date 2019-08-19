@@ -9,7 +9,18 @@ public class LoanAccountModel {
 	private long amount;
 	private String loanType;
 	private Customer customer;
+	private boolean status;
 
+	
+	public boolean isStatus() {
+		return status;
+	}
+
+	public void setStatus(boolean status) {
+		this.status = status;
+	}
+	
+	
 	public long getLoanAccNo() {
 		return loanAccNo;
 	}

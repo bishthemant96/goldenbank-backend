@@ -9,7 +9,18 @@ public class TransactionModel {
 	private long toAcc;
 	private String amount;
 	private Account account;
+	private boolean status;
 
+	
+	public boolean isStatus() {
+		return status;
+	}
+
+	public void setStatus(boolean status) {
+		this.status = status;
+	}
+	
+	
 	public long getTransId() {
 		return transId;
 	}
