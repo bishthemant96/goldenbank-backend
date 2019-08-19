@@ -4,9 +4,9 @@ import com.entity.LoanAccount;
 
 public interface LoanDao {
 
-	LoanAccount createLoan(LoanAccount emp);
-	LoanAccount readLoan(LoanAccount emp);
-	LoanAccount updateLoan(LoanAccount emp);
-	LoanAccount deleteLoan(LoanAccount emp);
+	LoanAccount createLoan(LoanAccount loanAccount);
+	LoanAccount readLoan(LoanAccount loanAccount);
+	LoanAccount updateLoan(LoanAccount loanAccount);
+	LoanAccount deleteLoan(LoanAccount loanAccount);
 	
 }

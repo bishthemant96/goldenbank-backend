@@ -6,10 +6,10 @@ import com.entity.Employee;
 
 public interface EmployeeDao {
 
-	Employee createEmployee(Employee emp);
-	Employee readEmployee(Employee emp);
-	Employee updateEmployee(Employee emp);
-	Employee deleteEmployee(Employee emp);
+	Employee createEmployee(Employee employee);
+	Employee readEmployee(Employee employee);
+	Employee updateEmployee(Employee employee);
+	Employee deleteEmployee(Employee employee);
 	
-	List<Employee> displayAllEmployee(Employee emp);
+	List<Employee> displayAllEmployee(Employee employee);
 }
