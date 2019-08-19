@@ -11,5 +11,5 @@ public interface CustomerDao {
 	Customer updateCustomer(Customer customer);
 	Customer deleteCustomer(Customer customer);
 	
-	List<Customer> displayAllCustomer(Customer customer);	
+	List<Customer> displayAllCustomer();	
 }

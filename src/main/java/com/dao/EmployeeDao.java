@@ -11,5 +11,5 @@ public interface EmployeeDao {
 	Employee updateEmployee(Employee employee);
 	Employee deleteEmployee(Employee employee);
 	
-	List<Employee> displayAllEmployee(Employee employee);
+	List<Employee> displayAllEmployee();
 }

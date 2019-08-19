@@ -6,7 +6,7 @@ import com.entity.Account;
 import com.entity.LoanAccount;
 
 public class CustomerModel {
-	
+
 	private int cusID;
 	private String cusName;
 	private String cusPassword;
@@ -16,7 +16,7 @@ public class CustomerModel {
 	private List<String> cusIDProof;
 	private long cusNo;
 	private String cusEmail;
-	private String empJoiningDate;
+	private String cusAddress;
 	private List<LoanAccount> loanAccount;
 	private List<Account> account;
 
@@ -92,12 +92,12 @@ public class CustomerModel {
 		this.cusEmail = cusEmail;
 	}
 
-	public String getEmpJoiningDate() {
-		return empJoiningDate;
+	public String getCusAddress() {
+		return cusAddress;
 	}
 
-	public void setEmpJoiningDate(String empJoiningDate) {
-		this.empJoiningDate = empJoiningDate;
+	public void setCusAddress(String cusAddress) {
+		this.cusAddress = cusAddress;
 	}
 
 	public List<LoanAccount> getLoanAccount() {
@@ -115,6 +115,5 @@ public class CustomerModel {
 	public void setAccount(List<Account> account) {
 		this.account = account;
 	}
-
 
 }
