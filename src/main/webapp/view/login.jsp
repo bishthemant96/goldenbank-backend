@@ -7,8 +7,8 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
-		<link href="css/index.css" rel="stylesheet">
+<title>Login-TGB</title>
+		<link href="css/login.css" rel="stylesheet">
 </head>
 <body>
 
@@ -17,19 +17,22 @@
 </div>
         
         <ul>
-  <li><a  href="#home">Home</a></li>
-  <li><a href="#news">News</a></li>
+  <li><a href="index">Home</a></li>
+  <li><a href="news">News</a></li>
   <li><a class="active" href="login">Login</a></li>
   <li style="float:right"><a href="contact">Contact</a></li>
-</ul>
+</ul> <br>
       
-      <p>this is login page</p><br><br><br>
-      <p>this is login page</p><br><br><br>
-      <p>this is home page</p><br><br><br>
-      <p>this is home page</p><br><br><br>
-      <p>this is home page</p><br><br><br>
-      <p>this is home page</p><br><br><br>
-      <p>this is home page</p><br><br><br>
+      <div class="form">
+      <form action="signin" method="get">
+      <h1>Login Into Your Account</h1>
+      
+      Employee ID : <br> <input type="number" name="empID" size="20"> <br> 
+      Password : <br> <input type="password" name="empPassword" size="20"> <br> 
+      <input type="submit" value="Submit">
+      </form>
+      </div>     
+            
 
 
 </body>

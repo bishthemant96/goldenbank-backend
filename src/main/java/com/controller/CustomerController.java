@@ -5,12 +5,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+
+//This controller will handle the customer CRUD in customer management
 @Controller
-public class LoginController {
+public class CustomerController {
 	
-	@RequestMapping(value="/signin", method = RequestMethod.GET)
-	public String getLoginPage(Model model) {
-		return "employeeDash";
+	@RequestMapping(value="/", method = RequestMethod.GET)
+	public String getPage(Model model) {
+		return "";
 	}
 
 }

@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>The Golden Bank</title>
 		<link href="css/index.css" rel="stylesheet">
 </head>
 <body>
@@ -17,10 +17,10 @@
 </div>
         
         <ul>
-  <li><a class="active" href="#home">Home</a></li>
-  <li><a href="#news">News</a></li>
-  <li><a href="#login">Login</a></li>
-  <li style="float:right"><a href="#contact">Contact</a></li>
+  <li><a class="active" href="index">Home</a></li>
+  <li><a href="news">News</a></li>
+  <li><a href="login">Login</a></li>
+  <li style="float:right"><a href="contact">Contact</a></li>
 </ul>
       
       <p>this is home page</p><br><br><br>
