@@ -22,23 +22,30 @@ public class EmployeeDaoImpl implements EmployeeDao {
 	}
 
 	public Employee readEmployee(Employee employee) {
-		Employee reEmployee = em.find(Employee.class, 1 ); //Replace 1 with getID function.
+		Employee reEmployee = em.find(Employee.class, employee.getEmpID() ); //Replace 1 with getID function.
 		return reEmployee;
 	}
 
 	public Employee updateEmployee(Employee employee) {
-		Employee reEmployee = em.find(Employee.class, 1); //Replace 1 with getID function
-		//Call setter functions over here.
+		Employee reEmployee = em.find(Employee.class, employee.getEmpID()); //Replace 1 with getID function
+		
+	    reEmployee.setEmpName(employee.getEmpName());
+	    reEmployee.setEmpBranch(employee.getEmpBranch());
+	    reEmployee.setEmpPost(employee.getEmpPost());
+	    reEmployee.setEmpAge(employee.getEmpAge());
+	    reEmployee.setEmpNo(employee.getEmpNo());
+	    reEmployee.setEmpEmail(employee.getEmpEmail());
+	    
 		return reEmployee;
 	}
 
 	public Employee deleteEmployee(Employee employee) {
-		Employee reEmployee = em.find(Employee.class, 1); //Replace 1 with getID function
+		Employee reEmployee = em.find(Employee.class, employee.getEmpID()); //Replace 1 with getID function
 		em.remove(reEmployee);
 		return employee;
 	}
 
-	public List<Employee> displayAllEmployee(Employee emp) {
+	public List<Employee> displayAllEmployee() {
 		List<?> temp = em.createQuery("Select e from Employee e").getResultList();
 		List<Employee> employeeList = new ArrayList<Employee>(temp.size());
 		

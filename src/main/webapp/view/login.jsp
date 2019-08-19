@@ -17,6 +17,7 @@
 </div>
         
         <ul>
+
   <li><a href="index">Home</a></li>
   <li><a href="news">News</a></li>
   <li><a class="active" href="login">Login</a></li>
@@ -32,9 +33,6 @@
       <input type="submit" value="Submit">
       </form>
       </div>     
-            
-     
-
 
 </body>
 </html>

@@ -19,18 +19,20 @@ public class LoanDaoImpl implements LoanDao {
 	}
 
 	public LoanAccount readLoan(LoanAccount loan) {
-		LoanAccount reLoan = em.find(LoanAccount.class, 1 ); //Replace 1 with getID function.
+		LoanAccount reLoan = em.find(LoanAccount.class, loan.getLoanAccNo() ); //Replace 1 with getID function.
 		return reLoan;
 	}
 
 	public LoanAccount updateLoan(LoanAccount loan) {
-		LoanAccount reLoan = em.find(LoanAccount.class, 1); //Replace 1 with getID function
-		//Call setter functions over here.
+		LoanAccount reLoan = em.find(LoanAccount.class, loan.getLoanAccNo()); //Replace 1 with getID function
+		reLoan.setAmount(loan.getAmount());
+		reLoan.setBranch(loan.getBranch());
+		reLoan.setLoanType(loan.getLoanType());
 		return reLoan;
 	}
 
 	public LoanAccount deleteLoan(LoanAccount loan) {
-		LoanAccount reLoan = em.find(LoanAccount.class, 1); //Replace 1 with getID function
+		LoanAccount reLoan = em.find(LoanAccount.class, loan.getLoanAccNo()); //Replace 1 with getID function
 		em.remove(reLoan);
 		return loan;
 	}
