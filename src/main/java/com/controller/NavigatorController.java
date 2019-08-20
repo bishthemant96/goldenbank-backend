@@ -16,11 +16,6 @@ public class NavigatorController {
 		return "index";
 	}
 	
-	@RequestMapping(value="/login", method = RequestMethod.GET)
-	public String getLoginPage(Model model) {
-		return "login";
-	}
-	
 	@RequestMapping(value="/contact", method = RequestMethod.GET)
 	public String getContactPage(Model model) {
 		return "contact";
