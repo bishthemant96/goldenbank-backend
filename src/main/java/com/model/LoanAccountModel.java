@@ -1,6 +1,6 @@
 package com.model;
 
-import com.entity.Customer;
+import com.entity.CustomerEntity;
 
 public class LoanAccountModel {
 
@@ -8,7 +8,7 @@ public class LoanAccountModel {
 	private String branch;
 	private long amount;
 	private String loanType;
-	private Customer customer;
+	private CustomerEntity customer;
 	private boolean status;
 
 	
@@ -53,11 +53,11 @@ public class LoanAccountModel {
 		this.loanType = loanType;
 	}
 
-	public Customer getCustomer() {
+	public CustomerEntity getCustomer() {
 		return customer;
 	}
 
-	public void setCustomer(Customer customer) {
+	public void setCustomer(CustomerEntity customer) {
 		this.customer = customer;
 	}
 

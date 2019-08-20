@@ -1,10 +1,10 @@
 package com.dao;
 
-import com.entity.Account;
+import com.entity.AccountEntity;
 
 public interface AccountDao {
-	 Account createAccount(Account account);
-	 Account readAccount(Account account);
-	 Account updateAccount(Account account);
-	 Account deleteAccount(Account account);
+	 AccountEntity createAccount(AccountEntity account);
+	 AccountEntity readAccount(AccountEntity account);
+	 AccountEntity updateAccount(AccountEntity account);
+	 AccountEntity deleteAccount(AccountEntity account);
 }
