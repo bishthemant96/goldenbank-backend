@@ -1,61 +1,38 @@
-function myFunction1() {
-	    var x = document.getElementById('div1');
-	    if (x.style.display === 'none') {
-	        x.style.display = 'block';
-	    } else {
-	        x.style.display = 'none';
-	    }
+window.onload = function(){
+	document.getElementById('div1').style.display="block";
+	document.getElementById('div2').style.display="none";
+	document.getElementById('div3').style.display="none";
+	document.getElementById('div4').style.display="none";
+}
+
+function toggleFunction(event) {
+	var caller = event.target.name;
+	
+	var one = document.getElementById('div1');
+	var two = document.getElementById('div2');
+	var three = document.getElementById('div3');
+	var four = document.getElementById('div4');
+	
+	
+	if(caller=="add"){
+		one.style.display = 'block';
+		two.style.display = 'none';
+		three.style.display = 'none';
+		four.style.display = 'none';
+	} else if(caller=="update"){
+        one.style.display = 'none';
+        two.style.display = 'block';
+        three.style.display = 'none';
+        four.style.display = 'none';
+	} else if(caller=="delete"){
+        one.style.display = 'none';
+        two.style.display = 'none';
+        three.style.display = 'block';
+        four.style.display = 'none';
+	} else if(caller=="view"){
+        one.style.display = 'none';
+        two.style.display = 'none';
+        three.style.display = 'none';
+        four.style.display = 'block';
 	}
-	
-	function myFunction2() {
-	    var x = document.getElementById('div2');
-	    if (x.style.display === 'none') {
-	        x.style.display = 'block';
-	    } else {
-	        x.style.display = 'none';
-	    }
-	}
-	
-	function myFunction3() {
-	    var x = document.getElementById('div3');
-	    if (x.style.display === 'none') {
-	        x.style.display = 'block';
-	    } else {
-	        x.style.display = 'none';
-	    }
-	}
-	
-	function myFunction4() {
-	    var x = document.getElementById('div4');
-	    if (x.style.display === 'none') {
-	        x.style.display = 'block';
-	    } else {
-	        x.style.display = 'none';
-	    }
-	}
-	
-	function main()
-	{
-	    $('#showdiv1').on('click', function() 
-		{
-	        $('#div1').toggle();
-	    });
-		
-		
-	    $('#showdiv2').on('click', function() 
-		{
-	        $('#div2').toggle();
-	    });
-		
-		
-		$('#showdiv3').on('click', function() 
-		{
-	        $('#div3').toggle();
-	    });
-	
-		$('#showdiv4').on('click', function() 
-		{
-			$('#div4').toggle();
-	    });
-	}
-	
+}

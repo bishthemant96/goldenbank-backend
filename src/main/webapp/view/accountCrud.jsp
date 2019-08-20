@@ -26,12 +26,20 @@
 			<li><a href="transaction">Transaction Management</a></li>
 			<li style="float:right"><a href="index">Logout</a></li>
 		</ul>
+		
+		<nav>
+			<ul>
+				<li><button onclick="toggleFunction(event)" name="add">Add New Account</button></li>
+				<li><button onclick="toggleFunction(event)" name="update"> Update Existing Account </button></li>
+				<li><button onclick="toggleFunction(event)" name="delete">Delete Existing Account</button></li>
+				<li><button onclick="toggleFunction(event)" name="view">View Existing Account</button></li>
+			</ul>
+		</nav>
 	      
 		<div class="content">
-			<div class ="vert-line"></div>
-			<h2 class= "vertline" id= "showdiv1"><button onclick="myFunction1()" name="add">Add New Account</button></h2><br><br>
-
 			<div id= "div1">
+				<br />
+				<center>Add new account:</center>
 				<form action="addAccount" method="POST" modelAttribute="AccountModel">
 					Customer ID:
 						<input type="number" name="cusID"/> <br>
@@ -46,12 +54,10 @@
 						<input type="submit" value="Add">
 				</form>
 			</div>
-	     
-	     
-			<div class ="vert-line"></div>
-			<h2 class= "vertline" id= "showdiv2"><button onclick="myFunction2()" name="update"> Update Existing Account </button></h2> <br><br>
 
 			<div id="div2">
+				<br />
+				<center>Update existing account:</center>
 				<form action="updateAccount" method="post" modelAttribute="AccountModel">
 					Account Number: 
 						<input type="number" name="accNo" readonly><br>
@@ -63,11 +69,9 @@
 				</form>
 			</div>
 	     
-	     
-			
-			<div class ="vert-line"></div>
-			<h2 class= "vertline" id= "showdiv3"><button onclick="myFunction3()" name="delete">Delete Existing Account</button></h2> <br><br>
 			<div id="div3">
+				<br />
+				<center>Delete existing account:</center>
 				<form action="deleteAccount" method="post" modelAttribute="AccountModel">
 					Account Number: 
 						<input type="number" name="accNo"><br>
@@ -75,13 +79,12 @@
 				</form>
 			</div>
 	     
-	    
-			<div class ="vert-line"></div>
-			<h2 class= "vertline" id= "showdiv4"><button onclick="myFunction4()" name="view">View Account</button></h2> <br><br>
 			<div id="div4">
+				<br />
+				<center>View existing account:</center>
 				<form action="viewAccount" method="post" modelAttribute="AccountModel">
-				Account Number: <input type="number" name="accNo"><br>
-				<input type="submit" value="View">  
+					Account Number: <input type="number" name="accNo"><br>
+					<input type="submit" value="View">  
 				</form>
 			</div>
 		</div> 
