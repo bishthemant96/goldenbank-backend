@@ -5,7 +5,7 @@ import javax.persistence.PersistenceContext;
 
 import org.springframework.stereotype.Service;
 
-import com.entity.Account;
+import com.entity.AccountEntity;
 
 @Service
 public class AccountDaoImpl implements AccountDao {
@@ -13,18 +13,18 @@ public class AccountDaoImpl implements AccountDao {
 	@PersistenceContext
 	EntityManager em;
 	
-	public Account createAccount(Account account) {
+	public AccountEntity createAccount(AccountEntity account) {
 		em.persist(account);
 		return account;
 	}
 
-	public Account readAccount(Account account) {
-		Account reAccount = em.find(Account.class, account.getAccNo() ); //Replace 1 with getID function.
+	public AccountEntity readAccount(AccountEntity account) {
+		AccountEntity reAccount = em.find(AccountEntity.class, account.getAccNo() ); //Replace 1 with getID function.
 		return reAccount;
 	}
 
-	public Account updateAccount(Account account) {
-		Account reAccount = em.find(Account.class, account.getAccNo()); //Replace 1 with getID function
+	public AccountEntity updateAccount(AccountEntity account) {
+		AccountEntity reAccount = em.find(AccountEntity.class, account.getAccNo()); //Replace 1 with getID function
 		reAccount.setBranch(account.getBranch());
 		reAccount.setAccNominee(account.getAccNominee());
 		reAccount.setAmount(account.getAmount());
@@ -32,9 +32,10 @@ public class AccountDaoImpl implements AccountDao {
 		return reAccount;
 	}
 
-	public Account deleteAccount(Account account) {
-		Account reAccount = em.find(Account.class, 1); //Replace 1 with getID function
+	public AccountEntity deleteAccount(AccountEntity account) {
+		AccountEntity reAccount = em.find(AccountEntity.class, 1); //Replace 1 with getID function
 		em.remove(reAccount);
 		return account;
 	}
+
 }

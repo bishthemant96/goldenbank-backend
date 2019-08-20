@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.dao.EmployeeDao;
+import com.entity.EmployeeEntity;
 import com.model.EmployeeModel;
 
 @Transactional
@@ -14,7 +15,7 @@ public class EmployeeService {
 	@Autowired
 	EmployeeDao eDao;	
 	
-	EmployeeModel authentication(EmployeeModel employee) {
+	EmployeeModel authentication(EmployeeEntity employee) {
 		EmployeeEntity empEntity = eDao.readEmployee(employee);
 		return null;
 	}

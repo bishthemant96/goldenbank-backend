@@ -2,14 +2,14 @@ package com.dao;
 
 import java.util.List;
 
-import com.entity.Employee;
+import com.entity.EmployeeEntity;
 
 public interface EmployeeDao {
 
-	Employee createEmployee(Employee employee);
-	Employee readEmployee(Employee employee);
-	Employee updateEmployee(Employee employee);
-	Employee deleteEmployee(Employee employee);
+	EmployeeEntity createEmployee(EmployeeEntity employee);
+	EmployeeEntity readEmployee(EmployeeEntity employee);
+	EmployeeEntity updateEmployee(EmployeeEntity employee);
+	EmployeeEntity deleteEmployee(EmployeeEntity employee);
 	
-	List<Employee> displayAllEmployee();
+	List<EmployeeEntity> displayAllEmployee();
 }

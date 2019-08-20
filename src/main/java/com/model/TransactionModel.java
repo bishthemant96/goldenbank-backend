@@ -1,6 +1,6 @@
 package com.model;
 
-import com.entity.Account;
+import com.entity.AccountEntity;
 
 public class TransactionModel {
 
@@ -8,7 +8,7 @@ public class TransactionModel {
 	private String fromAcc;
 	private long toAcc;
 	private String amount;
-	private Account account;
+	private AccountEntity account;
 	private boolean status;
 
 	
@@ -53,11 +53,11 @@ public class TransactionModel {
 		this.amount = amount;
 	}
 
-	public Account getAccount() {
+	public AccountEntity getAccount() {
 		return account;
 	}
 
-	public void setAccount(Account account) {
+	public void setAccount(AccountEntity account) {
 		this.account = account;
 	}
 

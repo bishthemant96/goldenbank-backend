@@ -14,7 +14,7 @@ import javax.persistence.Transient;
 
 @Entity
 @Table(name = "Customer")
-public class Customer {
+public class CustomerEntity {
 
 	@Id
 	@Column(name = "cusID")
@@ -28,13 +28,13 @@ public class Customer {
 	private String cusPassword;
 
 	@Column(name = "cusAge")
-	private String cusAge;
+	private int cusAge;
 
 	@Column(name = "cusGender")
 	private String cusGender;
 
 	@Column(name = "cusNationality")
-	private int cusNationality;
+	private String cusNationality;
 
 	@Transient
 	private List<String> cusIDProof; // will take input from form but not saving in database
@@ -49,10 +49,10 @@ public class Customer {
 	private String cusAddress;
 
 	@OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
-	List<LoanAccount> loanAccount;
+	List<LoanAccountEntity> loanAccount;
 
 	@OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
-	List<Account> account;
+	List<AccountEntity> account;
 
 	public int getCusID() {
 		return cusID;
@@ -78,11 +78,11 @@ public class Customer {
 		this.cusPassword = cusPassword;
 	}
 
-	public String getCusAge() {
+	public int getCusAge() {
 		return cusAge;
 	}
 
-	public void setCusAge(String cusAge) {
+	public void setCusAge(int cusAge) {
 		this.cusAge = cusAge;
 	}
 
@@ -94,11 +94,11 @@ public class Customer {
 		this.cusGender = cusGender;
 	}
 
-	public int getCusNationality() {
+	public String getCusNationality() {
 		return cusNationality;
 	}
 
-	public void setCusNationality(int cusNationality) {
+	public void setCusNationality(String cusNationality) {
 		this.cusNationality = cusNationality;
 	}
 
@@ -134,20 +134,21 @@ public class Customer {
 		this.cusAddress = cusAddress;
 	}
 
-	public List<LoanAccount> getLoanAccount() {
+	public List<LoanAccountEntity> getLoanAccount() {
 		return loanAccount;
 	}
 
-	public void setLoanAccount(List<LoanAccount> loanAccount) {
+	public void setLoanAccount(List<LoanAccountEntity> loanAccount) {
 		this.loanAccount = loanAccount;
 	}
 
-	public List<Account> getAccount() {
+	public List<AccountEntity> getAccount() {
 		return account;
 	}
 
-	public void setAccount(List<Account> account) {
+	public void setAccount(List<AccountEntity> account) {
 		this.account = account;
 	}
+
 
 }

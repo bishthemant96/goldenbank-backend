@@ -1,12 +1,12 @@
 package com.dao;
 
-import com.entity.Transaction;
+import com.entity.TransactionEntity;
 
 public interface TransactionDao {
 
-	Transaction createTransaction(Transaction transaction);
-	Transaction readTransaction(Transaction transaction);
-	Transaction updateTransaction(Transaction transaction);
-	Transaction deleteTransaction(Transaction transaction);
+	TransactionEntity createTransaction(TransactionEntity transaction);
+	TransactionEntity readTransaction(TransactionEntity transaction);
+	TransactionEntity updateTransaction(TransactionEntity transaction);
+	TransactionEntity deleteTransaction(TransactionEntity transaction);
 	
 }

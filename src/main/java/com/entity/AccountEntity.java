@@ -13,10 +13,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-
 @Entity
 @Table(name = "Account")
-public class Account {
+public class AccountEntity {
 
 	@Id
 	@Column(name = "accNo")
@@ -28,19 +27,19 @@ public class Account {
 
 	@Column(name = "amount")
 	private long amount;
-	
+
 	@Column(name = "accType")
 	private String accType;
 
 	@Column(name = "accNominee")
 	private String accNominee;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "cusID")
-	private Customer customer;
-	
-	@OneToMany(mappedBy="account", cascade = CascadeType.ALL)
-	List<Transaction> transaction ;
+	private CustomerEntity customer;
+
+	@OneToMany(mappedBy = "account", cascade = CascadeType.ALL)
+	List<TransactionEntity> transaction;
 
 	public long getAccNo() {
 		return accNo;
@@ -82,12 +81,20 @@ public class Account {
 		this.accNominee = accNominee;
 	}
 
-	public Customer getCustomer() {
+	public CustomerEntity getCustomer() {
 		return customer;
 	}
 
-	public void setCustomer(Customer customer) {
+	public void setCustomer(CustomerEntity customer) {
 		this.customer = customer;
 	}
-	
+
+	public List<TransactionEntity> getTransaction() {
+		return transaction;
+	}
+
+	public void setTransaction(List<TransactionEntity> transaction) {
+		this.transaction = transaction;
+	}
+
 }
