@@ -16,12 +16,14 @@ public class EmployeeService {
 	@Autowired
 	EmployeeDao eDao;	
 	
-	
-	public EmployeeModel authentication(EmployeeModel employee) {
+	public EmployeeModel authentication(EmployeeModel empModel) {
 		EmployeeEntity empEntity = new EmployeeEntity();
-		BeanUtils.copyProperties(employee, empEntity);
+		BeanUtils.copyProperties(empModel, empEntity);
 		empEntity = eDao.readEmployee(empEntity);
-		return employee;
-
+		if(empModel.getEmpPassword().equals(empEntity.getEmpPassword())) {
+			BeanUtils.copyProperties(empEntity, empModel);
+			empModel.setStatus(true);
+		}
+		return empModel;
 	}
 }
