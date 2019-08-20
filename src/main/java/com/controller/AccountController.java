@@ -18,9 +18,17 @@ public class AccountController {
 	
 	@RequestMapping(value="/addAccount", method = RequestMethod.POST)
 	public String createAccount(@ModelAttribute("AccountModel") AccountModel accountModel, Model model) {
-		System.out.println("RUN!");
-		
 		accountModel = accService.createAccount(accountModel);
+		if(accountModel.isStatus()) {
+			return "accountCrud";
+		} else {
+			return "employeeDash";
+		}
+	}
+	
+	@RequestMapping(value="/deleteAccount", method = RequestMethod.POST)
+	public String deleteAccount(@ModelAttribute("AccountModel") AccountModel accountModel, Model model) {
+		accountModel = accService.deleteAccount(accountModel);
 		if(accountModel.isStatus()) {
 			return "accountCrud";
 		} else {
