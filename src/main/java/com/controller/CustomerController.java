@@ -21,12 +21,7 @@ public class CustomerController {
 	@RequestMapping(value="/addCustomer", method = RequestMethod.POST)
 	public String addCustomer(@ModelAttribute("addCustomer") CustomerModel customerModel, Model model) {
 		
-		if(cService.addCustomer(customerModel)) {
-			System.out.println("customer added");
-		}
-		else {
-			System.out.println("error occured");
-		}
+		customerModel = cService.createCustomer(customerModel);
 		
 		return "customerCrud";
 	}
