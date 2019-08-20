@@ -25,11 +25,11 @@ public class TransactionService {
 		
 	}
 
-public TransactionModel deleteTransaction(TransactionModel transModel) {
+public TransactionModel readTransaction(TransactionModel transModel) {
 		
 		TransactionEntity transEntity = new TransactionEntity();
 		BeanUtils.copyProperties(transModel, transEntity);
-		transEntity=tDao.deleteTransaction(transEntity);
+		transEntity=tDao.readTransaction(transEntity);
 		BeanUtils.copyProperties( transEntity,transModel);
 		
 		return transModel;

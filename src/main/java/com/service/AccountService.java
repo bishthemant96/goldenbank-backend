@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.dao.AccountDao;
 import com.entity.AccountEntity;
+import com.entity.EmployeeEntity;
 import com.model.AccountModel;
 
 @Service
@@ -18,6 +19,8 @@ public class AccountService {
 
 		AccountEntity accEntity = new AccountEntity();
 		BeanUtils.copyProperties(accModel, accEntity);
+		EmployeeEntity empEntity= new EmployeeEntity();
+		
 		accEntity = aDao.createAccount(accEntity);
 		BeanUtils.copyProperties(accEntity, accModel);
 
