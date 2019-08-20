@@ -17,7 +17,7 @@ public class NavigatorController {
 	}
 	
 	@RequestMapping(value="/login", method = RequestMethod.GET)
-	public String getLoginPage(Model model) {
+	public String getLoginPage1(Model model) {
 		return "login";
 	}
 	
