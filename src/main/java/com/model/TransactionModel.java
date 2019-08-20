@@ -1,14 +1,12 @@
 package com.model;
 
-import com.entity.AccountEntity;
-
 public class TransactionModel {
 
 	private long transId;
 	private String fromAcc;
 	private long toAcc;
 	private String amount;
-	private AccountEntity account;
+	private int accNo;
 	private boolean status;
 
 	
@@ -53,12 +51,13 @@ public class TransactionModel {
 		this.amount = amount;
 	}
 
-	public AccountEntity getAccount() {
-		return account;
+	public int getAccNo() {
+		return accNo;
 	}
 
-	public void setAccount(AccountEntity account) {
-		this.account = account;
+	public void setAccNo(int accNo) {
+		this.accNo = accNo;
 	}
+
 
 }

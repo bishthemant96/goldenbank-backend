@@ -16,26 +16,14 @@ public class CustomerService {
 	@Autowired
 	CustomerDao cDao;
 
-	/*
-	 * public boolean authenticateUser(CustomerModel cModel) { CustomerEntity
-	 * customer = new CustomerEntity();
-	 * 
-	 * BeanUtils.copyProperties(cModel, customer);
-	 * 
-	 * customer = cDao.readCustomer(customer);
-	 * 
-	 * BeanUtils.copyProperties(employee, empEntity); empEntity =
-	 * eDao.readEmployee(empEntity);
-	 * 
-	 * 
-	 * return false; }
-	 */
-
 	public CustomerModel createCustomer(CustomerModel customerModel) {
+		customerModel.setStatus(false);
 		CustomerEntity customer = new CustomerEntity();
 		BeanUtils.copyProperties(customerModel, customer);
 		try {
 			customer = cDao.createCustomer(customer);
+			BeanUtils.copyProperties(customer, customerModel);
+			customerModel.setStatus(true);
 		} catch (Exception e) {
 			System.out.println("Error occured while Adding customer...");
 		}
@@ -43,10 +31,13 @@ public class CustomerService {
 	}
 
 	public CustomerModel deleteCustomer(CustomerModel customerModel) {
+		customerModel.setStatus(false);
 		CustomerEntity customer = new CustomerEntity();
 		BeanUtils.copyProperties(customerModel, customer);
 		try {
 			customer = cDao.deleteCustomer(customer);
+			BeanUtils.copyProperties(customer, customerModel);
+			customerModel.setStatus(true);
 		} catch (Exception e) {
 			System.out.println("Error occured while deleting customer...");
 		}
@@ -61,6 +52,7 @@ public class CustomerService {
 		BeanUtils.copyProperties(customerModel, customer);
 		try {
            customer= cDao.updateCustomer(customer);
+           BeanUtils.copyProperties(customer, customerModel);
            customerModel.setStatus(true);
 		} catch (Exception e) {
            System.out.println("Error occured while updating...");
@@ -69,10 +61,13 @@ public class CustomerService {
 	}
 
 	public CustomerModel readCustomer(CustomerModel customerModel) {
+		customerModel.setStatus(false);
 		CustomerEntity customer = new CustomerEntity();
 		BeanUtils.copyProperties(customerModel, customer);
 		try {
 			customer = cDao.readCustomer(customer);
+			BeanUtils.copyProperties(customer, customerModel);
+			customerModel.setStatus(true);
 		} catch (Exception e) {
 			System.out.println("Error occured while reading customer information...");
 		}

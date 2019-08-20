@@ -1,17 +1,14 @@
 package com.model;
 
-import com.entity.CustomerEntity;
-
 public class LoanAccountModel {
 
 	private long loanAccNo;
 	private String branch;
 	private long amount;
 	private String loanType;
-	private CustomerEntity customer;
+	private int cusID;
 	private boolean status;
 
-	
 	public boolean isStatus() {
 		return status;
 	}
@@ -19,8 +16,7 @@ public class LoanAccountModel {
 	public void setStatus(boolean status) {
 		this.status = status;
 	}
-	
-	
+
 	public long getLoanAccNo() {
 		return loanAccNo;
 	}
@@ -53,12 +49,12 @@ public class LoanAccountModel {
 		this.loanType = loanType;
 	}
 
-	public CustomerEntity getCustomer() {
-		return customer;
+	public int getCusID() {
+		return cusID;
 	}
 
-	public void setCustomer(CustomerEntity customer) {
-		this.customer = customer;
+	public void setCusID(int cusID) {
+		this.cusID = cusID;
 	}
 
 }
