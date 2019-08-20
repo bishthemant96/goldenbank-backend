@@ -12,7 +12,7 @@ public class CustomerController {
 	
 	@RequestMapping(value="/", method = RequestMethod.GET)
 	public String getPage(Model model) {
-		return "";
+		return "login";
 	}
 
 }

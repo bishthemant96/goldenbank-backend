@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -16,6 +17,11 @@ import com.service.CustomerService; // import the service method here
 @Controller
 public class LoginController { 
 	CustomerService customerService= null;
+	
+	@RequestMapping(value="/index", method = RequestMethod.GET)
+	public String getIndexPage(Model model) {
+		return "index";
+	}
 	
 		
 	// this method is called when you click on login link to open login page.
