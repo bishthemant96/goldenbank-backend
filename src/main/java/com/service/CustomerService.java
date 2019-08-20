@@ -32,25 +32,24 @@ public class CustomerService {
 	 * return false; }
 	 */
 
-	public boolean addCustomer(CustomerModel customerModel) {
+	public CustomerModel addCustomer(CustomerModel customerModel) {
 		CustomerEntity customer = new CustomerEntity();
 		BeanUtils.copyProperties(customerModel, customer);
 		try {
 			customer = cDao.createCustomer(customer);
-			return true;
 		} catch (Exception e) {
 			System.out.println("Error occured while Adding customer...");
-			return false;
 		}
+		return customerModel;
 	}
 
-	public boolean deleteCustomer(int empId) {
-		return false;
+	public CustomerModel deleteCustomer(CustomerModel customerModel) {
+		return customerModel;
 
 	}
 
-	public void updateCustomer(Model model) {
-
+	public CustomerModel updateCustomer(CustomerModel customerModel) {
+    return customerModel;
 	}
 
 }
