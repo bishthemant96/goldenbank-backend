@@ -99,7 +99,7 @@ $(document).ready(main);
      </div>
      
      <div id= "div1">
-     <form action="addCustomer" method="get">
+     <form action="addCustomer" method="post" modelAttribute="addCustomer">
      Name: <input type="text" name="cusName"> <br>
      Age: <input type="number" name="cusAge"> <br>
      Gender: <input type="text" name="cusGender"> <br>
@@ -126,7 +126,7 @@ $(document).ready(main);
      </div>
      
      <div id="div2">
-     <form action="updateCustomer" method="get">
+     <form action="updateCustomer" method="post" modelAttribute="updateCustomer">
      User ID: <input type="number" name="cusId" readonly><br>
      Name: <input type="text" name="cusName"><br>
      Age: <input type="number" name="cusAge"><br>
@@ -147,7 +147,7 @@ $(document).ready(main);
      </div>
      
      <div id="div3">
-     <form action="deleteCustomer" method="get">
+     <form action="deleteCustomer" method="post" modelAttribute="deleteCustomer">
      User ID: <input type="number" name="cusId">
      <input type="submit" value="Delete">
      <div class ="vert-line"></div> 
@@ -160,7 +160,7 @@ $(document).ready(main);
      </div>
      
      <div id="div4">
-     <form action="viewCustomer" method="get">
+     <form action="viewCustomer" method="post" modelAttribute="viewCustomer">
      User ID: <input type="number" name="cusId">
      <input type="submit" value="View">  
      <div class ="vert-line"></div>   
