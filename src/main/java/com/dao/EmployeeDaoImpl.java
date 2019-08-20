@@ -8,7 +8,7 @@ import javax.persistence.PersistenceContext;
 
 import org.springframework.stereotype.Service;
 
-import com.entity.Employee;
+import com.entity.EmployeeEntity;
 
 @Service
 public class EmployeeDaoImpl implements EmployeeDao {
@@ -16,18 +16,18 @@ public class EmployeeDaoImpl implements EmployeeDao {
 	@PersistenceContext
 	EntityManager em;
 	
-	public Employee createEmployee(Employee employee) {
+	public EmployeeEntity createEmployee(EmployeeEntity employee) {
 		em.persist(employee);
 		return employee;
 	}
 
-	public Employee readEmployee(Employee employee) {
-		Employee reEmployee = em.find(Employee.class, employee.getEmpID() ); //Replace 1 with getID function.
+	public EmployeeEntity readEmployee(EmployeeEntity employee) {
+		EmployeeEntity reEmployee = em.find(EmployeeEntity.class, employee.getEmpID() ); //Replace 1 with getID function.
 		return reEmployee;
 	}
 
-	public Employee updateEmployee(Employee employee) {
-		Employee reEmployee = em.find(Employee.class, employee.getEmpID()); //Replace 1 with getID function
+	public EmployeeEntity updateEmployee(EmployeeEntity employee) {
+		EmployeeEntity reEmployee = em.find(EmployeeEntity.class, employee.getEmpID()); //Replace 1 with getID function
 		
 	    reEmployee.setEmpName(employee.getEmpName());
 	    reEmployee.setEmpBranch(employee.getEmpBranch());
@@ -39,18 +39,18 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		return reEmployee;
 	}
 
-	public Employee deleteEmployee(Employee employee) {
-		Employee reEmployee = em.find(Employee.class, employee.getEmpID()); //Replace 1 with getID function
+	public EmployeeEntity deleteEmployee(EmployeeEntity employee) {
+		EmployeeEntity reEmployee = em.find(EmployeeEntity.class, employee.getEmpID()); //Replace 1 with getID function
 		em.remove(reEmployee);
 		return employee;
 	}
 
-	public List<Employee> displayAllEmployee() {
+	public List<EmployeeEntity> displayAllEmployee() {
 		List<?> temp = em.createQuery("Select e from Employee e").getResultList();
-		List<Employee> employeeList = new ArrayList<Employee>(temp.size());
+		List<EmployeeEntity> employeeList = new ArrayList<EmployeeEntity>(temp.size());
 		
 		for(Object obj: temp)
-			employeeList.add(((Employee)obj));	
+			employeeList.add(((EmployeeEntity)obj));	
 
 		return employeeList;
 	}

@@ -3,23 +3,23 @@ package com.model;
 
 import java.util.List;
 
-import com.entity.Account;
-import com.entity.LoanAccount;
+import com.entity.AccountEntity;
+import com.entity.LoanAccountEntity;
 
 public class CustomerModel {
 
 	private int cusID;
 	private String cusName;
 	private String cusPassword;
-	private String cusAge;
+	private int cusAge;
 	private String cusGender;
-	private int cusNationality;
+	private String cusNationality;
 	private List<String> cusIDProof;
 	private long cusNo;
 	private String cusEmail;
 	private String cusAddress;
-	private List<LoanAccount> loanAccount;
-	private List<Account> account;
+	private List<LoanAccountEntity> loanAccount;
+	private List<AccountEntity> account;
 	private boolean status;
 
 	public boolean isStatus() {
@@ -54,12 +54,20 @@ public class CustomerModel {
 		this.cusPassword = cusPassword;
 	}
 
-	public String getCusAge() {
+	public int getCusAge() {
 		return cusAge;
 	}
 
-	public void setCusAge(String cusAge) {
+	public void setCusAge(int cusAge) {
 		this.cusAge = cusAge;
+	}
+
+	public String getCusNationality() {
+		return cusNationality;
+	}
+
+	public void setCusNationality(String cusNationality) {
+		this.cusNationality = cusNationality;
 	}
 
 	public String getCusGender() {
@@ -68,14 +76,6 @@ public class CustomerModel {
 
 	public void setCusGender(String cusGender) {
 		this.cusGender = cusGender;
-	}
-
-	public int getCusNationality() {
-		return cusNationality;
-	}
-
-	public void setCusNationality(int cusNationality) {
-		this.cusNationality = cusNationality;
 	}
 
 	public List<String> getCusIDProof() {
@@ -110,20 +110,21 @@ public class CustomerModel {
 		this.cusAddress = cusAddress;
 	}
 
-	public List<LoanAccount> getLoanAccount() {
+	public List<LoanAccountEntity> getLoanAccount() {
 		return loanAccount;
 	}
 
-	public void setLoanAccount(List<LoanAccount> loanAccount) {
+	public void setLoanAccount(List<LoanAccountEntity> loanAccount) {
 		this.loanAccount = loanAccount;
 	}
 
-	public List<Account> getAccount() {
+	public List<AccountEntity> getAccount() {
 		return account;
 	}
 
-	public void setAccount(List<Account> account) {
+	public void setAccount(List<AccountEntity> account) {
 		this.account = account;
 	}
+
 
 }

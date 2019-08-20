@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.dao.EmployeeDao;
-import com.entity.Employee;
+import com.entity.EmployeeEntity;
 import com.model.EmployeeModel;
 
 @Transactional
@@ -16,10 +16,14 @@ public class EmployeeService {
 	@Autowired
 	EmployeeDao eDao;	
 	
-	public EmployeeModel authentication(EmployeeModel employee) {
-		Employee empEntity = new Employee();
-		BeanUtils.copyProperties(employee, empEntity);
+	public EmployeeModel authentication(EmployeeModel empModel) {
+		EmployeeEntity empEntity = new EmployeeEntity();
+		BeanUtils.copyProperties(empModel, empEntity);
 		empEntity = eDao.readEmployee(empEntity);
-		return employee;
+		if(empModel.getEmpPassword().equals(empEntity.getEmpPassword())) {
+			BeanUtils.copyProperties(empEntity, empModel);
+			empModel.setStatus(true);
+		}
+		return empModel;
 	}
 }
