@@ -45,22 +45,22 @@ li a.active {
   background-color: #FFBF00;
 }
 
+.vert-line {
+	border-bottom: thick solid #FFBF00;
+	text-align: center;
+	padding: 10px;
+	color: #FFBF00;
+}
+
 form {
 margin: 20px auto;
 width: 320px;
 color: black;
 text-align: center;
-font-size: 18px;
-	margin: auto;
+
 }
 
-
-input {
-padding: 10px;
-font-size: inherit;
-}
-
-input[type="button"] {
+input[type="submit"] {
 width: 344px;
 height: 45px;
 border: none;
@@ -68,7 +68,7 @@ background: #FFBF00;
 color: white;
 }
 
-input[type="button"]:focus {
+input[type="submit"]:focus {
 width: 344px;
 height: 45px;
 border: solid #FFBF00;
@@ -79,3 +79,5 @@ color: #FFBF00;
 input:focus {
 background: white;
 }
+
+

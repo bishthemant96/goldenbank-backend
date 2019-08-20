@@ -20,10 +20,16 @@ public class EmployeeService {
 		EmployeeEntity empEntity = new EmployeeEntity();
 		BeanUtils.copyProperties(empModel, empEntity);
 		empEntity = eDao.readEmployee(empEntity);
-		if(empModel.getEmpPassword().equals(empEntity.getEmpPassword())) {
+		
+		if(empEntity==null) {
+			empModel.setStatus(false);
+		} else if(empModel.getEmpPassword().equals(empEntity.getEmpPassword())) {
 			BeanUtils.copyProperties(empEntity, empModel);
 			empModel.setStatus(true);
+		} else {
+			empModel.setStatus(false);
 		}
+		
 		return empModel;
 	}
 }
