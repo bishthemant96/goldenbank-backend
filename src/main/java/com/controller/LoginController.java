@@ -8,8 +8,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class LoginController {
 	
-	@RequestMapping(value="/signin", method = RequestMethod.GET)
+	@RequestMapping(value="/signin", method = RequestMethod.POST)
 	public String getLoginPage(Model model) {
+		
+		
+		
 		return "employeeDash";
 	}
 

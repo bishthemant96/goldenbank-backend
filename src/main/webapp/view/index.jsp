@@ -18,7 +18,6 @@
         
         <ul>
   <li><a class="active" href="index">Home</a></li>
-  <li><a href="news">News</a></li>
   <li><a href="login">Login</a></li>
   <li style="float:right"><a href="contact">Contact</a></li>
 </ul>

@@ -18,13 +18,12 @@
         
         <ul>
   <li><a href="index">Home</a></li>
-  <li><a href="news">News</a></li>
   <li><a class="active" href="login">Login</a></li>
   <li style="float:right"><a href="contact">Contact</a></li>
 </ul> <br>
       
       <div class="form">
-      <form action="signin" method="get">
+      <form action="signin" method="POST">
       <h1>Login Into Your Account</h1>
       
       Employee ID : <br> <input type="number" name="empID" size="20"> <br> 

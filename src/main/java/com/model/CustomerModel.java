@@ -10,9 +10,9 @@ public class CustomerModel {
 	private int cusID;
 	private String cusName;
 	private String cusPassword;
-	private String cusAge;
+	private int cusAge;
 	private String cusGender;
-	private int cusNationality;
+	private String cusNationality;
 	private List<String> cusIDProof;
 	private long cusNo;
 	private String cusEmail;
@@ -53,11 +53,11 @@ public class CustomerModel {
 		this.cusPassword = cusPassword;
 	}
 
-	public String getCusAge() {
+	public int getCusAge() {
 		return cusAge;
 	}
 
-	public void setCusAge(String cusAge) {
+	public void setCusAge(int cusAge) {
 		this.cusAge = cusAge;
 	}
 
@@ -69,11 +69,11 @@ public class CustomerModel {
 		this.cusGender = cusGender;
 	}
 
-	public int getCusNationality() {
+	public String getCusNationality() {
 		return cusNationality;
 	}
 
-	public void setCusNationality(int cusNationality) {
+	public void setCusNationality(String cusNationality) {
 		this.cusNationality = cusNationality;
 	}
 
