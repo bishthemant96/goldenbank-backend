@@ -5,8 +5,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.service.CustomerService; // import the service method here
+
 @Controller
-public class LoginController {
+public class LoginController { 
+	CustomerService customerService= null;
 	
 	@RequestMapping(value="/signin", method = RequestMethod.POST)
 	public String getLoginPage(Model model) {
@@ -15,5 +18,5 @@ public class LoginController {
 		
 		return "employeeDash";
 	}
-
+	
 }

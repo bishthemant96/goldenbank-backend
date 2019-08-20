@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "Transaction")
-public class Transaction {
+public class TransactionEntity {
 
 	@Id
 	@Column(name = "transId")
@@ -29,7 +29,7 @@ public class Transaction {
 
 	@ManyToOne
 	@JoinColumn(name = "accNo")
-	private Account account;
+	private AccountEntity account;
 
 	public long getTransId() {
 		return transId;
@@ -64,11 +64,11 @@ public class Transaction {
 	}
 
 
-	public Account getAccount() {
+	public AccountEntity getAccount() {
 		return account;
 	}
 
-	public void setAccount(Account account) {
+	public void setAccount(AccountEntity account) {
 		this.account = account;
 	}
 	

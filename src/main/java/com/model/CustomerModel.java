@@ -1,9 +1,10 @@
 package com.model;
 
+
 import java.util.List;
 
-import com.entity.Account;
-import com.entity.LoanAccount;
+import com.entity.AccountEntity;
+import com.entity.LoanAccountEntity;
 
 public class CustomerModel {
 
@@ -17,8 +18,8 @@ public class CustomerModel {
 	private long cusNo;
 	private String cusEmail;
 	private String cusAddress;
-	private List<LoanAccount> loanAccount;
-	private List<Account> account;
+	private List<LoanAccountEntity> loanAccount;
+	private List<AccountEntity> account;
 	private boolean status;
 
 	public boolean isStatus() {
@@ -61,20 +62,20 @@ public class CustomerModel {
 		this.cusAge = cusAge;
 	}
 
-	public String getCusGender() {
-		return cusGender;
-	}
-
-	public void setCusGender(String cusGender) {
-		this.cusGender = cusGender;
-	}
-
 	public String getCusNationality() {
 		return cusNationality;
 	}
 
 	public void setCusNationality(String cusNationality) {
 		this.cusNationality = cusNationality;
+	}
+
+	public String getCusGender() {
+		return cusGender;
+	}
+
+	public void setCusGender(String cusGender) {
+		this.cusGender = cusGender;
 	}
 
 	public List<String> getCusIDProof() {
@@ -109,20 +110,21 @@ public class CustomerModel {
 		this.cusAddress = cusAddress;
 	}
 
-	public List<LoanAccount> getLoanAccount() {
+	public List<LoanAccountEntity> getLoanAccount() {
 		return loanAccount;
 	}
 
-	public void setLoanAccount(List<LoanAccount> loanAccount) {
+	public void setLoanAccount(List<LoanAccountEntity> loanAccount) {
 		this.loanAccount = loanAccount;
 	}
 
-	public List<Account> getAccount() {
+	public List<AccountEntity> getAccount() {
 		return account;
 	}
 
-	public void setAccount(List<Account> account) {
+	public void setAccount(List<AccountEntity> account) {
 		this.account = account;
 	}
+
 
 }

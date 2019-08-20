@@ -8,7 +8,7 @@ import javax.persistence.PersistenceContext;
 
 import org.springframework.stereotype.Service;
 
-import com.entity.Customer;
+import com.entity.CustomerEntity;
 
 @Service
 public class CustomerDaoImpl implements CustomerDao {
@@ -16,19 +16,19 @@ public class CustomerDaoImpl implements CustomerDao {
 	@PersistenceContext
 	EntityManager em;
 
-	public Customer createCustomer(Customer customer) {
+	public CustomerEntity createCustomer(CustomerEntity customer) {
 		em.persist(customer);
 		return customer;
 	}
 
-	public Customer readCustomer(Customer customer) {
+	public CustomerEntity readCustomer(CustomerEntity customer) {
 
-		Customer reCustomer = em.find(Customer.class, customer.getCusID());
+		CustomerEntity reCustomer = em.find(CustomerEntity.class, customer.getCusID());
 		return reCustomer;
 	}
 
-	public Customer updateCustomer(Customer customer) {
-		Customer reCustomer = em.find(Customer.class, customer.getCusID()); // Replace 1 with getID function
+	public CustomerEntity updateCustomer(CustomerEntity customer) {
+		CustomerEntity reCustomer = em.find(CustomerEntity.class, customer.getCusID()); // Replace 1 with getID function
 		reCustomer.setCusName(customer.getCusName());
 		reCustomer.setCusAge(customer.getCusAge());
 		reCustomer.setCusGender(customer.getCusGender());
@@ -40,18 +40,18 @@ public class CustomerDaoImpl implements CustomerDao {
 		return reCustomer;
 	}
 
-	public Customer deleteCustomer(Customer customer) {
-		Customer reCustomer = em.find(Customer.class, customer.getCusID()); // Replace 1 with getID function
+	public CustomerEntity deleteCustomer(CustomerEntity customer) {
+		CustomerEntity reCustomer = em.find(CustomerEntity.class, customer.getCusID()); // Replace 1 with getID function
 		em.remove(reCustomer);
 		return customer;
 	}
 
-	public List<Customer> displayAllCustomer() {
+	public List<CustomerEntity> displayAllCustomer() {
 		List<?> temp = em.createQuery("Select e from Customer e").getResultList();
-		List<Customer> customerList = new ArrayList<Customer>(temp.size());
+		List<CustomerEntity> customerList = new ArrayList<CustomerEntity>(temp.size());
 
 		for (Object obj : temp)
-			customerList.add(((Customer) obj));
+			customerList.add(((CustomerEntity) obj));
 
 		return customerList;
 	}

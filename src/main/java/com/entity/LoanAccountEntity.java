@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "LoanAccount")
-public class LoanAccount {
+public class LoanAccountEntity {
 
 	@Id
 	@Column(name = "loanAccNo")
@@ -29,7 +29,7 @@ public class LoanAccount {
 
 	@ManyToOne
 	@JoinColumn(name = "cusID")
-	private Customer customer;
+	private CustomerEntity customer;
 
 	public long getLoanAccNo() {
 		return loanAccNo;
@@ -63,11 +63,11 @@ public class LoanAccount {
 		this.loanType = loanType;
 	}
 
-	public Customer getCustomer() {
+	public CustomerEntity getCustomer() {
 		return customer;
 	}
 
-	public void setCustomer(Customer customer) {
+	public void setCustomer(CustomerEntity customer) {
 		this.customer = customer;
 	}
 
