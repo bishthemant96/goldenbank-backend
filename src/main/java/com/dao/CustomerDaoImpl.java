@@ -41,7 +41,7 @@ public class CustomerDaoImpl implements CustomerDao {
 	}
 
 	public CustomerEntity deleteCustomer(CustomerEntity customer) {
-		CustomerEntity reCustomer = em.find(CustomerEntity.class, customer.getCusID()); // Replace 1 with getID function
+		CustomerEntity reCustomer = em.find(CustomerEntity.class, customer.getCusID()); 
 		em.remove(reCustomer);
 		return customer;
 	}
