@@ -16,16 +16,6 @@ public class NavigatorController {
 		return "index";
 	}
 	
-	@RequestMapping(value="/news", method = RequestMethod.GET)
-	public String getNewsPage(Model model) {
-		return "news";
-	}
-	
-	@RequestMapping(value="/login", method = RequestMethod.GET)
-	public String getLoginPage(Model model) {
-		return "login";
-	}
-	
 	@RequestMapping(value="/contact", method = RequestMethod.GET)
 	public String getContactPage(Model model) {
 		return "contact";
@@ -47,21 +37,6 @@ public class NavigatorController {
 	public String getTransactionPage(Model model) {
 		return "transaction";
 	}
-	@RequestMapping(value="/newCustomer", method = RequestMethod.GET)
-	public String getNewCustomerPage(Model model) {
-		return "newCustomer";
-	}
-	@RequestMapping(value="/deleteCustomer", method = RequestMethod.GET)
-	public String getDeleteCustomerPage(Model model) {
-		return "deleteCustomer";
-	}
-	@RequestMapping(value="/editCustomer", method = RequestMethod.GET)
-	public String getEditCustomerPage(Model model) {
-		return "editCustomer";
-	}
-	@RequestMapping(value="/viewCustomer", method = RequestMethod.GET)
-	public String getViewCustomerPage(Model model) {
-		return "viewCustomer";
-	}
+	
 
 }
