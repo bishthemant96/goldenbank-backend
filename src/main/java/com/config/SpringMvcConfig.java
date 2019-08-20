@@ -23,6 +23,7 @@ public class SpringMvcConfig implements WebMvcConfigurer {
 	
 	public void addResourceHandlers(final ResourceHandlerRegistry registry) {
 	    registry.addResourceHandler("/css/**").addResourceLocations("/css/");
+	    registry.addResourceHandler("/js/**").addResourceLocations("/js/");
 	}
  
 	@Bean

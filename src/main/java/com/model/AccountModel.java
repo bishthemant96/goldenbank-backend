@@ -2,7 +2,6 @@ package com.model;
 
 import java.util.List;
 
-import com.entity.CustomerEntity;
 import com.entity.TransactionEntity;
 
 public class AccountModel {
@@ -12,7 +11,7 @@ public class AccountModel {
 	private long amount;
 	private String accType;
 	private String accNominee;
-	private CustomerEntity customer;
+	private int cusID;
 	private List<TransactionEntity> transaction;
 	private boolean status;
 
@@ -64,14 +63,6 @@ public class AccountModel {
 		this.accNominee = accNominee;
 	}
 
-	public CustomerEntity getCustomer() {
-		return customer;
-	}
-
-	public void setCustomer(CustomerEntity customer) {
-		this.customer = customer;
-	}
-
 	public List<TransactionEntity> getTransaction() {
 		return transaction;
 	}
@@ -80,5 +71,12 @@ public class AccountModel {
 		this.transaction = transaction;
 	}
 
+	public int getCusID() {
+		return cusID;
+	}
+
+	public void setCusID(int cusID) {
+		this.cusID = cusID;
+	}
 
 }
