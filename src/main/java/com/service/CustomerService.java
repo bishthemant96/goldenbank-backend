@@ -22,6 +22,7 @@ public class CustomerService {
 		BeanUtils.copyProperties(customerModel, customer);
 		try {
 			customer = cDao.createCustomer(customer);
+			BeanUtils.copyProperties(customer, customerModel);
 			customerModel.setStatus(true);
 		} catch (Exception e) {
 			System.out.println("Error occured while Adding customer...");
@@ -35,6 +36,7 @@ public class CustomerService {
 		BeanUtils.copyProperties(customerModel, customer);
 		try {
 			customer = cDao.deleteCustomer(customer);
+			BeanUtils.copyProperties(customer, customerModel);
 			customerModel.setStatus(true);
 		} catch (Exception e) {
 			System.out.println("Error occured while deleting customer...");
@@ -50,6 +52,7 @@ public class CustomerService {
 		BeanUtils.copyProperties(customerModel, customer);
 		try {
            customer= cDao.updateCustomer(customer);
+           BeanUtils.copyProperties(customer, customerModel);
            customerModel.setStatus(true);
 		} catch (Exception e) {
            System.out.println("Error occured while updating...");
@@ -63,6 +66,7 @@ public class CustomerService {
 		BeanUtils.copyProperties(customerModel, customer);
 		try {
 			customer = cDao.readCustomer(customer);
+			BeanUtils.copyProperties(customer, customerModel);
 			customerModel.setStatus(true);
 		} catch (Exception e) {
 			System.out.println("Error occured while reading customer information...");

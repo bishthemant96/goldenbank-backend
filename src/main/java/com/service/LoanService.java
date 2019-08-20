@@ -33,6 +33,7 @@ public class LoanService {
 
 		try {
 			loanAccount = lDao.createLoan(loanAccount);
+			BeanUtils.copyProperties(loanAccount,loanModel);
 			loanModel.setStatus(true);
 		} catch (Exception e) {
 			System.out.println("Error occured during loan creation...");
@@ -49,6 +50,7 @@ public class LoanService {
 
 		try {
 			loanAccount = lDao.deleteLoan(loanAccount);
+			BeanUtils.copyProperties(loanAccount,loanModel);
 			loanModel.setStatus(true);
 		} catch (Exception e) {
 			System.out.println("Error occured during loan deletion...");
@@ -64,6 +66,7 @@ public class LoanService {
 
 		try {
 			loanAccount = lDao.readLoan(loanAccount);
+			BeanUtils.copyProperties(loanAccount,loanModel);
 			loanModel.setStatus(true);
 		} catch (Exception e) {
 			System.out.println("Error occured during accessing loan info...");
