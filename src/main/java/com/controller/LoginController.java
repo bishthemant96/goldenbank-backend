@@ -18,21 +18,17 @@ import com.service.CustomerService; // import the service method here
 public class LoginController { 
 	CustomerService customerService= null;
 	
-	@RequestMapping(value="/index", method = RequestMethod.GET)
-	public String getIndexPage(Model model) {
-		return "index";
-	}
 	
-		
-	// this method is called when you click on login link to open login page.
-	 @RequestMapping(value="/login",method=RequestMethod.GET)
-	    public ModelAndView displayLogin(HttpServletRequest request, HttpServletResponse response)
-	    {
-	        ModelAndView model = new ModelAndView("login");
-	        CustomerModel customerModel = new CustomerModel();
-	        model.addObject("customerModel", customerModel);
-	        return model;
-	    }
+//		
+//	// this method is called when you click on login link to open login page.
+//	 @RequestMapping(value="/login",method=RequestMethod.GET)
+//	    public ModelAndView displayLogin(HttpServletRequest request, HttpServletResponse response)
+//	    {
+//	        ModelAndView model = new ModelAndView("login");
+//	        CustomerModel customerModel = new CustomerModel();
+//	        model.addObject("customerModel", customerModel);
+//	        return model;
+//	    }
 	 
 	// this method is called when you SUBMIT on login link on loginPage.
 	    @RequestMapping(value="/signin",method=RequestMethod.POST)
