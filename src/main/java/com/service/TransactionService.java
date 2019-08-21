@@ -25,31 +25,37 @@ public class TransactionService {
 
 		AccountEntity accEntity = new AccountEntity();
 		accEntity.setAccNo(transModel.getAccNo());
-		aDao.readAccount(accEntity);
-
-		TransactionEntity transEntity = new TransactionEntity();
-		BeanUtils.copyProperties(transModel, transEntity);
-		transEntity.setAccount(accEntity);
-
 		try {
-			transEntity = tDao.createTransaction(transEntity);
-			transModel.setStatus(true);
-		} catch (Exception e) {
-			System.out.println("Error occured during loan creation...");
-		}
+			accEntity = aDao.readAccount(accEntity);
+			if (accEntity == null) {
+				System.out.println("No Account exists for this AccountNo.");
+			} else {
+				TransactionEntity transEntity = new TransactionEntity();
+				BeanUtils.copyProperties(transModel, transEntity);
+				transEntity.setAccount(accEntity);
 
+				try {
+					transEntity = tDao.createTransaction(transEntity);
+					transModel.setStatus(true);
+				} catch (Exception e) {
+					System.out.println("Error occured during loan creation...");
+				}
+			}
+		} catch (Exception e) {
+			System.out.println("Error gathering Account information... " + e);
+		}
 		return transModel;
 
 	}
 
-	public TransactionModel deleteTransaction(TransactionModel transModel) {
+	public TransactionModel viewTransaction(TransactionModel transModel) {
 		transModel.setStatus(false);
 
 		TransactionEntity transEntity = new TransactionEntity();
 		BeanUtils.copyProperties(transModel, transEntity);
 
 		try {
-			transEntity = tDao.deleteTransaction(transEntity);
+			transEntity = tDao.readTransaction(transEntity);
 			BeanUtils.copyProperties(transEntity, transModel);
 			transModel.setStatus(true);
 		} catch (Exception e) {
