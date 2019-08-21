@@ -97,7 +97,7 @@ $(document).ready(main);
      <div class ="vert-line">
      <h2 class= "vertline" id= "showdiv1"><button onclick="myFunction1()" name="add">Add Customer</button></h2><br><br>
      </div>
-     
+     ${message} <br>
      <div id= "div1">
      <form action="addCustomer" method="post" modelAttribute="addCustomer">
      Name: <input type="text" name="cusName"> <br>
@@ -124,17 +124,12 @@ $(document).ready(main);
      <div class ="vert-line">
      <h2 class= "vertline" id= "showdiv2"><button onclick="myFunction2()" name="update"> Update Customer </button></h2> <br><br>
      </div>
+     				${message1} <br>
      
      <div id="div2">
-     <form action="updateCustomer" method="post" modelAttribute="updateCustomer">
-     User ID: <input type="number" name="cusId" readonly><br>
-     Name: <input type="text" name="cusName"><br>
-     Age: <input type="number" name="cusAge"><br>
-     Gender: <input type="text" name="cusGender"> <br>
-     Email ID: <input type="email" name="cusEmail"> <br>
-     Address: <input type="text" name="cusAddress"><br>
-     Phone No: <input type="number" name="cusNo"><br>
-     Nationality: <input type="text" name="cusNationality"><br>
+     <form action="updateCustomerForm" method="post" modelAttribute="updateCustomerForm">
+     User ID: <input type="number" name="cusId"><br>
+    
      <input type="submit" value="Update"> 
      <div class ="vert-line"></div>
      </form>
@@ -145,10 +140,10 @@ $(document).ready(main);
      <div class ="vert-line">
      <h2 class= "vertline" id= "showdiv3"><button onclick="myFunction3()" name="delete">Delete Customer</button></h2> <br><br>
      </div>
-     
+     ${message2} <br>
      <div id="div3">
-     <form action="deleteCustomer" method="post" modelAttribute="deleteCustomer">
-     User ID: <input type="number" name="cusId">
+     <form action="deleteCustomer" method="post" modelAttribute="deleteCus">
+     User ID: <input type="number" name="cusID">
      <input type="submit" value="Delete">
      <div class ="vert-line"></div> 
      </form>
