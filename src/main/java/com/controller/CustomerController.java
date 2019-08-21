@@ -23,28 +23,51 @@ public class CustomerController {
 		
 		customerModel = cService.createCustomer(customerModel);
 		
+		
+		model.addAttribute("message", "Customer Created!");
 		return "customerCrud";
 	}
 	
-	@RequestMapping(value="/updateCustomer", method = RequestMethod.POST)
-	public String updateCustomer(Model model) {
+	@RequestMapping(value="/updateCustomerForm", method = RequestMethod.POST)
+	public String updateCustomerForm(@ModelAttribute("updateCustomerForm") CustomerModel customerModel, Model model) {
 		
-		
-		return "";
+		customerModel = cService.readCustomer(customerModel);
+		model.addAttribute("updateCustomerForm", customerModel);
+				
+		return "updateCustomer";
 	}
 	
+	@RequestMapping(value="/updateCustomer", method = RequestMethod.POST)
+	public String updateCustomer(@ModelAttribute("updateCustomer") CustomerModel customerModel, Model model) {
+		
+		customerModel = cService.updateCustomer(customerModel);
+		model.addAttribute("message1", "Customer Updated!");
+		return "customerCrud";
+	}
+
+	
 	@RequestMapping(value="/deleteCustomer", method = RequestMethod.POST)
-	public String deleteCustomer(Model model) {
-		
-		
-		return "";
+	public String deleteCustomer(@ModelAttribute("deleteCus") CustomerModel customerModel, Model model) {
+		System.out.println("id+"+customerModel.getCusID());
+		customerModel = cService.deleteCustomer(customerModel);
+		model.addAttribute("message2", "Customer Deleted!");
+		return "customerCrud";
 	}
 	
 	@RequestMapping(value="/viewCustomer", method = RequestMethod.POST)
-	public String viewCustomer(Model model) {
+	public String viewCustomer(@ModelAttribute("viewCustomer") CustomerModel customerModel, Model model) {
 		
+		customerModel = cService.readCustomer(customerModel);
+	
 		
-		return "";
+		  model.addAttribute("UserID", customerModel.getCusID());
+		  model.addAttribute("Name", customerModel.getCusName());
+		  model.addAttribute("age", customerModel.getCusAge());
+		  model.addAttribute("address", customerModel.getCusAddress());
+		  model.addAttribute("email", customerModel.getCusEmail());
+		  model.addAttribute("gender", customerModel.getCusGender());
+		 
+		return "viewCustomer";
 
 	}
 
