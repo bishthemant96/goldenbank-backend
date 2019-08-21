@@ -28,18 +28,17 @@ public class CustomerController {
 		return "customerCrud";
 	}
 	
-	@RequestMapping(value="/updateCustomerForm", method = RequestMethod.POST)
+	@RequestMapping(value="/updateCustomer", method = RequestMethod.GET)
 	public String updateCustomerForm(@ModelAttribute("updateCustomerForm") CustomerModel customerModel, Model model) {
 		
 		customerModel = cService.readCustomer(customerModel);
 		model.addAttribute("updateCustomerForm", customerModel);
-				
+
 		return "updateCustomer";
 	}
 	
 	@RequestMapping(value="/updateCustomer", method = RequestMethod.POST)
-	public String updateCustomer(@ModelAttribute("updateCustomer") CustomerModel customerModel, Model model) {
-		
+	public String updateCustomer(@ModelAttribute("updateCustomerForm") CustomerModel customerModel, Model model) {
 		customerModel = cService.updateCustomer(customerModel);
 		model.addAttribute("message1", "Customer Updated!");
 		return "customerCrud";
@@ -48,7 +47,6 @@ public class CustomerController {
 	
 	@RequestMapping(value="/deleteCustomer", method = RequestMethod.POST)
 	public String deleteCustomer(@ModelAttribute("deleteCus") CustomerModel customerModel, Model model) {
-		System.out.println("id+"+customerModel.getCusID());
 		customerModel = cService.deleteCustomer(customerModel);
 		model.addAttribute("message2", "Customer Deleted!");
 		return "customerCrud";
