@@ -33,7 +33,7 @@ public class AccountDaoImpl implements AccountDao {
 	}
 
 	public AccountEntity deleteAccount(AccountEntity account) {
-		AccountEntity reAccount = em.find(AccountEntity.class, 1); //Replace 1 with getID function
+		AccountEntity reAccount = em.find(AccountEntity.class, account.getAccNo());
 		em.remove(reAccount);
 		return account;
 	}
