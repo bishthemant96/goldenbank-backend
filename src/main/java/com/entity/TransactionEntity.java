@@ -18,18 +18,15 @@ public class TransactionEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long transId;
 
+	@ManyToOne
 	@Column(name = "fromAcc")
-	private String fromAcc;
-
+	private AccountEntity fromAcc;
+	
 	@Column(name = "toAcc")
 	private long toAcc;
 
 	@Column(name = "amount")
 	private String amount;
-
-	@ManyToOne
-	@JoinColumn(name = "accNo")
-	private AccountEntity account;
 
 	public long getTransId() {
 		return transId;
@@ -37,14 +34,6 @@ public class TransactionEntity {
 
 	public void setTransId(long transId) {
 		this.transId = transId;
-	}
-
-	public String getFromAcc() {
-		return fromAcc;
-	}
-
-	public void setFromAcc(String fromAcc) {
-		this.fromAcc = fromAcc;
 	}
 
 	public long getToAcc() {
@@ -63,13 +52,14 @@ public class TransactionEntity {
 		this.amount = amount;
 	}
 
-
-	public AccountEntity getAccount() {
-		return account;
+	public AccountEntity getFromAcc() {
+		return fromAcc;
 	}
 
-	public void setAccount(AccountEntity account) {
-		this.account = account;
+	public void setFromAcc(AccountEntity fromAcc) {
+		this.fromAcc = fromAcc;
 	}
+
+
 	
 }

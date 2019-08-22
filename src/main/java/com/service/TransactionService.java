@@ -24,7 +24,7 @@ public class TransactionService {
 		transModel.setStatus(false);
 
 		AccountEntity accEntity = new AccountEntity();
-		accEntity.setAccNo(transModel.getAccNo());
+		accEntity.setAccNo(transModel.getFromAcc());
 		try {
 			accEntity = aDao.readAccount(accEntity);
 			if (accEntity == null) {
@@ -32,7 +32,7 @@ public class TransactionService {
 			} else {
 				TransactionEntity transEntity = new TransactionEntity();
 				BeanUtils.copyProperties(transModel, transEntity);
-				transEntity.setAccount(accEntity);
+				transEntity.setFromAcc(accEntity);
 
 				try {
 					transEntity = tDao.createTransaction(transEntity);
