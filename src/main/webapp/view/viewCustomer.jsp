@@ -10,8 +10,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form modelAttribute="customerModel">
-Customer ID: ${UserID} <br>
+<form modelAttribute="viewCustomer">
+Customer ID: ${cusID} <br>
 Customer Name: ${Name}<br>
 Age: ${age} <br>
 Address: ${address} <br>
