@@ -3,91 +3,110 @@
 
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Customer Crud</title>
-<link href="css/accCrud.css" rel="stylesheet">
-<script type="text/javascript" src="js/customerCrud.js"></script>
-</head>
-
-<body>
-
-	<div class="top">
-		<h1>
-			The <span style="color: #FFBF00;">Golden</span> Bank
-		</h1>
-	</div>
-
-	<ul>
-		<li><a href="employeeDash">Home</a></li>
-		<li><a class="active" href="customerCrud">Customer Management</a></li>
-		<li><a href="accountCrud">Account Management</a></li>
-		<li><a href="transaction">Transaction Management</a></li>
-		<li style="float: right"><a href="login">Logout</a></li>
-	</ul>
-
-	<nav>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Customer Crud</title>
+		<link href="css/formStyling.css" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Lexend+Tera|Raleway&display=swap" rel="stylesheet">
+		<script type="text/javascript" src="js/customerCrud.js"></script>
+	</head>
+	
+	<body>
+		<div id="header">
+			<h1 id="fancyfont">The <span id="brand-key">Golden</span> Bank</h1>
+		</div>
+	
 		<ul>
-			<li><button onclick="toggleFunction(event)" name="add">Add
-					New Customer</button></li>
-			<li><button onclick="toggleFunction(event)" name="update">
-					Update Existing Customer</button></li>
-			<li><button onclick="toggleFunction(event)" name="delete">Delete
-					Existing Customer</button></li>
-			<li><button onclick="toggleFunction(event)" name="view">View
-					Existing Customer</button></li>
+			<li><a href="employeeDash">Home</a></li>
+			<li><a class="active" href="customerCrud">Customer Management</a></li>
+			<li><a href="accountCrud">Account Management</a></li>
+			<li><a href="transaction">Transaction Management</a></li>
+			<li style="float: right"><a href="login">Logout</a></li>
 		</ul>
-	</nav>
-
-	<div class="content">
-		<div id="div1">
-			<br />
-			<center>Add new Customer:</center>
-			<form action="addCustomer" method="post" modelAttribute="addCustomer">
-				Name: <input type="text" name="cusName"> <br> Age: <input
-					type="number" name="cusAge"> <br> Gender: <input
-					type="text" name="cusGender"> <br> Email ID: <input
-					type="email" name="cusEmail"> <br> Create Password: <input
-					type="password" name="cusPassword"><br> Address: <input
-					type="text" name="cusAddress"><br> Phone No: <input
-					type="number" name="cusNo"><br> Nationality: <input
-					type="text" name="cusNationality"><br> ID Proof: <br>
-				<input type="checkbox" name="cusIDProof"> Aadhar Card<br>
-				<input type="checkbox" name="cusIDProof"> Driving License<br>
-				<input type="checkbox" name="cusIDProof">Passport<br> <br>
-				<input type="submit" value="Add">
-			</form>
+	
+		<nav>
+			<ul class="sub-nav">
+				<li><button class="subnav-button" onclick="toggleFunction(event)" name="add">Add
+						New Customer</button></li>
+				<li><button class="subnav-button" onclick="toggleFunction(event)" name="update">
+						Update Existing Customer</button></li>
+				<li><button class="subnav-button" onclick="toggleFunction(event)" name="delete">Delete
+						Existing Customer</button></li>
+				<li><button class="subnav-button active" onclick="toggleFunction(event)" name="view">View
+						Existing Customer</button></li>
+			</ul>
+		</nav>
+	
+		<div class="content">
+			<div id="div1">
+				<br />
+				<center>Add new Customer:</center>
+				<br/>
+				<form action="addCustomer" method="post" modelAttribute="addCustomer">
+					<label for="cusName"> Name: </label> 
+					<input type="text" id="cusName" name="cusName">
+					
+					<label for="cusAge"> Age: </label>
+					<input type="number" id="cusAge" name="cusAge">
+					
+					<label for="cusGender"> Gender: </label>
+					<input type="text" id="cusGender" name="cusGender">
+					
+					<label for="cusEmail"> Email ID: </label>
+					<input type="email" id="cusEmail" name="cusEmail">
+					
+					<label for="cusPassword">Create Password: </label>
+					<input type="password" id="cusPassword" name="cusPassword">
+					
+					<label for="cusAddress"> Address: </label>
+					<input type="text" id="cusAddress" name="cusAddress">
+					
+					<label for="cusNo"> Phone No: </label>
+					<input type="number" id="cusNo" name="cusNo">
+					
+					<label for="cusNationality"> Nationality: </label>
+					<input type="text" id="cusNationality" name="cusNationality">
+				
+					ID Proof:
+					<label class="check-label"> Aadhar Card </label>  <input type="checkbox" name="cusIDProof">
+					<label class="check-label"> Driving License </label> <input type="checkbox" name="cusIDProof">
+					<label class="check-label"> Passport</label> <input type="checkbox" name="cusIDProof">
+					<input type="submit" value="Add">
+				</form>
+				<br/>
+			</div>
+	
+			<div id="div2">
+				<br />
+				<center>Update existing Customer:</center>
+				<br />
+				<form action="updateCustomer" modelAttribute="updateCustomerForm">
+					User ID: <input type="number" name="cusID"><br> <input
+						type="submit" value="Update">
+				</form>
+			</div>
+	
+			<div id="div3">
+				<br />
+				
+				<center>Delete existing Customer:</center>
+				<br />
+				<form action="deleteCustomer" method="post" modelAttribute="deleteCus">
+					User ID: <input type="number" name="cusID"> <input
+						type="submit" value="Delete">
+				</form>
+			</div>
+	
+			<div id="div4">
+				<br />
+				<center>View existing Customer:</center>
+				<h3>${message}</h3>
+				<form action="viewCustomer" method="post" modelAttribute="viewCustomer">
+					<label>User ID: </label>
+					<input type="number" name="cusID"> 
+					<input type="submit" value="View">
+				</form>
+			</div>
 		</div>
-
-		<div id="div2">
-			<br />
-			<center>Update existing Customer:</center>
-			<form action="updateCustomer" modelAttribute="updateCustomerForm">
-				User ID: <input type="number" name="cusID"><br> <input
-					type="submit" value="Update">
-			</form>
-		</div>
-
-		<div id="div3">
-			<br />
-			<center>Delete existing Customer:</center>
-			<form action="deleteCustomer" method="post"
-				modelAttribute="deleteCus">
-				User ID: <input type="number" name="cusID"> <input
-					type="submit" value="Delete">
-			</form>
-		</div>
-
-		<div id="div4">
-			<br />
-			<h3>${message}</h3><br>
-			<center>View existing Customer:</center>
-			<form action="viewCustomer" method="post"
-				modelAttribute="viewCustomer">
-				User ID: <input type="number" name="cusID"> <input
-					type="submit" value="View">
-			</form>
-		</div>
-	</div>
-</body>
+	</body>
 </html>

@@ -10,16 +10,14 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Account Crud</title>
-<link href="css/accCrud.css" rel="stylesheet">
+<link href="css/formStyling.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lexend+Tera|Raleway&display=swap" rel="stylesheet">
 </head>
 
 <body>
-
-	<div class="top">
-		<h1>
-			The <span style="color: #FFBF00;">Golden</span> Bank
-		</h1>
-	</div>
+		<div id="header">
+			<h1 id="fancyfont">The <span id="brand-key">Golden</span> Bank</h1>
+		</div>
 
 	<ul>
 		<li><a href="employeeDash">Home</a></li>
