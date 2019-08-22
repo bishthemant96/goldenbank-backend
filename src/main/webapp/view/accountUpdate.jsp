@@ -8,7 +8,7 @@
 <html>
 	<head>
 		<meta charset="ISO-8859-1">
-		<title>Insert title here</title>
+		<title>Update Record</title>
 		<link href="css/formStyling.css" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Lexend+Tera|Raleway&display=swap" rel="stylesheet">
 	</head>

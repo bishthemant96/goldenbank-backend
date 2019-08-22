@@ -8,10 +8,10 @@
 <html>
 	<head>
 		<meta charset="ISO-8859-1">
-		<title>Account Crud</title>
+		<title>Loan Management</title>
 		<link href="css/formStyling.css" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Lexend+Tera|Raleway&display=swap" rel="stylesheet">
-		<script type="text/javascript" src="js/accountCrud.js"></script>
+		<script type="text/javascript" src="js/loan.js"></script>
 	</head>
 	
 	<body>
@@ -22,8 +22,8 @@
 	    <ul>
 	  		<li><a href="employeeDash">Home</a></li>
 			<li><a href="customerCrud">Customer Management</a></li>
-			<li><a class="active" href="accountCrud">Account Management</a></li>
-			<li><a href="loan">Loan Management</a></li>
+			<li><a href="accountCrud">Account Management</a></li>
+			<li><a class="active" href="loan">Loan Management</a></li>
 			<li><a href="transaction">Transaction Management</a></li>
 			<li style="float:right"><a href="login">Logout</a></li>
 		</ul>
@@ -32,22 +32,17 @@
 			<ul class="sub-nav">
 				<li>
 					<button class="subnav-button active" onclick="toggleFunction(event)" name="add">
-						Add New Account
-					</button>
-				</li>
-				<li>
-					<button class="subnav-button" onclick="toggleFunction(event)" name="update">
-						Update Existing Account
+						Create Loan
 					</button>
 				</li>
 				<li>
 					<button class="subnav-button" onclick="toggleFunction(event)" name="delete">
-					Delete Existing Account
+					Close Loan
 					</button>
 				</li>
 				<li>
 					<button class="subnav-button" onclick="toggleFunction(event)" name="view">
-					View Existing Account
+					View Current Loan
 					</button>
 				</li>
 			</ul>
@@ -56,52 +51,40 @@
 		<div class="content">
 			<div id= "div1">
 				<br />
-				<center>Add new account:</center>
+				<center>Create Loan:</center>
 				<br/>
-				<form action="addAccount" method="POST" modelAttribute="AccountModel">
+				<form action="createLoan" method="POST" modelAttribute="loanModel">
 					Customer ID:
 						<input type="number" name="cusID"/> <br>
 					Branch: 
 						<input type="text" name="branch"> <br>
-					Initial Amount: 
+					Amount: 
 						<input type="number" name="amount"> <br>
-					Account Type: 
-						<input type="text" name="accType"> <br>
-					Account Nominee: 
-						<input type="text" name="accNominee"> <br> <br>
-						<input type="submit" value="Add">
-				</form>
-			</div>
-
-			<div id="div2">
-				<br />
-				<center>Update existing account:</center>
-				<br/>
-				<form action="UpdateForm" method="GET" modelAttribute="AccountModel">
-					Account Number: 
-					<input type="number" name="accNo"><br>
-					<input type="submit" value="Update"> 
+					Loan Type: 
+						<input type="text" name="loanType"> <br>
+						<input type="submit" value="Create">
+						
 				</form>
 			</div>
 	     
 			<div id="div3">
 				<br />
-				<center>Delete existing account:</center>
+				<center>Close existing Loan:</center>
 				<br/>
-				<form action="deleteAccount" method="post" modelAttribute="AccountModel">
-					Account Number: 
-						<input type="number" name="accNo"><br>
+				<form action="deleteLoan" method="post" modelAttribute="loanModel">
+					Loan Account Number: 
+						<input type="number" name="loanAccNo"><br>
 						<input type="submit" value="Delete">
 				</form>
 			</div>
 	     
 			<div id="div4">
 				<br />
-				<center>View existing account:</center>
+				<center>View existing Loan:</center>
 				<br/>
-				<form action="readAccount" method="GET" modelAttribute="AccountModel">
-					<label> Account Number: </label> 
-					<input type="number" id="accNo" name="accNo"><br>
+				<form action="readLoan" method="GET" modelAttribute="loanModel">
+					<label> Loan Account Number: </label> 
+					<input type="number" id="accNo" name="loanAccNo"><br>
 					<input type="submit" value="View"> 
 				</form>
 			</div>
