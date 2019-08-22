@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.model.EmployeeModel;
 import com.service.EmployeeService;
@@ -27,15 +28,24 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value="/login", method = RequestMethod.POST)
-	public String submitLoginPage(@ModelAttribute("employeeModel") EmployeeModel employeeModel, Model model) {
+	public ModelAndView submitLoginPage(@ModelAttribute("employeeModel") EmployeeModel employeeModel, Model model) {
 		employeeModel = empService.authentication(employeeModel);
 		
 		if(employeeModel.isStatus()) {
-			return "redirect:/employeeDash";
+			
+			ModelAndView mv = new ModelAndView("employeeDash");
+			
+			mv.addObject("name", employeeModel.getEmpName());
+			mv.addObject("branch", employeeModel.getEmpBranch());
+			mv.addObject("post", employeeModel.getEmpPost());
+
+			return mv;
 		}
 		else {
-			model.addAttribute("Error", "Invalid user id or password!");
-			return "login";
+			String str = "Invalid UserId or Password";
+			ModelAndView mv = new ModelAndView("login");
+			mv.addObject("Error", str);
+			return mv;
 		}
 	}
 
