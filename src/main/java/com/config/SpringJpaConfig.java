@@ -19,12 +19,13 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+//This class is equivalent to persistence.xml
+
 @Configuration
 @EnableTransactionManagement //Equivalent to annotation driven.
 @EnableJpaRepositories(basePackages="com")
 @PropertySource("classpath:application.properties")
 
-//This class is equivalent to persistence.xml
 public class SpringJpaConfig {
 	
 	@Autowired

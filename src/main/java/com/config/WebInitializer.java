@@ -9,6 +9,7 @@ import org.springframework.web.context.support.AnnotationConfigWebApplicationCon
 import org.springframework.web.servlet.DispatcherServlet;
 
 //This class is equivalent to web.xml file
+
 public class WebInitializer implements WebApplicationInitializer {
     public void onStartup(ServletContext ctx) throws ServletException {
         AnnotationConfigWebApplicationContext webCtx = new AnnotationConfigWebApplicationContext();

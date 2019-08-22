@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Account Crud</title>
+<title>Customer Crud</title>
 <link href="css/formStyling.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Lexend+Tera|Raleway&display=swap" rel="stylesheet">
 </head>

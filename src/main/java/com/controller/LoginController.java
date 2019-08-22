@@ -28,7 +28,7 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value="/login", method = RequestMethod.POST)
-	public ModelAndView submitLoginPage(@ModelAttribute("employeeModel") EmployeeModel employeeModel, Model model) {
+	public ModelAndView submitLoginPage(@ModelAttribute("employeeModel") EmployeeModel employeeModel) {
 		employeeModel = empService.authentication(employeeModel);
 		
 		if(employeeModel.isStatus()) {
