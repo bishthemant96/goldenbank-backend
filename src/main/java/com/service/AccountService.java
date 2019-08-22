@@ -9,24 +9,25 @@ import com.dao.AccountDao;
 import com.dao.CustomerDao;
 import com.entity.AccountEntity;
 import com.entity.CustomerEntity;
+
 import com.model.AccountModel;
 
-@Transactional	
+@Transactional
 @Service
 public class AccountService {
 
 	@Autowired
 	AccountDao aDao;
-	
+
 	@Autowired
 	CustomerDao cDao;
-	
+
 	public AccountModel createAccount(AccountModel accModel) {
 		CustomerEntity cusEntity = new CustomerEntity();
 		cusEntity.setCusID(accModel.getCusID());
 		cusEntity = cDao.readCustomer(cusEntity);
-		
-		if(cusEntity==null) {
+
+		if (cusEntity == null) {
 			accModel.setStatus(false);
 			return accModel;
 		} else {
@@ -38,7 +39,7 @@ public class AccountService {
 				BeanUtils.copyProperties(accEntity, accModel);
 				accModel.setStatus(true);
 				return accModel;
-			} catch(Exception e) {
+			} catch (Exception e) {
 				accModel.setStatus(false);
 				return accModel;
 			}

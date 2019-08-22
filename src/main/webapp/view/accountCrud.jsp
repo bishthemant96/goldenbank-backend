@@ -24,7 +24,7 @@
 			<li><a href="customerCrud">Customer Management</a></li>
 			<li><a class="active" href="accountCrud">Account Management</a></li>
 			<li><a href="transaction">Transaction Management</a></li>
-			<li style="float:right"><a href="index">Logout</a></li>
+			<li style="float:right"><a href="login">Logout</a></li>
 		</ul>
 		
 		<nav>
