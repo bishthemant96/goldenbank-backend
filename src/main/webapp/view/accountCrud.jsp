@@ -82,9 +82,11 @@
 			<div id="div4">
 				<br />
 				<center>View existing account:</center>
-				<form action="viewAccount" method="post" modelAttribute="AccountModel">
-					Account Number: <input type="number" name="accNo"><br>
-					<input type="submit" value="View">  
+			
+				<form action="readAccount" method="GET" modelAttribute="AccountModel">
+					<label> Account Number: </label> 
+					<input type="number" id="accNo" name="accNo"><br>
+					<input type="submit" value="View"> 
 				</form>
 			</div>
 		</div> 

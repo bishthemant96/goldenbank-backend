@@ -73,7 +73,6 @@ public class AccountService {
 		BeanUtils.copyProperties(accModel, accEntity);
 		try {
 			accEntity = aDao.deleteAccount(accEntity);
-			BeanUtils.copyProperties(accEntity, accModel);
 			accModel.setStatus(true);
 			return accModel;
 		} catch (Exception e) {
