@@ -26,7 +26,7 @@ public class TransactionController {
 	@RequestMapping(value = "/readTransaction", method = RequestMethod.POST)
 	public String readTransaction(@ModelAttribute("readTransaction") TransactionModel transactionModel, Model model) {
 
-		transactionModel = tService.readTransaction(transactionModel);
+		transactionModel = tService.viewTransaction(transactionModel);
 
 		return "transaction";
 
