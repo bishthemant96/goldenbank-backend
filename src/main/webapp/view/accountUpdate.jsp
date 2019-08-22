@@ -27,7 +27,7 @@
 	      
 		<div class="content">
 			<br />
-			<form:form action="UpdateAccount"  method ="POST" modelAttribute="accModel">
+			<form:form action="UpdateAccount"  method ="post" modelAttribute="accModel">
 				Account No.:
 					<form:input type="number" path="accNo" readonly="true"/> <br>
 				Customer ID:

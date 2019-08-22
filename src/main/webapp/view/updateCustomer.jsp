@@ -11,13 +11,17 @@
 <meta charset="ISO-8859-1">
 <title>Customer Crud</title>
 <link href="css/formStyling.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Lexend+Tera|Raleway&display=swap" rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css?family=Lexend+Tera|Raleway&display=swap"
+	rel="stylesheet">
 </head>
 
 <body>
-		<div id="header">
-			<h1 id="fancyfont">The <span id="brand-key">Golden</span> Bank</h1>
-		</div>
+	<div id="header">
+		<h1 id="fancyfont">
+			The <span id="brand-key">Golden</span> Bank
+		</h1>
+	</div>
 
 	<ul>
 		<li><a href="employeeDash">Home</a></li>
@@ -28,50 +32,35 @@
 	</ul>
 
 	<div class="content">
+		<br />
+		<form:form action="updateCustomer" method="post"
+			modelAttribute="updateCustomerForm">
 
-		<div id="div2">
-			<br />
-			<center>Update existing account:</center>
-			<form:form action="updateCustomer" method="post"
-				modelAttribute="updateCustomerForm">
+						ID :
+						<form:input type="number" readonly="true" path="cusID" /><br>
 
-				<table>
-					<tr>
-						<td>ID :</td>
-						<td><form:input readonly="true" path="cusID"/></td>
-					</tr>
-					<tr>
-						<td>Name :</td>
-						<td><form:input path="cusName" /></td>
-					</tr>
-					<tr>
-						<td>Age :</td>
-						<td><form:input path="cusAge" /></td>
-					</tr>
-					<tr>
-						<td>Gender :</td>
-						<td><form:input path="cusGender" /></td>
-					</tr>
-					<tr>
-						<td>Email :</td>
-						<td><form:input path="cusEmail" /></td>
-					</tr>
-					<tr>
-						<td>Address :</td>
-						<td><form:input path="cusAddress" /></td>
-					</tr>
-					<tr>
-						<td>Phone No. :</td>
-						<td><form:input path="cusNo" /></td>
-					</tr>
-					<tr>
-						<td>Nationality :</td>
-						<td><form:input path="cusNationality" /></td>
-					</tr>
-				</table>
-				<input type="submit" value="Update">
-			</form:form>
-		</div>
+						Name :
+						<form:input type="text" path="cusName" /><br>
+
+						Age :
+						<form:input type="number" path="cusAge" /><br>
+
+						Gender :
+						<form:input type="text" path="cusGender" /><br>
+
+						Email :
+						<form:input type="text" path="cusEmail" /><br>
+
+						Address :
+						<form:input type="text" path="cusAddress" /><br>
+
+						Phone No. :
+						<form:input type="number" path="cusNo" /><br>
+
+						Nationality :
+						<form:input type="text" path="cusNationality" /><br>
+			<input type="submit" value="Update">
+		</form:form>
 	</div>
 </body>
 </html>
