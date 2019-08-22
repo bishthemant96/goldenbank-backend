@@ -54,17 +54,8 @@ public class CustomerController {
 	
 	@RequestMapping(value="/viewCustomer", method = RequestMethod.POST)
 	public String viewCustomer(@ModelAttribute("viewCustomer") CustomerModel customerModel, Model model) {
-		
 		customerModel = cService.readCustomer(customerModel);
-	
-		
-		  model.addAttribute("UserID", customerModel.getCusID());
-		  model.addAttribute("Name", customerModel.getCusName());
-		  model.addAttribute("age", customerModel.getCusAge());
-		  model.addAttribute("address", customerModel.getCusAddress());
-		  model.addAttribute("email", customerModel.getCusEmail());
-		  model.addAttribute("gender", customerModel.getCusGender());
-		 
+		model.addAttribute("viewCustomer", customerModel);
 		return "viewCustomer";
 
 	}

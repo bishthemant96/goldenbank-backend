@@ -29,13 +29,13 @@
 	<nav>
 		<ul>
 			<li><button onclick="toggleFunction(event)" name="add">Add
-					New Account</button></li>
+					New Customer</button></li>
 			<li><button onclick="toggleFunction(event)" name="update">
-					Update Existing Account</button></li>
+					Update Existing Customer</button></li>
 			<li><button onclick="toggleFunction(event)" name="delete">Delete
-					Existing Account</button></li>
+					Existing Customer</button></li>
 			<li><button onclick="toggleFunction(event)" name="view">View
-					Existing Account</button></li>
+					Existing Customer</button></li>
 		</ul>
 	</nav>
 
@@ -80,10 +80,10 @@
 
 		<div id="div4">
 			<br />
-			<center>View existing view:</center>
+			<center>View existing Customer:</center>
 			<form action="viewCustomer" method="post"
 				modelAttribute="viewCustomer">
-				User ID: <input type="number" name="cusId"> <input
+				User ID: <input type="number" name="cusID"> <input
 					type="submit" value="View">
 			</form>
 		</div>
