@@ -34,19 +34,5 @@ public class EmployeeService {
 	}
 	
 	
-	public EmployeeModel readEmployee(EmployeeModel empModel) {
-		empModel.setStatus(false);
-		EmployeeEntity employee = new EmployeeEntity();
-		BeanUtils.copyProperties(empModel, employee);
-		try {
-			employee = eDao.readEmployee(employee);
-			BeanUtils.copyProperties(employee, empModel);
-			empModel.setStatus(true);
-		} catch (Exception e) {
-			System.out.println("Error occured while reading employee information...");
-		}
-		return empModel;
-
-	}
 	
 }
