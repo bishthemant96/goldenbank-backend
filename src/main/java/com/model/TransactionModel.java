@@ -3,10 +3,9 @@ package com.model;
 public class TransactionModel {
 
 	private long transId;
-	private String fromAcc;
+	private long fromAcc;
 	private long toAcc;
 	private String amount;
-	private int accNo;
 	private boolean status;
 
 	
@@ -27,14 +26,6 @@ public class TransactionModel {
 		this.transId = transId;
 	}
 
-	public String getFromAcc() {
-		return fromAcc;
-	}
-
-	public void setFromAcc(String fromAcc) {
-		this.fromAcc = fromAcc;
-	}
-
 	public long getToAcc() {
 		return toAcc;
 	}
@@ -51,13 +42,14 @@ public class TransactionModel {
 		this.amount = amount;
 	}
 
-	public int getAccNo() {
-		return accNo;
+	public long getFromAcc() {
+		return fromAcc;
 	}
 
-	public void setAccNo(int accNo) {
-		this.accNo = accNo;
+	public void setFromAcc(long fromAcc) {
+		this.fromAcc = fromAcc;
 	}
+
 
 
 }

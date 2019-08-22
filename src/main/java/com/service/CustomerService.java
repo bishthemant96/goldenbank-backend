@@ -47,16 +47,25 @@ public class CustomerService {
 
 	public CustomerModel updateCustomer(CustomerModel customerModel) {
 		customerModel.setStatus(false);
-		CustomerEntity customer = new CustomerEntity();
-
-		BeanUtils.copyProperties(customerModel, customer);
+		
+		CustomerEntity cEntity = new CustomerEntity();
+		cEntity.setCusID(customerModel.getCusID());
+		try {  
+			cEntity = cDao.readCustomer(cEntity);
+			if (cEntity == null) {
+				System.out.println("No customer exists for this customerID...");
+			} else {
+		    BeanUtils.copyProperties(customerModel, cEntity);
 		try {
-           customer= cDao.updateCustomer(customer);
-           BeanUtils.copyProperties(customer, customerModel);
+			cEntity= cDao.updateCustomer(cEntity);
+           BeanUtils.copyProperties(cEntity, customerModel);
            customerModel.setStatus(true);
 		} catch (Exception e) {
-           System.out.println("Error occured while updating...");
+           System.out.println("Error occured while updating..." +e );
 		}
+		}
+	}catch(Exception e) {
+	}
 		return customerModel;
 	}
 

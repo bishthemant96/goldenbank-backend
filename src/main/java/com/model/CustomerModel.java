@@ -3,9 +3,6 @@ package com.model;
 
 import java.util.List;
 
-import com.entity.AccountEntity;
-import com.entity.LoanAccountEntity;
-
 public class CustomerModel {
 
 	private int cusID;
@@ -18,8 +15,6 @@ public class CustomerModel {
 	private long cusNo;
 	private String cusEmail;
 	private String cusAddress;
-	private List<LoanAccountEntity> loanAccount;
-	private List<AccountEntity> account;
 	private boolean status;
 
 	public boolean isStatus() {
@@ -108,22 +103,6 @@ public class CustomerModel {
 
 	public void setCusAddress(String cusAddress) {
 		this.cusAddress = cusAddress;
-	}
-
-	public List<LoanAccountEntity> getLoanAccount() {
-		return loanAccount;
-	}
-
-	public void setLoanAccount(List<LoanAccountEntity> loanAccount) {
-		this.loanAccount = loanAccount;
-	}
-
-	public List<AccountEntity> getAccount() {
-		return account;
-	}
-
-	public void setAccount(List<AccountEntity> account) {
-		this.account = account;
 	}
 
 

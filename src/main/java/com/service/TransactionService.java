@@ -33,7 +33,7 @@ public class TransactionService {
 			} else {
 				TransactionEntity transEntity = new TransactionEntity();
 				BeanUtils.copyProperties(transModel, transEntity);
-				transEntity.setAccount(accEntity);
+				transEntity.setFromAcc(accEntity);
 
 				try {
 					transEntity = tDao.createTransaction(transEntity);
