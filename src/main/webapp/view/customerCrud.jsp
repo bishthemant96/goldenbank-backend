@@ -100,7 +100,6 @@
 			<div id="div4">
 				<br />
 				<center>View existing Customer:</center>
-				<h3>${message}</h3>
 				<form action="viewCustomer" method="post" modelAttribute="viewCustomer">
 					<label>User ID: </label>
 					<input type="number" name="cusID"> 

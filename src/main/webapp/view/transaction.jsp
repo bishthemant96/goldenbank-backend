@@ -5,65 +5,64 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Transaction Management</title>
-<link href="css/transaction.css" rel="stylesheet">
+<link href="css/formStyling.css" rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css?family=Lexend+Tera|Raleway&display=swap"
+	rel="stylesheet">
+<script type="text/javascript" src="js/transactionCrud.js"></script>
 </head>
 <body>
-
-	<div class="top">
-		<h1>
-			The <span style="color: #FFBF00;">Golden</span> Bank
+	<div id="header">
+		<h1 id="fancyfont">
+			The <span id="brand-key">Golden</span> Bank
 		</h1>
 	</div>
 
 	<ul>
 		<li><a href="employeeDash">Home</a></li>
 		<li><a href="customerCrud">Customer Management</a></li>
-		<li><a href="accountCrud">Account Management</a></li>
-		<li><a class="active" href="transaction">Transaction
-				Management</a></li>
-
-		<li style="float: right"><a href="index">Logout</a></li>
+		<li><a class="active" href="accountCrud">Account Management</a></li>
+		<li><a href="transaction">Transaction Management</a></li>
+		<li style="float: right"><a href="login">Logout</a></li>
 	</ul>
 
-	<div id="defaultTransaction">
-		<form>
-			<br> <br> Make New Transaction<br> <a href=""><input
-				type="button" name="add" value="Create"></a> <br> <br>
-			View Transaction<br> <a href=""><input type="button"
-				name="view" value="View"></a> <br>
-		</form>
-	</div>
-	
-	
 	<nav>
-			<ul>
-				<li><button onclick="toggleTrans(event)" name="create">Create Transaction</button></li>
-				<li><button onclick="toggleTrans(event)" name="read">Read Transaction</button></li>
-			</ul>
-		</nav>
-	
-	
-	
+		<ul class="sub-nav">
+			<li>
+				<button class="subnav-button active" onclick="toggleFunction(event)"
+					name="add">Create Transaction</button>
+			</li>
+			<li>
+				<button class="subnav-button" onclick="toggleFunction(event)"
+					name="view">View Transaction</button>
+			</li>
+		</ul>
+	</nav>
 
-	<div id="addsTrans">
+	<div class="content">
+		<div id="div1">
+			<br />
+			<center>Create Transaction</center>
+			<br />
+			<form action="addTransaction" method="POST" modelAttribute="addTransaction">
+				From Account : <input type="number" name="fromAcc" /> <br> To
+				Account : <input type="number" name="toAcc"> <br>
+				Amount: <input type="number" name="amount"> <br> <input
+					type="submit" value="Create Transaction">
+			</form>
+		</div>
 
-		${message}
-		<form action="addTransaction" method="POST"	modelAttribute="addTransaction">
-			From Account : <input type="number" name="fromAcc" /> <br> To
-			Account : <input type="number" name="toAcc"> <br>
-			Amount: <input type="number" name="amount"> <br>
-			<input type="submit" value="Create Transaction">
-		</form>
+		<div id="div2">
+			<br />
+			<center>View Transaction</center>
+			<br />
+			<form action="readTransaction" method="POST" modelAttribute="readTransaction">
+				Transaction ID : <input type="number" name="transId" /> <br> <input
+					type="submit" value="Search Transaction">
+			</form>
+		</div>
 	</div>
-
-	<div id="readTrans">
-
-		<form action="readTransaction" method="POST"  modelAttribute="readTransaction">
-			Transaction ID : <input type="number" name="transId" /> <br>
-			<input type="submit" value="Search Transaction">
-		</form>
-	</div>
-
-  
 </body>
 </html>
+
+
