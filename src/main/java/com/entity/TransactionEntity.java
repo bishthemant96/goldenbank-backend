@@ -19,7 +19,7 @@ public class TransactionEntity {
 	private long transId;
 
 	@ManyToOne
-	@Column(name = "fromAcc")
+	@JoinColumn(name = "accNo")
 	private AccountEntity fromAcc;
 	
 	@Column(name = "toAcc")

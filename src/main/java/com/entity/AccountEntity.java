@@ -38,7 +38,7 @@ public class AccountEntity {
 	@JoinColumn(name = "cusID")
 	private CustomerEntity customer;
 
-	@OneToMany(mappedBy = "account", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "fromAcc", cascade = CascadeType.ALL)
 	List<TransactionEntity> transaction;
 
 	public long getAccNo() {
