@@ -58,14 +58,10 @@
 			<div id="div2">
 				<br />
 				<center>Update existing account:</center>
-				<form action="updateAccount" method="post" modelAttribute="AccountModel">
+				<form action="UpdateForm" method="GET" modelAttribute="AccountModel">
 					Account Number: 
-						<input type="number" name="accNo" readonly><br>
-					Branch: 
-						<input type="text" name="branch"> <br>
-					Account Nominee: 
-						<input type="email" name="accNominee"> <br/> <br/>
-						<input type="submit" value="Update"> 
+					<input type="number" name="accNo"><br>
+					<input type="submit" value="Update"> 
 				</form>
 			</div>
 	     
@@ -82,7 +78,6 @@
 			<div id="div4">
 				<br />
 				<center>View existing account:</center>
-			
 				<form action="readAccount" method="GET" modelAttribute="AccountModel">
 					<label> Account Number: </label> 
 					<input type="number" id="accNo" name="accNo"><br>

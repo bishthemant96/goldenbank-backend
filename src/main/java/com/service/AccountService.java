@@ -47,24 +47,22 @@ public class AccountService {
 	}
 
 	public AccountModel readAccount(AccountModel accModel) {
-
 		AccountEntity accEntity = new AccountEntity();
 		BeanUtils.copyProperties(accModel, accEntity);
-
 		accEntity = aDao.readAccount(accEntity);
 		BeanUtils.copyProperties(accEntity, accModel);
-
+		
+		int cusID = accEntity.getCustomer().getCusID();
+		accModel.setCusID(cusID);
 		return accModel;
 
 	}
 
 	public AccountModel updateAccount(AccountModel accModel) {
-
 		AccountEntity accEntity = new AccountEntity();
 		BeanUtils.copyProperties(accModel, accEntity);
 		accEntity = aDao.updateAccount(accEntity);
 		BeanUtils.copyProperties(accEntity, accModel);
-
 		return accModel;
 
 	}

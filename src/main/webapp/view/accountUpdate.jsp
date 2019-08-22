@@ -3,14 +3,13 @@
 	contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"
     isELIgnored="false"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="ISO-8859-1">
 		<title>Insert title here</title>
-		<link href="css/accCrud.css" rel="stylesheet">
+		<link href="css/accCrud.css" rel="stylesheet">	
 	</head>
 	<body>
 		<div class="top">
@@ -27,18 +26,22 @@
 	      
 		<div class="content">
 			<br />
-			<form:form modelAttribute="accModel">
+			<form:form action="UpdateAccount"  method ="POST" modelAttribute="accModel">
+				Account No.:
+					<form:input type="number" path="accNo" readonly="true"/> <br>
 				Customer ID:
 					<form:input type="number" path="cusID" readonly="true"/> <br>
 				Branch: 
-					<form:input type="text" path="branch" readonly="true"/> <br>
-				Initial Amount: 
-					<form:input type="number" path="amount" readonly="true"/> <br>
+					<form:input type="text" path="branch"/> <br>
+				Amount: 
+					<form:input type="number" path="amount"/> <br>
 				Account Type: 
-					<form:input type="text" path="accType" readonly="true"/> <br>
+					<form:input type="text" path="accType"/> <br>
 				Account Nominee: 
-					<form:input type="text" path="accNominee" readonly="true"/> <br>
+					<form:input type="text" path="accNominee"/> <br>
+					
+					<form:input type="submit" path="" value="submit"/>
 			</form:form>
-		</div> 
+		</div>
 	</body>
 </html>
