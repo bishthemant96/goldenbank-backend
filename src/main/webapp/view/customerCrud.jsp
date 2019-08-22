@@ -21,18 +21,19 @@
 			<li><a class="active" href="customerCrud">Customer Management</a></li>
 			<li><a href="accountCrud">Account Management</a></li>
 			<li><a href="transaction">Transaction Management</a></li>
+			<li><a href="loanCrud">Loan Management</a></li>
 			<li style="float: right"><a href="login">Logout</a></li>
 		</ul>
 	
 		<nav>
 			<ul class="sub-nav">
-				<li><button class="subnav-button" onclick="toggleFunction(event)" name="add">Add
+				<li><button class="subnav-button active" onclick="toggleFunction(event)" name="add">Add
 						New Customer</button></li>
 				<li><button class="subnav-button" onclick="toggleFunction(event)" name="update">
 						Update Existing Customer</button></li>
 				<li><button class="subnav-button" onclick="toggleFunction(event)" name="delete">Delete
 						Existing Customer</button></li>
-				<li><button class="subnav-button active" onclick="toggleFunction(event)" name="view">View
+				<li><button class="subnav-button " onclick="toggleFunction(event)" name="view">View
 						Existing Customer</button></li>
 			</ul>
 		</nav>
@@ -68,10 +69,10 @@
 					<input type="text" id="cusNationality" name="cusNationality">
 				
 					ID Proof:
-					<label class="check-label"> Aadhar Card </label>  <input type="checkbox" name="cusIDProof">
-					<label class="check-label"> Driving License </label> <input type="checkbox" name="cusIDProof">
+					<label class="check-label"> Aadhar Card </label><input type="checkbox" name="cusIDProof">  
+					<label class="check-label"> Driving License </label><input type="checkbox" name="cusIDProof"> 
 					<label class="check-label"> Passport</label> <input type="checkbox" name="cusIDProof">
-					<input type="submit" value="Add">
+					<input type="submit" value="Add Customer">
 				</form>
 				<br/>
 			</div>
@@ -82,7 +83,7 @@
 				<br />
 				<form action="updateCustomer" modelAttribute="updateCustomerForm">
 					User ID: <input type="number" name="cusID"><br> <input
-						type="submit" value="Update">
+						type="submit" value="Update Customer">
 				</form>
 			</div>
 	
@@ -93,7 +94,7 @@
 				<br />
 				<form action="deleteCustomer" method="post" modelAttribute="deleteCus">
 					User ID: <input type="number" name="cusID"> <input
-						type="submit" value="Delete">
+						type="submit" value="Delete Customer">
 				</form>
 			</div>
 	
@@ -103,7 +104,7 @@
 				<form action="viewCustomer" method="post" modelAttribute="viewCustomer">
 					<label>User ID: </label>
 					<input type="number" name="cusID"> 
-					<input type="submit" value="View">
+					<input type="submit" value="View Customer">
 				</form>
 			</div>
 		</div>
