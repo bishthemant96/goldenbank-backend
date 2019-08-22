@@ -7,7 +7,7 @@
 <meta charset="ISO-8859-1">
 <title>Customer Crud</title>
 <link href="css/accCrud.css" rel="stylesheet">
-<script type="text/javascript" src="js/accountCrud.js"></script>
+<script type="text/javascript" src="js/customerCrud.js"></script>
 </head>
 
 <body>
@@ -80,6 +80,7 @@
 
 		<div id="div4">
 			<br />
+			<h3>${message}</h3><br>
 			<center>View existing Customer:</center>
 			<form action="viewCustomer" method="post"
 				modelAttribute="viewCustomer">

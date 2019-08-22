@@ -25,6 +25,10 @@ public class NavigatorController {
 	public String getEmployeePage(Model model) {
 		return "employeeDash";
 	}
+	@RequestMapping(value="/employeeDash", method = RequestMethod.POST)
+	public String getEmployeeDash(Model model) {
+		return "employeeDash";
+	}
 	@RequestMapping(value="/customerCrud", method = RequestMethod.GET)
 	public String getCustomerCrudPage(Model model) {
 		return "customerCrud";
