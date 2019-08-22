@@ -20,11 +20,12 @@ public class TransactionService {
 	AccountDao aDao;
 
 	public TransactionModel createTransaction(TransactionModel transModel) {
-
 		transModel.setStatus(false);
 
+		
+		
 		AccountEntity accEntity = new AccountEntity();
-		accEntity.setAccNo(transModel.getAccNo());
+		accEntity.setAccNo(transModel.getFromAcc());
 		try {
 			accEntity = aDao.readAccount(accEntity);
 			if (accEntity == null) {
@@ -32,17 +33,18 @@ public class TransactionService {
 			} else {
 				TransactionEntity transEntity = new TransactionEntity();
 				BeanUtils.copyProperties(transModel, transEntity);
-				transEntity.setAccount(accEntity);
+				transEntity.setFromAcc(accEntity);
 
 				try {
 					transEntity = tDao.createTransaction(transEntity);
+					BeanUtils.copyProperties(transEntity,transModel);
 					transModel.setStatus(true);
 				} catch (Exception e) {
-					System.out.println("Error occured during loan creation...");
+					System.out.println("Error occured while creating transaction...");
 				}
 			}
 		} catch (Exception e) {
-			System.out.println("Error gathering Account information... " + e);
+			System.out.println("Error gathering Transaction information... " + e);
 		}
 		return transModel;
 
@@ -59,7 +61,7 @@ public class TransactionService {
 			BeanUtils.copyProperties(transEntity, transModel);
 			transModel.setStatus(true);
 		} catch (Exception e) {
-			System.out.println("Error occured during loan deletion...");
+			System.out.println("Error gathering Transaction information...");
 		}
 
 		return transModel;

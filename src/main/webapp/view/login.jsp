@@ -8,29 +8,37 @@
 <html>
 	<head>
 		<meta charset="ISO-8859-1">
-		<title>Login-TGB</title>
+		<title>Golden Bank</title>
+		<link href="https://fonts.googleapis.com/css?family=Lexend+Tera|Raleway&display=swap" rel="stylesheet">
 		<link href="css/login.css" rel="stylesheet">
 	</head>
 	
 	<body>
-		<div class="top">
-			<h1>The <span style="color:#FFBF00;">Golden</span> Bank</h1>
+		<div id="header">
+			<h1 id="fancyfont">The <span id="brand-key">Golden</span> Bank</h1>
 		</div>
 
 		<br />
       
 		<div class="form">
+			<h4 id="fancyfont">Login Into Your Account</h4>
 			<form action="login" method="POST" modelAttribute="employeeModel">
-				<h2>Login Into Your Account</h2>
-				${Error}
-				<br />
-				<br />
+				${Error}	
 				
-				Employee ID : <br> 
-				<input type="number" name="empID" size="20"> <br> 
-				Password : <br> 
-				<input type="password" name="empPassword" size="20"> <br> 
-				<input type="submit" value="Submit">
+				<table>
+					<tr>
+						<td><label> Employee ID : </label></td>
+						<td><input type="number" name="empID" size="20"></td>
+					</tr>
+					<tr>
+						<td><label> Password : </label></td>
+						<td><input type="password" name="empPassword" size="20"></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><input type="submit" value="Submit"></td>
+					</tr>
+				</table>
 			</form>
 		</div>
 		     
