@@ -11,11 +11,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class NavigatorController {
 	
 	
-	@RequestMapping(value="/index", method = RequestMethod.GET)
-	public String getIndexPage(Model model) {
-		return "index";
-	}
-	
 	@RequestMapping(value="/contact", method = RequestMethod.GET)
 	public String getContactPage(Model model) {
 		return "contact";
