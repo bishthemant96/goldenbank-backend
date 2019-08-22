@@ -24,7 +24,10 @@
   
   <li style="float:right"><a href="login">Logout</a></li>
 </ul>
-      <h2>Welcome  </h2>
+      <h2>Welcome, ${name}</h2>
+      <h3>Branch : ${branch}</h3>
+      <h3>Designation : ${post}</h3>
+      
       
       <p>this is employee dashboard</p><br><br><br>
         <p>this is employee dashboard</p><br><br><br>
