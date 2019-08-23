@@ -47,8 +47,8 @@
 				<br> Nationality:
 				<c:out value="${viewCustomer.getCusNationality()}" />
 				<br>
-				<a href="employeeDash"><button>Go Back</button></a>
 			</form>
+			<a id="backButton" href="customerCrud">Go Back</a>
 		</div>
 	</div>
 </body>
