@@ -126,3 +126,13 @@ input[type="submit"]:hover {
 .check-label {
 	text-align: right;
 }
+
+#backButton{
+	display: inline-block;
+	border: none;
+	background: #FFBF00;
+	color: white;
+	padding: 10px;
+	text-decoration: none;
+	margin-left: 48%;
+}

@@ -39,7 +39,7 @@ public class NavigatorController {
 
 	@RequestMapping(value="/loan", method = RequestMethod.GET)
 	public String getLoanPage(Model model) {
-		return "loan";
+		return "loanCrud";
 	}
 	
 

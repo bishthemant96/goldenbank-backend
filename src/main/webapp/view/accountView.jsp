@@ -41,6 +41,7 @@
 				Account Nominee: 
 					<form:input type="text" path="accNominee" readonly="true"/> <br>
 			</form:form>
+			<a id= "backButton" href="accountCrud">Go Back</a>
 		</div> 
 	</body>
 </html>
