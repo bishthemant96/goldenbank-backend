@@ -36,9 +36,10 @@ public class NavigatorController {
 	public String getTransactionPage(Model model) {
 		return "transaction";
 	}
-	@RequestMapping(value="/loanCrud", method = RequestMethod.GET)
+
+	@RequestMapping(value="/loan", method = RequestMethod.GET)
 	public String getLoanPage(Model model) {
-		return "loanCrud";
+		return "loan";
 	}
 	
 

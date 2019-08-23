@@ -9,7 +9,7 @@
 <html>
 	<head>
 		<meta charset="ISO-8859-1">
-		<title>View Account</title>
+		<title>View Loan</title>
 		<link href="css/formStyling.css" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Lexend+Tera|Raleway&display=swap" rel="stylesheet">
 	</head>
@@ -21,25 +21,23 @@
 	    <ul>
 	  		<li><a href="employeeDash">Home</a></li>
 			<li><a href="customerCrud">Customer Management</a></li>
-			<li><a class="active" href="accountCrud">Account Management</a></li>
-			<li><a href="loan">Loan Management</a></li>
+			<li><a href="accountCrud">Account Management</a></li>
+			<li><a class="active" href="loan">Loan Management</a></li>
 			<li><a href="transaction">Transaction Management</a></li>
 			<li style="float:right"><a href="index">Logout</a></li>
 		</ul>
 	      
 		<div class="content">
 			<br />
-			<form:form modelAttribute="accModel">
+			<form:form modelAttribute="loanAccModel">
 				Customer ID:
 					<form:input type="number" path="cusID" readonly="true"/> <br>
 				Branch: 
 					<form:input type="text" path="branch" readonly="true"/> <br>
-				Initial Amount: 
+				Loan Amount: 
 					<form:input type="number" path="amount" readonly="true"/> <br>
-				Account Type: 
-					<form:input type="text" path="accType" readonly="true"/> <br>
-				Account Nominee: 
-					<form:input type="text" path="accNominee" readonly="true"/> <br>
+				Loan Type: 
+					<form:input type="text" path="loanType" readonly="true"/> <br>
 			</form:form>
 		</div> 
 	</body>

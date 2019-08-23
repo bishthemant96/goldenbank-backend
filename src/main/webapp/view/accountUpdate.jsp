@@ -8,7 +8,7 @@
 <html>
 	<head>
 		<meta charset="ISO-8859-1">
-		<title>Insert title here</title>
+		<title>Update Record</title>
 		<link href="css/formStyling.css" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Lexend+Tera|Raleway&display=swap" rel="stylesheet">
 	</head>
@@ -21,8 +21,8 @@
 	  		<li><a href="employeeDash">Home</a></li>
 			<li><a href="customerCrud">Customer Management</a></li>
 			<li><a class="active" href="accountCrud">Account Management</a></li>
+			<li><a href="loan">Loan Management</a></li>
 			<li><a href="transaction">Transaction Management</a></li>
-			<li><a href="loanCrud">Loan Management</a></li>
 			<li style="float:right"><a href="index">Logout</a></li>
 		</ul>
 	      
