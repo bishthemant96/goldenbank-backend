@@ -33,7 +33,7 @@ public class CustomerController {
 		customerModel = cService.readCustomer(customerModel);
 		model.addAttribute("updateCustomerForm", customerModel);
 
-		return "updateCustomer";
+		return "customerUpdate";
 	}
 
 	@RequestMapping(value = "/updateCustomer", method = RequestMethod.POST)
@@ -56,7 +56,7 @@ public class CustomerController {
 		ModelAndView mv = null;
 		String msg = "no customer Exists for Customer ID :" + customerModel.getCusID();
 		if (customerModel.isStatus()) {
-			mv = new ModelAndView("viewCustomer");
+			mv = new ModelAndView("customerView");
 			mv.addObject("viewCustomer", customerModel);
 			return mv;
 		} else {

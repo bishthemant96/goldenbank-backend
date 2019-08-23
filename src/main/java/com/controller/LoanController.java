@@ -21,7 +21,7 @@ public class LoanController {
 	public String createLoan(@ModelAttribute("loanModel") LoanAccountModel loanModel, Model model) {
 		loanModel = loanService.createLoan(loanModel);
 		if(loanModel.isStatus()) {
-			return "loan";
+			return "loanCrud";
 		} else {
 			return "employeeDash";
 		}
@@ -31,7 +31,7 @@ public class LoanController {
 	public String deleteLoan(@ModelAttribute("loanModel") LoanAccountModel loanModel, Model model) {
 		loanModel = loanService.closeLoan(loanModel);
 		if(loanModel.isStatus()) {
-			return "loan";
+			return "loanCrud";
 		} else {
 			return "employeeDash";
 		}
