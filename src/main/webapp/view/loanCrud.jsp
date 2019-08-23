@@ -84,7 +84,7 @@
 				<br/>
 				<form action="readLoan" method="GET" modelAttribute="loanModel">
 					<label> Loan Account Number: </label> 
-					<input type="number" id="accNo" name="loanAccNo"><br>
+					<input type="number" id="LoanAccNo" name="loanAccNo"><br>
 					<input type="submit" value="View"> 
 				</form>
 			</div>

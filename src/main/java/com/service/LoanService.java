@@ -74,6 +74,7 @@ public class LoanService {
 		try {
 			loanAccount = lDao.readLoan(loanAccount);
 			BeanUtils.copyProperties(loanAccount, loanModel);
+			loanModel.setCusID(loanAccount.getCustomer().getCusID());
 			loanModel.setStatus(true);
 		} catch (Exception e) {
 			System.out.println("Error occured during accessing loan info...");
