@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1" isELIgnored="false"%>
-
+	
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,33 +25,34 @@
 		<li><a href="transaction">Transaction Management</a></li>
 		<li style="float: right"><a href="index">Logout</a></li>
 	</ul>
-
-	<div class="content">
-
-		<div id="div2">
-			<br />
-			<center>View existing Customer:</center>
-			<form modelAttribute="viewCustomer" method="post">
-				Customer ID:
-				<c:out value=" ${viewCustomer.getCusID()}" />
-				<br> Customer Name:
-				<c:out value="${viewCustomer.getCusName()}" />
-				<br> Age:
-				<c:out value="${viewCustomer.getCusAge()}" />
-				<br> Gender:
-				<c:out value="${viewCustomer.getCusGender()}" />
-				<br> Phone No:
-				<c:out value="${viewCustomer.getCusNo()}" />
-				<br> Email:
-				<c:out value="${viewCustomer.getCusEmail()}" />
-				<br> Address:
-				<c:out value="${viewCustomer.getCusAddress()}" />
-				<br> Nationality:
-				<c:out value="${viewCustomer.getCusNationality()}" />
-				<br>
-			</form>
-			<a id="backButton" href="customerCrud">Go Back</a>
-		</div>
+		
+		<div class="content">
+		<br />
+		<form:form modelAttribute="viewCustomer">
+			Customer ID:
+                    <form:input type="number" path="cusID"
+				readonly="true" />
+			<br>
+				Customer Name:
+					<form:input type="text" path="cusName" readonly="true" />
+			<br>
+				Age: 
+					<form:input type="number" path="cusAge" readonly="true" />
+			<br>
+				Phone No: 
+					<form:input type="number" path="cusNo" readonly="true" />
+			<br>
+				Email: 
+					<form:input type="text" path="cusEmail" readonly="true" />
+			<br>
+				Address: 
+					<form:input type="text" path="cusAddress" readonly="true" />
+			<br>
+				Nationality: 
+					<form:input type="text" path="cusNationality" readonly="true" />
+			<br>
+		</form:form>
+		<a id="backButton" href="customerCrud">Go Back</a>
 	</div>
 </body>
 </html>
