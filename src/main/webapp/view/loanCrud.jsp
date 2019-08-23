@@ -11,7 +11,7 @@
 		<title>Loan Management</title>
 		<link href="css/formStyling.css" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Lexend+Tera|Raleway&display=swap" rel="stylesheet">
-		<script type="text/javascript" src="js/loan.js"></script>
+		<script type="text/javascript" src="js/loanCrud.js"></script>
 	</head>
 	
 	<body>
