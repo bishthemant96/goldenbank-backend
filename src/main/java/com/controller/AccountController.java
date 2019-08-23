@@ -60,7 +60,7 @@ public class AccountController {
 		accModel = accService.readAccount(accModel);
 		model.addAttribute("accModel", accModel);
 		if(accModel.isStatus())
-			return "accountView";
+			return "accountUpdate";
 		else
 			return "accountCrud";
 	}
