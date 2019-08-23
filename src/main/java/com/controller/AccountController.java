@@ -20,21 +20,15 @@ public class AccountController {
 	@RequestMapping(value="/addAccount", method = RequestMethod.POST)
 	public String createAccount(@ModelAttribute("AccountModel") AccountModel accountModel, Model model) {
 		accountModel = accService.createAccount(accountModel);
-		if(accountModel.isStatus()) {
-			return "accountCrud";
-		} else {
-			return "employeeDash";
-		}
+		model.addAttribute("accModel", accountModel);
+		return "accountCrud";
 	}
 	
 	@RequestMapping(value="/deleteAccount", method = RequestMethod.POST)
 	public String deleteAccount(@ModelAttribute("AccountModel") AccountModel accountModel, Model model) {
 		accountModel = accService.deleteAccount(accountModel);
-		if(accountModel.isStatus()) {
-			return "accountCrud";
-		} else {
-			return "employeeDash";
-		}
+		model.addAttribute("accModel", accountModel);
+		return "accountCrud";
 	}
 	
 	@RequestMapping(value="/readAccount", method = RequestMethod.GET)
@@ -43,7 +37,11 @@ public class AccountController {
 		accModel.setAccNo(Integer.parseInt(id));
 		accModel = accService.readAccount(accModel);
 		model.addAttribute("accModel", accModel);
-		return "accountView";
+		
+		if(accModel.isStatus())
+			return "accountView";
+		else
+			return "accountCrud";
 	}
 	
 	
@@ -61,7 +59,10 @@ public class AccountController {
 		accModel.setAccNo(Integer.parseInt(id));
 		accModel = accService.readAccount(accModel);
 		model.addAttribute("accModel", accModel);
-		return "accountUpdate";
+		if(accModel.isStatus())
+			return "accountView";
+		else
+			return "accountCrud";
 	}
 
 
