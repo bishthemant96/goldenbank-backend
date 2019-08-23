@@ -44,7 +44,8 @@
 		<div id="div1">
 			<br />
 			<center>Create Transaction</center>
-			<br />
+			<br /></br>
+		
 			<form action="addTransaction" method="POST" modelAttribute="addTransaction">
 				From Account : <input type="number" name="fromAcc" /> <br> To
 				Account : <input type="number" name="toAcc"> <br>
@@ -57,7 +58,7 @@
 			<br />
 			<center>View Transaction</center>
 			<br />
-			<form action="readTransaction" method="POST" modelAttribute="readTransaction">
+			<form action="readTransaction" method="GET" modelAttribute="readTransaction">
 				Transaction ID : <input type="number" name="transId" /> <br> <input
 					type="submit" value="Search Transaction">
 			</form>

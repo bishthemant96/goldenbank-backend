@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.model.TransactionModel;
 import com.service.TransactionService;
@@ -17,18 +18,31 @@ public class TransactionController {
 	TransactionService tService;
 
 	@RequestMapping(value = "/addTransaction", method = RequestMethod.POST)
-	public String createTransaction(@ModelAttribute("addTransaction") TransactionModel transactionModel,Model model) {
+	public String createTransaction(@ModelAttribute("addTransaction") TransactionModel transactionModel, Model model) {
 
 		transactionModel = tService.createTransaction(transactionModel);
 		model.addAttribute("message", "Transaction Created!");
 		return "transaction";
 	}
 
-	@RequestMapping(value = "/readTransaction", method = RequestMethod.POST)
-	public String readTransaction(@ModelAttribute("readTransaction") TransactionModel transactionModel, Model model) {
+	@RequestMapping(value = "/readTransaction", method = RequestMethod.GET)
+	public String readTransaction(@RequestParam("transId") long id, Model model) {
 
-	
-		return "transaction";
+		TransactionModel transModel = new TransactionModel();
+		transModel.setTransId(id);
+		transModel = tService.viewTransaction(transModel);
+		String msg = "No Transaction Exists for transaction ID :" + transModel.getTransId();
+
+		if (transModel.isStatus()) {
+
+			model.addAttribute("transModel", transModel);
+			return "transactionView";
+
+		} else {
+			model.addAttribute("transModel", transModel);
+			model.addAttribute("message", msg);
+			return "transactionView";
+		}
 
 	}
 }
