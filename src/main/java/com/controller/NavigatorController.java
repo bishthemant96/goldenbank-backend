@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class NavigatorController {
 	
-	@RequestMapping(value="/employeeDash", method = RequestMethod.POST)
+	@RequestMapping(value="/employeeDash", method = RequestMethod.GET)
 	public String getEmployeeDash(Model model) {
 		return "employeeDash";
 	}
