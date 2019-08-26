@@ -6,7 +6,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.model.CustomerModel;
 import com.service.CustomerService;
@@ -19,53 +18,49 @@ public class CustomerController {
 	CustomerService cService;
 
 	@RequestMapping(value = "/addCustomer", method = RequestMethod.POST)
-	public String addCustomer(@ModelAttribute("addCustomer") CustomerModel customerModel, Model model) {
-
+	public String addCustomer(@ModelAttribute("customerModel") CustomerModel customerModel, Model model) {
 		customerModel = cService.createCustomer(customerModel);
-
-		model.addAttribute("message", "Customer Created!");
+		model.addAttribute("customerModel", customerModel);
 		return "customerCrud";
+	}
+	
+	@RequestMapping(value = "/viewCustomer", method = RequestMethod.POST)
+	public String viewCustomer(@ModelAttribute("customerModel") CustomerModel customerModel, Model model) {
+		customerModel = cService.readCustomer(customerModel);
+		
+		if (customerModel.isStatus()) {
+			model.addAttribute("customerModel", customerModel);
+			return "customerView";
+		} else {
+			model.addAttribute("customerModel",customerModel );
+			return "customerCrud";
+		}
 	}
 
 	@RequestMapping(value = "/updateCustomer", method = RequestMethod.GET)
-	public String updateCustomerForm(@ModelAttribute("updateCustomerForm") CustomerModel customerModel, Model model) {
-
+	public String getUpdateCustomerForm(@ModelAttribute("customerModel") CustomerModel customerModel, Model model) {
 		customerModel = cService.readCustomer(customerModel);
-		model.addAttribute("updateCustomerForm", customerModel);
-
-		return "customerUpdate";
+		model.addAttribute("customerModel", customerModel);
+		if(customerModel.isStatus()) {
+			return "customerUpdate";
+		} else {
+			return "customerCrud";
+		}
+		
 	}
 
 	@RequestMapping(value = "/updateCustomer", method = RequestMethod.POST)
-	public String updateCustomer(@ModelAttribute("updateCustomerForm") CustomerModel customerModel, Model model) {
+	public String updateCustomer(@ModelAttribute("customerModel") CustomerModel customerModel, Model model) {
 		customerModel = cService.updateCustomer(customerModel);
-		model.addAttribute("message1", "Customer Updated!");
+		model.addAttribute("customerModel",customerModel);
 		return "customerCrud";
 	}
 
 	@RequestMapping(value = "/deleteCustomer", method = RequestMethod.POST)
-	public String deleteCustomer(@ModelAttribute("deleteCus") CustomerModel customerModel, Model model) {
+	public String deleteCustomer(@ModelAttribute("customerModel") CustomerModel customerModel, Model model) {
 		customerModel = cService.deleteCustomer(customerModel);
-		model.addAttribute("message2", "Customer Deleted!");
+		model.addAttribute("customerModel", customerModel);
 		return "customerCrud";
 	}
-
-	@RequestMapping(value = "/viewCustomer", method = RequestMethod.POST)
-	public ModelAndView viewCustomer(@ModelAttribute("viewCustomer") CustomerModel customerModel) {
-		customerModel = cService.readCustomer(customerModel);
-		ModelAndView mv = null;
-		String msg = "no customer Exists for Customer ID :" + customerModel.getCusID();
-		if (customerModel.isStatus()) {
-			mv = new ModelAndView("customerView");
-			mv.addObject("viewCustomer", customerModel);
-			return mv;
-		} else {
-			mv = new ModelAndView("customerCrud");
-			mv.addObject("message",msg );
-
-			return mv;
-		}
-	}
-
 
 }

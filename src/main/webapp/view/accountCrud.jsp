@@ -25,8 +25,8 @@
 	  		<li><a href="employeeDash">Home</a></li>
 			<li><a href="customerCrud">Customer Management</a></li>
 			<li><a class="active" href="accountCrud">Account Management</a></li>
-			<li><a href="loan">Loan Management</a></li>
-			<li><a href="transaction">Transaction Management</a></li>
+			<li><a href="loanCrud">Loan Management</a></li>
+			<li><a href="transactionCrud">Transaction Management</a></li>
 			<li style="float:right"><a href="login">Logout</a></li>
 		</ul>
 		
@@ -79,7 +79,7 @@
 				<br />
 				<center>Update existing account:</center>
 				<br/>
-				<form action="UpdateForm" method="GET" modelAttribute="AccountModel">
+				<form action="UpdateAccount" method="GET" modelAttribute="AccountModel">
 					Account Number: 
 					<input type="number" name="accNo"><br>
 					<input type="submit" value="Update"> 

@@ -27,15 +27,15 @@
 		<li><a href="employeeDash">Home</a></li>
 		<li><a class="active" href="customerCrud">Customer Management</a></li>
 		<li><a href="accountCrud">Account Management</a></li>
-		<li><a href="loan">Loan Management</a></li>
-		<li><a href="transaction">Transaction Management</a></li>
+		<li><a href="loanCrud">Loan Management</a></li>
+		<li><a href="transactionCrud">Transaction Management</a></li>
 		<li style="float: right"><a href="index">Logout</a></li>
 	</ul>
 
 	<div class="content">
 		<br />
 		<form:form action="updateCustomer" method="post"
-			modelAttribute="updateCustomerForm">
+			modelAttribute="customerModel">
 
 						ID :
 						<form:input type="number" readonly="true" path="cusID" /><br>

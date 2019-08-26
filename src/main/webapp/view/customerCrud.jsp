@@ -20,8 +20,8 @@
 			<li><a href="employeeDash">Home</a></li>
 			<li><a class="active" href="customerCrud">Customer Management</a></li>
 			<li><a href="accountCrud">Account Management</a></li>
-			<li><a href="loan">Loan Management</a></li>
-			<li><a href="transaction">Transaction Management</a></li>
+			<li><a href="loanCrud">Loan Management</a></li>
+			<li><a href="transactionCrud">Transaction Management</a></li>
 			<li style="float: right"><a href="login">Logout</a></li>
 		</ul>
 	
@@ -43,7 +43,7 @@
 				<br />
 				<center>Add new Customer:</center>
 				<br/>
-				<form action="addCustomer" method="post" modelAttribute="addCustomer">
+				<form action="addCustomer" method="post" modelAttribute="customerModel">
 					<label for="cusName"> Name: </label> 
 					<input type="text" id="cusName" name="cusName">
 					
@@ -81,7 +81,7 @@
 				<br />
 				<center>Update existing Customer:</center>
 				<br />
-				<form action="updateCustomer" modelAttribute="updateCustomerForm">
+				<form action="updateCustomer" modelAttribute="customerModel">
 					User ID: <input type="number" name="cusID"><br> <input
 						type="submit" value="Update Customer">
 				</form>
@@ -92,7 +92,7 @@
 				
 				<center>Delete existing Customer:</center>
 				<br />
-				<form action="deleteCustomer" method="post" modelAttribute="deleteCus">
+				<form action="deleteCustomer" method="post" modelAttribute="customerModel">
 					User ID: <input type="number" name="cusID"> <input
 						type="submit" value="Delete Customer">
 				</form>
@@ -101,7 +101,7 @@
 			<div id="div4">
 				<br />
 				<center>View existing Customer:</center>
-				<form action="viewCustomer" method="post" modelAttribute="viewCustomer">
+				<form action="viewCustomer" method="post" modelAttribute="customerModel">
 					<label>User ID: </label>
 					<input type="number" name="cusID"> 
 					<input type="submit" value="View Customer">

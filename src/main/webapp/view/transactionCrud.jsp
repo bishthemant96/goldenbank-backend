@@ -22,8 +22,8 @@
 		<li><a href="employeeDash">Home</a></li>
 		<li><a href="customerCrud">Customer Management</a></li>
 		<li><a href="accountCrud">Account Management</a></li>
-		<li><a href="loan">Loan Management</a></li>
-		<li><a class="active" href="transaction">Transaction Management</a></li>
+		<li><a href="loanCrud">Loan Management</a></li>
+		<li><a class="active" href="transactionCrud">Transaction Management</a></li>
 		<li style="float: right"><a href="index">Logout</a></li>
 	</ul>
 

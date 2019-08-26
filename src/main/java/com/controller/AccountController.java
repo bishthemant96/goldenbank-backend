@@ -17,6 +17,7 @@ public class AccountController {
 	@Autowired
 	AccountService accService;
 	
+	
 	@RequestMapping(value="/addAccount", method = RequestMethod.POST)
 	public String createAccount(@ModelAttribute("AccountModel") AccountModel accountModel, Model model) {
 		accountModel = accService.createAccount(accountModel);
@@ -24,12 +25,6 @@ public class AccountController {
 		return "accountCrud";
 	}
 	
-	@RequestMapping(value="/deleteAccount", method = RequestMethod.POST)
-	public String deleteAccount(@ModelAttribute("AccountModel") AccountModel accountModel, Model model) {
-		accountModel = accService.deleteAccount(accountModel);
-		model.addAttribute("accModel", accountModel);
-		return "accountCrud";
-	}
 	
 	@RequestMapping(value="/readAccount", method = RequestMethod.GET)
 	public String readAccount(@RequestParam("accNo") String id, Model model) {
@@ -53,17 +48,25 @@ public class AccountController {
 	}
 	
 	
-	@RequestMapping(value="/UpdateForm", method = RequestMethod.GET)
-	public String updateForm(@RequestParam("accNo") String id, Model model) {
+	@RequestMapping(value="/UpdateAccount", method = RequestMethod.GET)
+	public String getUpdateAccountForm(@RequestParam("accNo") String id, Model model) {
 		AccountModel accModel = new AccountModel();
 		accModel.setAccNo(Integer.parseInt(id));
 		accModel = accService.readAccount(accModel);
 		model.addAttribute("accModel", accModel);
+		
 		if(accModel.isStatus())
 			return "accountUpdate";
 		else
 			return "accountCrud";
 	}
-
+	
+	
+	@RequestMapping(value="/deleteAccount", method = RequestMethod.POST)
+	public String deleteAccount(@ModelAttribute("AccountModel") AccountModel accountModel, Model model) {
+		accountModel = accService.deleteAccount(accountModel);
+		model.addAttribute("accModel", accountModel);
+		return "accountCrud";
+	}
 
 }

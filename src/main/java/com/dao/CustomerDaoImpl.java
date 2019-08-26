@@ -16,19 +16,21 @@ public class CustomerDaoImpl implements CustomerDao {
 	@PersistenceContext
 	EntityManager em;
 
+	
 	public CustomerEntity createCustomer(CustomerEntity customer) {
 		em.persist(customer);
 		return customer;
 	}
 
+	
 	public CustomerEntity readCustomer(CustomerEntity customer) {
-
 		CustomerEntity reCustomer = em.find(CustomerEntity.class, customer.getCusID());
 		return reCustomer;
 	}
 
+	
 	public CustomerEntity updateCustomer(CustomerEntity customer) {
-		CustomerEntity reCustomer = em.find(CustomerEntity.class, customer.getCusID()); // Replace 1 with getID function
+		CustomerEntity reCustomer = em.find(CustomerEntity.class, customer.getCusID());
 		reCustomer.setCusName(customer.getCusName());
 		reCustomer.setCusAge(customer.getCusAge());
 		reCustomer.setCusGender(customer.getCusGender());
@@ -40,20 +42,22 @@ public class CustomerDaoImpl implements CustomerDao {
 		return reCustomer;
 	}
 
+	
 	public CustomerEntity deleteCustomer(CustomerEntity customer) {
 		CustomerEntity reCustomer = em.find(CustomerEntity.class, customer.getCusID()); 
 		em.remove(reCustomer);
 		return customer;
 	}
 
+	
 	public List<CustomerEntity> displayAllCustomer() {
 		List<?> temp = em.createQuery("Select e from Customer e").getResultList();
 		List<CustomerEntity> customerList = new ArrayList<CustomerEntity>(temp.size());
-
+		
 		for (Object obj : temp)
 			customerList.add(((CustomerEntity) obj));
 
 		return customerList;
 	}
-
+	
 }
