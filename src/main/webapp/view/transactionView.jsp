@@ -31,7 +31,7 @@
 		
 				<h3><center>${message}</center></h3>
 			<br />
-			<form:form modelAttribute="transModel">
+			<form:form modelAttribute="transactionModel">
 			Transaction ID
 			<form:input type="number" path="transId" readonly="true"/><br>
 				Sender Account

@@ -17,32 +17,29 @@ public class TransactionController {
 	@Autowired
 	TransactionService tService;
 
+	
 	@RequestMapping(value = "/addTransaction", method = RequestMethod.POST)
-	public String createTransaction(@ModelAttribute("addTransaction") TransactionModel transactionModel, Model model) {
-
+	public String createTransaction(@ModelAttribute("transactionModel") TransactionModel transactionModel, Model model) {
 		transactionModel = tService.createTransaction(transactionModel);
-		model.addAttribute("message", "Transaction Created!");
-		return "transaction";
+		model.addAttribute("transactionModel", transactionModel);
+		return "transactionCrud";
 	}
+	
 
 	@RequestMapping(value = "/readTransaction", method = RequestMethod.GET)
 	public String readTransaction(@RequestParam("transId") long id, Model model) {
+		TransactionModel transactionModel = new TransactionModel();
+		transactionModel.setTransId(id);
+		transactionModel = tService.viewTransaction(transactionModel);
 
-		TransactionModel transModel = new TransactionModel();
-		transModel.setTransId(id);
-		transModel = tService.viewTransaction(transModel);
-		String msg = "No Transaction Exists for transaction ID :" + transModel.getTransId();
-
-		if (transModel.isStatus()) {
-
-			model.addAttribute("transModel", transModel);
+		if (transactionModel.isStatus()) {
+			model.addAttribute("transactionModel", transactionModel);
 			return "transactionView";
 
 		} else {
-			model.addAttribute("transModel", transModel);
-			model.addAttribute("message", msg);
-			return "transactionView";
+			model.addAttribute("transactionModel", transactionModel);
+			return "transactionCrud";
 		}
-
 	}
+	
 }

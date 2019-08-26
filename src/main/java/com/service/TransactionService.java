@@ -19,12 +19,14 @@ public class TransactionService {
 
 	@Autowired
 	AccountDao aDao;
+	
 	@Autowired
 	AccountService aService;
 
+	
 	public TransactionModel createTransaction(TransactionModel transModel) {
 		transModel.setStatus(false);
-
+		
 		AccountEntity accEntityFrom = new AccountEntity();
 		AccountEntity accEntityTo = new AccountEntity();
 
@@ -32,24 +34,24 @@ public class TransactionService {
 		accEntityTo.setAccNo(transModel.getToAcc());
 
 		try {
-
 			accEntityFrom = aDao.readAccount(accEntityFrom);
 			accEntityTo = aDao.readAccount(accEntityTo);
 
 			if (accEntityFrom == null) {
-				// this tells that whether fromAcc exists or not
-				System.out.println("No Account exists for this AccountNo.");
+				System.out.println("No from-account found.");
+				return transModel;
 				
 			} else if (accEntityTo == null) {
-				// this tells that whether fromAcc exists or not
-				System.out.println("Reciever's Account doesn't exists for this AccountNo.");
+				System.out.println("No to-account found.");
+				return transModel;
 			}
+			
 			long fromAccBal = accEntityFrom.getAmount();
 			long toAccBal = accEntityTo.getAmount();
-			System.out.println(transModel.getAmount());
+			
 			if (fromAccBal <= Integer.parseInt(transModel.getAmount())) {
-				// check for sufficient Account Balance
 				System.out.println("Insufficient Balance.");
+				return transModel;
 			} else {
 				TransactionEntity transEntity = new TransactionEntity();
 				BeanUtils.copyProperties(transModel, transEntity);
@@ -78,11 +80,11 @@ public class TransactionService {
 					transModel.setStatus(true);
 					
 				} catch (Exception e) {
-					System.out.println("Error occured while creating transaction...");
+					System.out.println("Transaction creation failed.");
 				}
 			}
 		} catch (Exception e) {
-			System.out.println("Error gathering Transaction information... " + e);
+			System.out.println("Transaction creation failed - 2.");
 		}
 		return transModel;
 
@@ -90,23 +92,21 @@ public class TransactionService {
 
 	public TransactionModel viewTransaction(TransactionModel transModel) {
 		transModel.setStatus(false);
-
 		TransactionEntity transEntity = new TransactionEntity();
 		BeanUtils.copyProperties(transModel, transEntity);
-		System.out.println(transEntity.getTransId());
-		System.out.println(transModel.getTransId());
 
 		try {
+			
 			transEntity = tDao.readTransaction(transEntity);
 			BeanUtils.copyProperties(transEntity, transModel);
 			transModel.setFromAcc(transEntity.getFromAcc().getAccNo());
 			transModel.setStatus(true);
+			
 		} catch (Exception e) {
-			System.out.println("Error gathering Transaction information...");
+			System.out.println("Transaction read fail.");
 		}
 
 		return transModel;
-
 	}
 
 	

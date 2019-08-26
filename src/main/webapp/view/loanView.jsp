@@ -30,7 +30,7 @@
 
 	<div class="content">
 		<br />
-		<form:form modelAttribute="loanAccModel">
+		<form:form modelAttribute="loanModel">
 			Loan Account No:
                     <form:input type="number" path="loanAccNo"
 				readonly="true" />
