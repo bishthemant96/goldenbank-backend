@@ -46,6 +46,7 @@ public class LoanController {
 			loanModel = loanService.closeLoan(loanModel);
 		} catch(Exception e) {
 			System.out.println("Unexpected Rollback: entity doesnot exist.");
+			loanModel.setError("Loan does not exist.");
 		}
 		model.addAttribute("loanModel", loanModel);
 		return "loanCrud";

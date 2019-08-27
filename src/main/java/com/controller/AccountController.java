@@ -68,6 +68,7 @@ public class AccountController {
 			accountModel = accService.deleteAccount(accountModel);
 		} catch(Exception e) {
 			System.out.println("Unexpected Rollback: entity doesnot exist.");
+			accountModel.setError("Account does not exist.");
 		}
 		model.addAttribute("accModel", accountModel);
 		return "accountCrud";

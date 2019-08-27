@@ -39,10 +39,12 @@ public class TransactionService {
 
 			if (accEntityFrom == null) {
 				System.out.println("Sender's Account not found.");
+				transModel.setError("Sender account does not exist.");
 				return transModel;
 				
 			} else if (accEntityTo == null) {
 				System.out.println("Receiver's Account not found.");
+				transModel.setError("Receiver account does not exist.");
 				return transModel;
 			}
 			
@@ -51,6 +53,7 @@ public class TransactionService {
 			
 			if (fromAccBal <= Integer.parseInt(transModel.getAmount())) {
 				System.out.println("Insufficient Balance.");
+				transModel.setError("Insufficient balance in account.");
 				return transModel;
 			} else {
 				TransactionEntity transEntity = new TransactionEntity();
@@ -81,10 +84,12 @@ public class TransactionService {
 					
 				} catch (Exception e) {
 					System.out.println("Transaction creation failed.");
+					transModel.setError("Transaction creation failed.");
 				}
 			}
 		} catch (Exception e) {
 			System.out.println("Transaction creation failed - 2.");
+			transModel.setError("Transaction creation failed.");
 		}
 		return transModel;
 
@@ -104,6 +109,7 @@ public class TransactionService {
 			
 		} catch (Exception e) {
 			System.out.println("Transaction read fail.");
+			transModel.setError("Transaction does not exist.");
 		}
 
 		return transModel;

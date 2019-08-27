@@ -32,6 +32,7 @@ public class LoanService {
 			cEntity = cDao.readCustomer(cEntity);
 			if (cEntity == null) {
 				System.out.println("Loan creation failed: No such customer.");
+				loanModel.setError("Customer does not exist.");
 			} else {
 				
 				LoanAccountEntity loanAccount = new LoanAccountEntity();
@@ -46,10 +47,12 @@ public class LoanService {
 					
 				} catch (Exception e) {
 					System.out.println("Loan creation failed.");
+					loanModel.setError("Loan could not be created.");
 				}
 			}
 		} catch (Exception e) {
 			System.out.println("Loan creation failed: No such customer.");
+			loanModel.setError("Customer does not exist.");
 		}
 		
 		return loanModel;
@@ -70,6 +73,7 @@ public class LoanService {
 			
 		} catch (Exception e) {
 			System.out.println("Loan view failed.");
+			loanModel.setError("Loan does not exist.");
 		}
 		return loanModel;
 	}
@@ -88,6 +92,7 @@ public class LoanService {
 			
 		} catch (Exception e) {
 			System.out.println("Loan deletion failed.");
+			loanModel.setError("Loan does not exist.");
 		}
 		return loanModel;
 	}

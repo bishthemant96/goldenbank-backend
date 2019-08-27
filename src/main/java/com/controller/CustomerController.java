@@ -62,6 +62,7 @@ public class CustomerController {
 			customerModel = cService.deleteCustomer(customerModel);
 		} catch(Exception e) {
 			System.out.println("Unexpected Rollback: entity doesnot exist.");
+			customerModel.setError("Customer does not exist.");
 		}
 		
 		model.addAttribute("customerModel", customerModel);

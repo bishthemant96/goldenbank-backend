@@ -5,8 +5,9 @@ window.onload = function(){
 	
 	
 	var status = document.getElementById('status').value;
+	var error = document.getElementById('error').value;
 	if(status.localeCompare('false')==0){
-		alert("Requested operation couldn't be performed.");
+		alert("Operation failed with error:\n"+error);
 	} else if(status.localeCompare('true')==1){
 		alert("Request submitted successfully.");
 	}
