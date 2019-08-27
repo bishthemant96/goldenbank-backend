@@ -106,6 +106,7 @@
 			<div id="div4">
 				<br />
 				<center>View existing Customer:</center>
+				<br/>
 				<form name="myform4" onSubmit="return validateform4()" action="viewCustomer" method="post" modelAttribute="viewCustomer">
 					<label>User ID: </label>
 					<input type="number" name="cusID"> 
