@@ -14,6 +14,9 @@
 		<script type="text/javascript" src="js/transactionCrud.js"></script>
 	</head>
 	<body>
+	
+	<input type="hidden" id="status" value='${transactionModel.status}'/>
+	
 		<div id="header">
 			<h1 id="fancyfont">
 				The <span id="brand-key">Golden</span> Bank

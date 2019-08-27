@@ -39,7 +39,6 @@
 		<br />
 		<form:form action="updateCustomer" method="post"
 			modelAttribute="updateCustomerForm" name="myform1" onSubmit="return validateform1()">
-
 						ID :
 						<form:input type="number" readonly="true" path="cusID" /><br>
 
@@ -53,7 +52,7 @@
 						<form:input type="text" path="cusGender" /><br>
 
 						Email :
-						<form:input type="text" path="cusEmail" /><br>
+						<form:input type="email" path="cusEmail" /><br>
 
 						Address :
 						<form:input type="text" path="cusAddress" /><br>
