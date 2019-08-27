@@ -36,3 +36,94 @@ function toggleFunction(event) {
         four.style.display = 'block';
 	}
 }
+
+
+function validateform1(){  
+	var name=document.myform1.cusName.value;  
+	var age=document.myform1.cusAge.value;       
+	var pwd=document.myform1.cusPassword.value;
+	var no=document.myform1.cusNo.value;
+	
+	var numbers = /^[0-9]+$/;
+	var letters = /^[A-Za-z]+$/;
+	
+	
+	if (name==null || name==""){  
+		alert("Name can't be blank");  
+		return false;  
+	} 
+	else {
+		if(name.match(letters))
+		{
+			return true;
+		}
+		else
+		{
+			alert("name should be a text field");
+			return false;
+		}
+	}
+	
+	
+	
+	if(age==null || age==""){  
+		alert("Age can't be empty");  
+		return false;
+	}
+	else{
+		if(age.match(numbers) && age>=18 && age<111){
+			return true;
+		}
+		else{
+			alert("Age should be a number and in the range of 18-110");  
+			return false;
+		}
+	}
+		
+	
+	if(pwd==null || pwd=="" && pwd.length>5){  
+		alert("Fill the password with atleast 6 characters");  
+		return false;  
+	}
+
+	else if(no==null || no==""){  
+		alert("Number can not be empty");  
+		return false;
+		if(no.match(numbers) && no<10){
+			return true;
+		}
+		else{
+			alert("Number should be a numeric value");  
+			return false;
+		}
+	}   	
+}
+
+
+function validateform2(){  
+	var id=document.myform2.cusID.value;  
+	  
+	if (id==null || id==""){  
+	  alert("User ID can't be blank");  
+	  return false;  
+	}  
+	}  
+
+function validateform3(){  
+	var id=document.myform3.cusID.value;  
+	  
+	if (id==null || id==""){  
+	  alert("User ID can't be blank");  
+	  return false;  
+	}  
+	}  
+
+function validateform4(){  
+	var id=document.myform4.cusID.value;  
+	  
+	if (id==null || id==""){  
+	  alert("User ID can't be blank");  
+	  return false;  
+	}  
+	}  
+

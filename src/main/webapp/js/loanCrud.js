@@ -26,3 +26,95 @@ function toggleFunction(event) {
         four.style.display = 'block';
 	}
 }
+
+
+
+function validateform1(){  
+	var id=document.myform1.cusID.value;  
+	var branch=document.myform1.branch.value;       
+	var loanType=document.myform1.loanType.value;
+	var amount=document.myform1.amount.value;
+	
+	var numbers = /^[0-9]+$/;
+	var letters = /^[A-Za-z]+$/;
+	
+	
+	if (branch==null || branch==""){  
+		alert("branch can't be blank");  
+		return false;  
+	} 
+	else {
+		if(branch.match(letters))
+		{
+			return true;
+		}
+		else
+		{
+			alert("branch should be a text field");
+			return false;
+		}
+	}
+	
+	
+	
+	if(id==null || id==""){  
+		alert("ID can't be empty");  
+		return false;
+	}
+	else{
+		if(id.match(numbers)){
+			return true;
+		}
+		else{
+			alert("ID should be a number");  
+			return false;
+		}
+	}
+		
+	
+	if(loanType==null || loanType==""){  
+		alert("LoanType is a required field");  
+		return false;
+		if(loanType.match(letters))
+		{
+			return true;
+		}
+		else
+		{
+			alert("loanType should be a text field");
+			return false;
+		}
+	}
+
+	else if(amount==null || amount==""){  
+		alert("amount can not be empty");  
+		return false;
+		if(amount.match(numbers) && amount>=2000){
+			return true;
+		}
+		else{
+			alert("amount should be a numeric value and minimum 2000 rs");  
+			return false;
+		}
+	}   	
+}
+
+
+function validateform2(){  
+	var id=document.myform2.loanAccNo.value;  
+	  
+	if (id==null || id==""){  
+	  alert("loanAccNo can't be blank");  
+	  return false;  
+	}  
+	}  
+
+function validateform3(){  
+	var id=document.myform3.loanAccNo.value;  
+	  
+	if (id==null || id==""){  
+	  alert("User loanAccNo can't be blank");  
+	  return false;  
+	}  
+	}
+
