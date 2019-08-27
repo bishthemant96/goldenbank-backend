@@ -38,11 +38,11 @@ public class TransactionService {
 			accEntityTo = aDao.readAccount(accEntityTo);
 
 			if (accEntityFrom == null) {
-				System.out.println("No from-account found.");
+				System.out.println("Sender's Account not found.");
 				return transModel;
 				
 			} else if (accEntityTo == null) {
-				System.out.println("No to-account found.");
+				System.out.println("Receiver's Account not found.");
 				return transModel;
 			}
 			

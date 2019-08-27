@@ -50,7 +50,7 @@
 						<form:input type="text" path="cusGender" /><br>
 
 						Email :
-						<form:input type="text" path="cusEmail" /><br>
+						<form:input type="email" path="cusEmail" /><br>
 
 						Address :
 						<form:input type="text" path="cusAddress" /><br>
