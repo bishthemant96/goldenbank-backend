@@ -8,7 +8,17 @@ public class LoanAccountModel {
 	private String loanType;
 	private int cusID;
 	private boolean status;
+	private String error;
+	
+	
+	public String getError() {
+		return error;
+	}
 
+	public void setError(String error) {
+		this.error = error;
+	}
+	
 	public boolean isStatus() {
 		return status;
 	}
