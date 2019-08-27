@@ -13,7 +13,7 @@ function toggleFunction(event) {
 	var three = document.getElementById('div3');
 	var four = document.getElementById('div4');
 	
-	
+		
 	if(caller=="add"){
 		one.style.display = 'block';
 		two.style.display = 'none';

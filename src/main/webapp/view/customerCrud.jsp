@@ -86,11 +86,9 @@
 				<br />
 				<center>Update existing Customer:</center>
 				<br />
-<<<<<<< HEAD
-				<form action="updateCustomer" modelAttribute="customerModel">
-=======
+				
 				<form name="myform2" onSubmit="return validateform2()" action="updateCustomer" modelAttribute="updateCustomerForm">
->>>>>>> 6d1be702850e49eee4ccb3bdcd5ca52762e09cba
+
 					User ID: <input type="number" name="cusID"><br> <input
 						type="submit" value="Update Customer">
 				</form>
@@ -101,11 +99,8 @@
 				
 				<center>Delete existing Customer:</center>
 				<br />
-<<<<<<< HEAD
-				<form action="deleteCustomer" method="post" modelAttribute="customerModel">
-=======
 				<form name="myform3" onSubmit="return validateform3()" action="deleteCustomer" method="post" modelAttribute="deleteCus">
->>>>>>> 6d1be702850e49eee4ccb3bdcd5ca52762e09cba
+
 					User ID: <input type="number" name="cusID"> <input
 						type="submit" value="Delete Customer">
 				</form>
@@ -114,11 +109,9 @@
 			<div id="div4">
 				<br />
 				<center>View existing Customer:</center>
-<<<<<<< HEAD
-				<form action="viewCustomer" method="post" modelAttribute="customerModel">
-=======
+
 				<form name="myform4" onSubmit="return validateform4()" action="viewCustomer" method="post" modelAttribute="viewCustomer">
->>>>>>> 6d1be702850e49eee4ccb3bdcd5ca52762e09cba
+
 					<label>User ID: </label>
 					<input type="number" name="cusID"> 
 					<input type="submit" value="View Customer">
