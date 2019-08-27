@@ -64,7 +64,11 @@ public class AccountController {
 	
 	@RequestMapping(value="/deleteAccount", method = RequestMethod.POST)
 	public String deleteAccount(@ModelAttribute("AccountModel") AccountModel accountModel, Model model) {
-		accountModel = accService.deleteAccount(accountModel);
+		try {
+			accountModel = accService.deleteAccount(accountModel);
+		} catch(Exception e) {
+			System.out.println("Unexpected Rollback: entity doesnot exist.");
+		}
 		model.addAttribute("accModel", accountModel);
 		return "accountCrud";
 	}

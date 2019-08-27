@@ -58,7 +58,12 @@ public class CustomerController {
 
 	@RequestMapping(value = "/deleteCustomer", method = RequestMethod.POST)
 	public String deleteCustomer(@ModelAttribute("customerModel") CustomerModel customerModel, Model model) {
-		customerModel = cService.deleteCustomer(customerModel);
+		try {
+			customerModel = cService.deleteCustomer(customerModel);
+		} catch(Exception e) {
+			System.out.println("Unexpected Rollback: entity doesnot exist.");
+		}
+		
 		model.addAttribute("customerModel", customerModel);
 		return "customerCrud";
 	}
