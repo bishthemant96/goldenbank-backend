@@ -28,6 +28,7 @@ public class CustomerService {
 			customerModel.setStatus(true);
 		} catch (Exception e) {
 			System.out.println("Customer creation failed.");
+			customerModel.setError("Invalid entried:Customer creation failed.");
 		}
 		return customerModel;
 	}
@@ -44,6 +45,7 @@ public class CustomerService {
 			customerModel.setStatus(true);
 		} catch (Exception e) {
 			System.out.println("Customer information fetch failed.");
+			customerModel.setError("Customer does not exist.");
 		}
 		return customerModel;
 
@@ -67,10 +69,12 @@ public class CustomerService {
 			    	customerModel.setStatus(true);
 			    } catch (Exception e) {
 			    	System.out.println("Customer Update Failed: Operation Error.");
+			    	customerModel.setError("Customer update failed.");
 			    }
 			}
 		} catch(Exception e) {
 			//Do nothing.
+			customerModel.setError("Customer does not exist.");
 		}
 		return customerModel;
 	}
@@ -87,6 +91,7 @@ public class CustomerService {
 			customerModel.setStatus(true);
 		} catch (Exception e) {
 			System.out.println("Customer Deletion Failed.");
+			customerModel.setError("Customer deletion failed.");
 		}
 		return customerModel;
 	}

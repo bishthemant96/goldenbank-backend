@@ -17,6 +17,7 @@
 	<body>
 	
 	<input type="hidden" id="status" value='${loanModel.status}'/>
+	<input type="hidden" id="error" value='${loanModel.error}'/>
 	
 		<div id="header">
 			<h1 id="fancyfont">The <span id="brand-key">Golden</span> Bank</h1>

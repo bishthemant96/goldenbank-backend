@@ -29,6 +29,7 @@ public class AccountService {
 
 		if (cusEntity == null) {
 			accModel.setStatus(false);
+			accModel.setError("Customer does not exist.");
 			return accModel;
 		} else {
 			AccountEntity accEntity = new AccountEntity();
@@ -41,6 +42,7 @@ public class AccountService {
 				return accModel;
 			} catch (Exception e) {
 				accModel.setStatus(false);
+				accModel.setError("Account could not be created.");
 				return accModel;
 			}
 		}
@@ -61,6 +63,7 @@ public class AccountService {
 		catch(Exception e) {
 			System.out.println(e.getMessage());
 			accModel.setStatus(false);
+			accModel.setError("Account does not exist.");
 			return accModel;
 		}
 	}
@@ -90,6 +93,7 @@ public class AccountService {
 			return accModel;
 		} catch (Exception e) {
 			accModel.setStatus(false);
+			accModel.setError("Account does not exist.");
 			return accModel;
 		}
 	}

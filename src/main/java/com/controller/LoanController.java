@@ -42,7 +42,12 @@ public class LoanController {
 	
 	@RequestMapping(value="/deleteLoan", method = RequestMethod.POST)
 	public String deleteLoan(@ModelAttribute("loanModel") LoanAccountModel loanModel, Model model) {
-		loanModel = loanService.closeLoan(loanModel);
+		try {
+			loanModel = loanService.closeLoan(loanModel);
+		} catch(Exception e) {
+			System.out.println("Unexpected Rollback: entity doesnot exist.");
+			loanModel.setError("Loan does not exist.");
+		}
 		model.addAttribute("loanModel", loanModel);
 		return "loanCrud";
 	}

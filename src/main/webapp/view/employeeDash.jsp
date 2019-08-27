@@ -26,8 +26,11 @@
 			<li style="float:right"><a href="login">Logout</a></li>
 		</ul>
 		
-		<h2>Welcome, ${name}</h2>
-		<h3>Branch : ${branch}</h3>
-		<h3>Designation : ${post}</h3>
+		<div class="dashboard">
+			<h2 id="welcome">Welcome, ${name}!</h2>
+			<h4>Branch : ${branch}</h4>
+			<h4>Designation : ${post}</h4>
+		</div>
+
 	</body>
 </html>

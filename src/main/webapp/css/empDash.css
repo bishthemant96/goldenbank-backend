@@ -55,3 +55,11 @@ li a.active {
 	color: white;
 	background-color: #FFBF00;
 }
+
+.dashboard {
+	text-align:center;
+}
+
+#welcome {
+	text-decoration: bold;
+}

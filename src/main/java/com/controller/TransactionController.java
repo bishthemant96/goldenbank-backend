@@ -31,13 +31,11 @@ public class TransactionController {
 		TransactionModel transactionModel = new TransactionModel();
 		transactionModel.setTransId(id);
 		transactionModel = tService.viewTransaction(transactionModel);
-
+		model.addAttribute("transactionModel", transactionModel);
 		if (transactionModel.isStatus()) {
-			model.addAttribute("transactionModel", transactionModel);
 			return "transactionView";
 
 		} else {
-			model.addAttribute("transactionModel", transactionModel);
 			return "transactionCrud";
 		}
 	}
