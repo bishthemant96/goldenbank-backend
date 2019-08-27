@@ -14,6 +14,9 @@
 <link
 	href="https://fonts.googleapis.com/css?family=Lexend+Tera|Raleway&display=swap"
 	rel="stylesheet">
+
+<script type="text/javascript" src="js/customerCrud.js"></script>
+	
 </head>
 
 <body>
@@ -35,8 +38,7 @@
 	<div class="content">
 		<br />
 		<form:form action="updateCustomer" method="post"
-			modelAttribute="customerModel">
-
+			modelAttribute="updateCustomerForm" name="myform1" onSubmit="return validateform1()">
 						ID :
 						<form:input type="number" readonly="true" path="cusID" /><br>
 
