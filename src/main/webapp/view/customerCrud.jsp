@@ -46,8 +46,7 @@
 				<br />
 				<center>Add new Customer:</center>
 				<br/>
-				<form name="myform1" onSubmit="return validateform1()" 
-				action="addCustomer" method="post" modelAttribute="addCustomer">
+				<form name="myform1" onSubmit="return validateform1()" action="addCustomer" method="post" modelAttribute="addCustomer">
 
 					<label for="cusName"> Name: </label> 
 					<input type="text" id="cusName" name="cusName">
@@ -86,9 +85,7 @@
 				<br />
 				<center>Update existing Customer:</center>
 				<br />
-				
 				<form name="myform2" onSubmit="return validateform2()" action="updateCustomer" modelAttribute="updateCustomerForm">
-
 					User ID: <input type="number" name="cusID"><br> <input
 						type="submit" value="Update Customer">
 				</form>
@@ -100,7 +97,6 @@
 				<center>Delete existing Customer:</center>
 				<br />
 				<form name="myform3" onSubmit="return validateform3()" action="deleteCustomer" method="post" modelAttribute="deleteCus">
-
 					User ID: <input type="number" name="cusID"> <input
 						type="submit" value="Delete Customer">
 				</form>
@@ -109,9 +105,7 @@
 			<div id="div4">
 				<br />
 				<center>View existing Customer:</center>
-
 				<form name="myform4" onSubmit="return validateform4()" action="viewCustomer" method="post" modelAttribute="viewCustomer">
-
 					<label>User ID: </label>
 					<input type="number" name="cusID"> 
 					<input type="submit" value="View Customer">
