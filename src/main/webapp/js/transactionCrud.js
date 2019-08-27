@@ -28,3 +28,16 @@ function toggleFunction(event) {
         two.style.display = 'block';
 	} 
 }
+
+function validateViewTrans(){
+	
+	fromAcc=document.addTrans.fromAcc.value;
+	toAcc=document.addTrans.toAcc.value;
+	amount=document.addTrans.amount.value;
+	
+	if(amount<10){
+		alert("Enter Amount greater than 10");
+		  return false;
+	}
+}
+

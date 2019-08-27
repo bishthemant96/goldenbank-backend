@@ -29,7 +29,6 @@
 	      
 		<div class="content">
 		
-				<h3><center>${message}</center></h3>
 			<br />
 			<form:form modelAttribute="transactionModel">
 			Transaction ID
@@ -41,6 +40,8 @@
 				Amount: 
 					<form:input type="number" path="amount" readonly="true"/> <br>
 			</form:form>
+			
+			<a id="backButton" href="transactionCrud">Go Back</a>
 		</div> 
 	</body>
 </html>

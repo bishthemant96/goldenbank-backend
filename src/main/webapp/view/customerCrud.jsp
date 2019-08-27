@@ -50,25 +50,25 @@
 				<form name="myform1" onSubmit="return validateform1()" action="addCustomer" method="post" modelAttribute="addCustomer">
 
 					<label for="cusName"> Name: </label> 
-					<input type="text" id="cusName" name="cusName">
+					<input type="text" id="cusName" name="cusName" required>
 					
 					<label for="cusAge"> Age: </label>
-					<input type="number" id="cusAge" name="cusAge">
+					<input type="number" id="cusAge" name="cusAge" required>
 					
 					<label for="cusGender"> Gender: </label>
-					<input type="text" id="cusGender" name="cusGender">
+					<input type="text" id="cusGender" name="cusGender" required>
 					
 					<label for="cusEmail"> Email ID: </label>
 					<input type="email" id="cusEmail" name="cusEmail" required>
 					
 					<label for="cusPassword">Create Password: </label>
-					<input type="password" id="cusPassword" name="cusPassword">
+					<input type="password" id="cusPassword" name="cusPassword" required>
 					
 					<label for="cusAddress"> Address: </label>
-					<input type="text" id="cusAddress" name="cusAddress">
+					<input type="text" id="cusAddress" name="cusAddress" required>
 					
 					<label for="cusNo"> Phone No: </label>
-					<input type="number" id="cusNo" name="cusNo">
+					<input type="number" id="cusNo" name="cusNo" required>
 					
 					<label for="cusNationality"> Nationality: </label>
 					<input type="text" id="cusNationality" name="cusNationality" required>
@@ -77,7 +77,7 @@
 					<label class="check-label"> Aadhar Card </label><input type="checkbox" name="cusIDProof">  
 					<label class="check-label"> Driving License </label><input type="checkbox" name="cusIDProof"> 
 					<label class="check-label"> Passport</label> <input type="checkbox" name="cusIDProof">
-					<input type="submit" value="Add Customer">
+					<input type="submit" value="Add Customer" required>
 				</form>
 				<br/>
 			</div>

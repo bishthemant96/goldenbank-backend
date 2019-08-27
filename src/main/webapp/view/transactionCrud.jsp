@@ -52,10 +52,10 @@
 				<center>Create Transaction</center>
 				<br /></br>
 			
-				<form action="addTransaction" method="POST" modelAttribute="transactionModel">
-					From Account : <input type="number" name="fromAcc" /> <br> To
-					Account : <input type="number" name="toAcc"> <br>
-					Amount: <input type="number" name="amount"> <br> <input
+				<form name ="addTrans" onsubmit="validateViewTrans()" action="addTransaction" method="POST" modelAttribute="transactionModel">
+					Sender's Account : <input type="number" name="fromAcc" required> <br> Reciever's
+					Account : <input type="number" name="toAcc" required> <br>
+					Amount: <input type="number" name="amount" required> <br> <input
 						type="submit" value="Create Transaction">
 				</form>
 			</div>
@@ -65,7 +65,7 @@
 				<center>View Transaction</center>
 				<br />
 				<form action="readTransaction" method="GET" modelAttribute="transactionModel">
-					Transaction ID : <input type="number" name="transId" /> <br> <input
+					Transaction ID : <input type="number" name="transId" required/> <br> <input
 						type="submit" value="Search Transaction">
 				</form>
 			</div>

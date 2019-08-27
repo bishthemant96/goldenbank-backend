@@ -55,7 +55,7 @@ function validateform1(){
 	var no=document.myform1.cusNo.value;
 	
 	var numbers = /^[0-9]+$/;
-	var letters = /^[A-Za-z]+$/;
+	var letters = /^[A-Z / a-z]+$/;
 	
 	
 	if (name==null || name==""){  
@@ -99,7 +99,7 @@ function validateform1(){
 	else if(no==null || no==""){  
 		alert("Number can not be empty");  
 		return false;
-		if(no.match(numbers) && no<10){
+		if(no.match(numbers) && no>=10){
 			return true;
 		}
 		else{

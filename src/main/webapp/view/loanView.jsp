@@ -48,7 +48,7 @@
 					<form:input type="text" path="loanType" readonly="true" />
 			<br>
 		</form:form>
-		<a id="backButton" href="loan">Go Back</a>
+		<a id="backButton" href="loanCrud">Go Back</a>
 	</div>
 </body>
 </html>
