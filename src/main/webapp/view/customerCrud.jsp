@@ -43,7 +43,7 @@
 				<br />
 				<center>Add new Customer:</center>
 				<br/>
-				<form action="addCustomer" method="post" modelAttribute="addCustomer">
+				<form name="myform1" onSubmit="return validateform1()" action="addCustomer" method="post" modelAttribute="addCustomer">
 					<label for="cusName"> Name: </label> 
 					<input type="text" id="cusName" name="cusName">
 					
@@ -54,7 +54,7 @@
 					<input type="text" id="cusGender" name="cusGender">
 					
 					<label for="cusEmail"> Email ID: </label>
-					<input type="email" id="cusEmail" name="cusEmail">
+					<input type="email" id="cusEmail" name="cusEmail" required>
 					
 					<label for="cusPassword">Create Password: </label>
 					<input type="password" id="cusPassword" name="cusPassword">
@@ -66,7 +66,7 @@
 					<input type="number" id="cusNo" name="cusNo">
 					
 					<label for="cusNationality"> Nationality: </label>
-					<input type="text" id="cusNationality" name="cusNationality">
+					<input type="text" id="cusNationality" name="cusNationality" required>
 				
 					ID Proof:
 					<label class="check-label"> Aadhar Card </label><input type="checkbox" name="cusIDProof">  
@@ -81,7 +81,7 @@
 				<br />
 				<center>Update existing Customer:</center>
 				<br />
-				<form action="updateCustomer" modelAttribute="updateCustomerForm">
+				<form name="myform2" onSubmit="return validateform2()" action="updateCustomer" modelAttribute="updateCustomerForm">
 					User ID: <input type="number" name="cusID"><br> <input
 						type="submit" value="Update Customer">
 				</form>
@@ -92,7 +92,7 @@
 				
 				<center>Delete existing Customer:</center>
 				<br />
-				<form action="deleteCustomer" method="post" modelAttribute="deleteCus">
+				<form name="myform3" onSubmit="return validateform3()" action="deleteCustomer" method="post" modelAttribute="deleteCus">
 					User ID: <input type="number" name="cusID"> <input
 						type="submit" value="Delete Customer">
 				</form>
@@ -101,7 +101,7 @@
 			<div id="div4">
 				<br />
 				<center>View existing Customer:</center>
-				<form action="viewCustomer" method="post" modelAttribute="viewCustomer">
+				<form name="myform4" onSubmit="return validateform4()" action="viewCustomer" method="post" modelAttribute="viewCustomer">
 					<label>User ID: </label>
 					<input type="number" name="cusID"> 
 					<input type="submit" value="View Customer">

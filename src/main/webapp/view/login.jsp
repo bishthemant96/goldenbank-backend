@@ -11,6 +11,7 @@
 		<title>Golden Bank</title>
 		<link href="https://fonts.googleapis.com/css?family=Lexend+Tera|Raleway&display=swap" rel="stylesheet">
 		<link href="css/login.css" rel="stylesheet">
+		<script type="text/javascript" src="js/login.js"></script>
 	</head>
 	
 	<body>
@@ -22,7 +23,7 @@
       
 		<div class="form">
 			<h4 id="fancyfont">Login Into Your Account</h4>
-			<form action="login" method="POST" modelAttribute="employeeModel">
+			<form name="myform" action="login" method="POST" modelAttribute="employeeModel" onSubmit="return validateform()">
 				${Error}	
 				
 				<table>
