@@ -2,6 +2,15 @@ window.onload = function(){
 	document.getElementById('div1').style.display="block";
 	document.getElementById('div3').style.display="none";
 	document.getElementById('div4').style.display="none";
+	
+	
+	var status = document.getElementById('status').value;
+	if(status.localeCompare('false')==0){
+		alert("Requested operation couldn't be performed.");
+	} else if(status.localeCompare('true')==1){
+		alert("Request submitted successfully.");
+	}
+	
 }
 
 function toggleFunction(event) {
