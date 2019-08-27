@@ -85,7 +85,6 @@
 				<br />
 				<center>Update existing Customer:</center>
 				<br />
-
 				<form name="myform2" onSubmit="return validateform2()" action="updateCustomer" modelAttribute="updateCustomerForm">
 					User ID: <input type="number" name="cusID"><br> <input
 						type="submit" value="Update Customer">
