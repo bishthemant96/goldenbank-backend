@@ -127,3 +127,42 @@ function validateform4(){
 	}
 }  
 
+
+function validateform5(){
+	alert("Inside");
+	var name=document.myform1.cusName.value;  
+	var age=document.myform1.cusAge.value; 
+	var gender=document.myform1.cusGender.value;
+	var email=document.myform1.cusEmail.value;
+	var cusAddress=document.myform1.cusAddress.value;
+	var no=document.myform1.cusNo.value;
+	var cusNationality=document.myform1.cusNationality.value;
+	
+	var numbers = /^[0-9]+$/;
+	var letters = /^[A-Z / a-z]+$/;
+	
+	if (!name.match(letters)) {
+		alert("Name should be aplhabetic.");
+		return false;
+	} else if(!(age.match(numbers) && age>=18 && age<151)){
+		alert("Age should be a number(18-150)");  
+		return false;
+	} else if(!gender.match(letters)){
+		alert("Gender should be alphabetic.");  
+		return false;
+	} else if(email.length>100){
+		alert("Email is too long.");
+		return false;
+	} else if(!no.match(numbers)){
+		alert("Number should be a numeric value");  
+		return false;
+	} else if(no.length!=10){
+		alert("Enter a valid mobile number.");
+		return false;
+	} else if(!cusNationality.match(letters)) {
+		alert("Nationality should be alphabetic.");
+		return false;
+	} else {
+		return true;
+	}
+}
