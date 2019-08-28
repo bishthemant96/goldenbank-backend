@@ -38,6 +38,11 @@
 				<br>
 					Age: 
 						<form:input type="number" path="cusAge" readonly="true" />
+					
+				<br>	
+					Gender :
+						<form:input type="cusGender" path="cusGender" readonly="true" />
+          				
 				<br>
 					Phone No: 
 						<form:input type="number" path="cusNo" readonly="true" />

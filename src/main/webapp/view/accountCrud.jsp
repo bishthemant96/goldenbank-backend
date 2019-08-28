@@ -70,7 +70,10 @@
 					Initial Amount: 
 						<input type="number" name="amount" required/> <br>
 					Account Type: 
-						<input type="text" name="accType" required/> <br>
+						<select name="accType" id="accType" required>
+							<option value="Savings Account">Savings Account</option>
+							<option value="Current Account">Current Account</option>
+						</select> <br/>
 					Account Nominee: 
 						<input type="text" name="accNominee" required/> <br> <br>
 						<input type="submit" value="Add">

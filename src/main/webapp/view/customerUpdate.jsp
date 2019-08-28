@@ -45,7 +45,12 @@
 						<form:input type="number" path="cusAge" name="cusAge" required="required"/><br>
 
 						Gender :
-						<form:input type="text" path="cusGender" name="cusGender" required="required"/><br>
+			            <form:select path="cusGender" name="cusGender" required="required">
+               				<form:option value="Male">Male</form:option>
+							<form:option value="Female">Female</form:option>
+							<form:option value="Others">Others</form:option>
+          				</form:select>
+
 
 						Email :
 						<form:input type="email" path="cusEmail" name="cusEmail" required="required"/><br>
@@ -57,7 +62,7 @@
 						<form:input type="number" path="cusNo" name="cusNo" required="required"/><br>
 
 						Nationality :
-						<form:input type="text" path="cusNationality" name="cusNationality" required="required"/><br>
+						<form:input type="text" path="cusNationality" name="cusNationality" readonly="true"/><br>
 			<input type="submit" value="Update">
 		</form:form>
 	</div>

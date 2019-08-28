@@ -57,7 +57,11 @@
 					<input type="number" id="cusAge" name="cusAge" required/>
 					
 					<label for="cusGender"> Gender: </label>
-					<input type="text" id="cusGender" name="cusGender" required/>
+					<select name="cusGender" id="cusGender" required>
+						<option value="Male">Male</option>
+						<option value="Female">Female</option>
+						<option value="Others">Others</option>
+					</select>
 					
 					<label for="cusEmail"> Email ID: </label>
 					<input type="email" id="cusEmail" name="cusEmail" required/>
@@ -72,7 +76,7 @@
 					<input type="number" id="cusNo" name="cusNo" required/>
 					
 					<label for="cusNationality"> Nationality: </label>
-					<input type="text" id="cusNationality" name="cusNationality" required/>
+					<input type="text" id="cusNationality" name="cusNationality" value="Indian" readonly/>
 				
 					ID Proof:
 					<label class="check-label"> Aadhar Card </label><input type="checkbox" name="cusIDProof"/>  

@@ -39,7 +39,10 @@
 				Amount: 
 					<form:input type="number" path="amount" name="amount" required="required"/> <br>
 				Account Type: 
-					<form:input type="text" path="accType" name="accType" required="required"/> <br>
+		            <form:select path="accType" name="accType" required="required">
+             			<form:option value="Savings Account">Savings Account</form:option>
+						<form:option value="Current Account">Current Account</form:option>
+     				</form:select>
 				Account Nominee: 
 					<form:input type="text" path="accNominee" name="accNominee" required="required"/> <br>
 					
