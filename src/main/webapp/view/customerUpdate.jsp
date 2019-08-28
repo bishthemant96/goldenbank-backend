@@ -40,28 +40,28 @@
 		<form:form action="updateCustomer" method="post"
 			modelAttribute="updateCustomerForm" name="myform1" onSubmit="return validateform1()">
 						ID :
-						<form:input type="number" readonly="true" path="cusID" /><br>
+						<form:input type="number" readonly="true" path="cusID" required/><br>
 
 						Name :
-						<form:input type="text" path="cusName" /><br>
+						<form:input type="text" path="cusName" required/><br>
 
 						Age :
-						<form:input type="number" path="cusAge" /><br>
+						<form:input type="number" path="cusAge" required/><br>
 
 						Gender :
-						<form:input type="text" path="cusGender" /><br>
+						<form:input type="text" path="cusGender" required/><br>
 
 						Email :
-						<form:input type="email" path="cusEmail" /><br>
+						<form:input type="email" path="cusEmail" required/><br>
 
 						Address :
-						<form:input type="text" path="cusAddress" /><br>
+						<form:input type="text" path="cusAddress" required/><br>
 
 						Phone No. :
-						<form:input type="number" path="cusNo" /><br>
+						<form:input type="number" path="cusNo" required/><br>
 
 						Nationality :
-						<form:input type="text" path="cusNationality" /><br>
+						<form:input type="text" path="cusNationality" required/><br>
 			<input type="submit" value="Update">
 		</form:form>
 	</div>

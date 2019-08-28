@@ -34,13 +34,13 @@
 				Customer ID:
 					<form:input type="number" path="cusID" readonly="true"/> <br>
 				Branch: 
-					<form:input type="text" path="branch"/> <br>
+					<form:input type="text" path="branch" required/> <br>
 				Amount: 
-					<form:input type="number" path="amount"/> <br>
+					<form:input type="number" path="amount" required/> <br>
 				Account Type: 
-					<form:input type="text" path="accType"/> <br>
+					<form:input type="text" path="accType" required/> <br>
 				Account Nominee: 
-					<form:input type="text" path="accNominee"/> <br>
+					<form:input type="text" path="accNominee" required/> <br>
 					
 					<form:input type="submit" path="" value="submit"/>
 			</form:form>

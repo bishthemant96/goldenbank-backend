@@ -63,15 +63,15 @@
 				<br/>
 				<form action="addAccount" method="POST" modelAttribute="AccountModel">
 					Customer ID:
-						<input type="number" name="cusID"/> <br>
+						<input type="number" name="cusID" required/> <br>
 					Branch: 
-						<input type="text" name="branch"> <br>
+						<input type="text" name="branch" required/> <br>
 					Initial Amount: 
-						<input type="number" name="amount"> <br>
+						<input type="number" name="amount" required/> <br>
 					Account Type: 
-						<input type="text" name="accType"> <br>
+						<input type="text" name="accType" required/> <br>
 					Account Nominee: 
-						<input type="text" name="accNominee"> <br> <br>
+						<input type="text" name="accNominee" required/> <br> <br>
 						<input type="submit" value="Add">
 				</form>
 			</div>
@@ -82,7 +82,7 @@
 				<br/>
 				<form action="UpdateAccount" method="GET" modelAttribute="AccountModel">
 					Account Number: 
-					<input type="number" name="accNo"><br>
+					<input type="number" name="accNo" required/><br>
 					<input type="submit" value="Update"> 
 				</form>
 			</div>
@@ -93,7 +93,7 @@
 				<br/>
 				<form action="deleteAccount" method="post" modelAttribute="AccountModel">
 					Account Number: 
-						<input type="number" name="accNo"><br>
+						<input type="number" name="accNo" required/><br>
 						<input type="submit" value="Delete">
 				</form>
 			</div>
@@ -104,7 +104,7 @@
 				<br/>
 				<form action="readAccount" method="GET" modelAttribute="AccountModel">
 					<label> Account Number: </label> 
-					<input type="number" id="accNo" name="accNo"><br>
+					<input type="number" id="accNo" name="accNo" required/><br>
 					<input type="submit" value="View"> 
 				</form>
 			</div>
