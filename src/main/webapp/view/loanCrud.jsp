@@ -61,11 +61,11 @@
 					Customer ID:
 						<input type="number" name="cusID" required/> <br>
 					Branch: 
-						<input type="text" name="branch" required> <br>
+						<input type="text" name="branch" required/> <br>
 					Amount: 
-						<input type="number" name="amount" required> <br>
+						<input type="number" name="amount" required/> <br>
 					Loan Type: 
-						<input type="text" name="loanType" required> <br>
+						<input type="text" name="loanType" required/> <br>
 						<input type="submit" value="Create">
 						
 				</form>
@@ -77,7 +77,7 @@
 				<br/>
 				<form name="myform2" onSubmit="return validateform2()" action="deleteLoan" method="post" modelAttribute="loanModel">
 					Loan Account Number: 
-						<input type="number" name="loanAccNo" required><br>
+						<input type="number" name="loanAccNo" required/><br>
 						<input type="submit" value="Delete">
 				</form>
 			</div>
@@ -88,7 +88,7 @@
 				<br/>
 				<form name="myform3" onSubmit="return validateform3()" action="readLoan" method="GET" modelAttribute="loanModel">
 					<label> Loan Account Number: </label> 
-					<input type="number" id="LoanAccNo" name="loanAccNo" required><br>
+					<input type="number" id="LoanAccNo" name="loanAccNo" required/><br>
 					<input type="submit" value="View"> 
 				</form>
 			</div>
