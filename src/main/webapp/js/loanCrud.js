@@ -44,7 +44,7 @@ function validateform1() {
 	var amount = document.myform1.amount.value;
 
 	var numbers = /^[0-9]+$/;
-	var letters = /^[A-Za-z]+$/;
+	var letters = /^[A-Z / a-z]+$/;
 
 	if (!branch.match(letters)) {
 		alert("branch should be a text field");
