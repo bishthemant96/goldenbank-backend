@@ -23,7 +23,7 @@
 			<li><a class="active" href="accountCrud">Account Management</a></li>
 			<li><a href="loanCrud">Loan Management</a></li>
 			<li><a href="transactionCrud">Transaction Management</a></li>
-			<li style="float:right"><a href="index">Logout</a></li>
+			<li style="float:right"><a href="login">Logout</a></li>
 		</ul>
 	      
 		<div class="content">
@@ -34,13 +34,13 @@
 				Customer ID:
 					<form:input type="number" path="cusID" readonly="true"/> <br>
 				Branch: 
-					<form:input type="text" path="branch" required/> <br>
+					<form:input type="text" path="branch" required="required"/> <br>
 				Amount: 
-					<form:input type="number" path="amount" required/> <br>
+					<form:input type="number" path="amount" required="required"/> <br>
 				Account Type: 
-					<form:input type="text" path="accType" required/> <br>
+					<form:input type="text" path="accType" required="required"/> <br>
 				Account Nominee: 
-					<form:input type="text" path="accNominee" required/> <br>
+					<form:input type="text" path="accNominee" required="required"/> <br>
 					
 					<form:input type="submit" path="" value="submit"/>
 			</form:form>

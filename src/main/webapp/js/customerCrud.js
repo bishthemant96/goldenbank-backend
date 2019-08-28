@@ -50,90 +50,80 @@ function toggleFunction(event) {
 
 function validateform1(){  
 	var name=document.myform1.cusName.value;  
-	var age=document.myform1.cusAge.value;       
+	var age=document.myform1.cusAge.value; 
+	var gender=document.myform1.cusGender.value;
 	var pwd=document.myform1.cusPassword.value;
+	var email=document.myform1.cusEmail.value;
+	var cusAddress=document.myform1.cusAddress.value;
 	var no=document.myform1.cusNo.value;
+	var cusNationality=document.myform1.cusNationality.value;
 	
 	var numbers = /^[0-9]+$/;
 	var letters = /^[A-Z / a-z]+$/;
 	
-	
-	if (name==null || name==""){  
-		alert("Name can't be blank");  
-		return false;  
-	} 
-	else {
-		if(name.match(letters))
-		{
-			return true;
-		}
-		else
-		{
-			alert("name should be a text field");
-			return false;
-		}
-	}
-	
-	
-	
-	if(age==null || age==""){  
-		alert("Age can't be empty");  
+	if (!name.match(letters)) {
+		alert("Name should be aplhabetic.");
 		return false;
-	}
-	else{
-		if(age.match(numbers) && age>=18 && age<111){
-			return true;
-		}
-		else{
-			alert("Age should be a number and in the range of 18-110");  
-			return false;
-		}
-	}
-		
-	
-	if(pwd==null || pwd=="" && pwd.length>5){  
-		alert("Fill the password with atleast 6 characters");  
-		return false;  
-	}
-
-	else if(no==null || no==""){  
-		alert("Number can not be empty");  
+	} else if(!(age.match(numbers) && age>=18 && age<151)){
+		alert("Age should be a number(18-150)");  
 		return false;
-		if(no.match(numbers) && no>=10){
-			return true;
-		}
-		else{
-			alert("Number should be a numeric value");  
-			return false;
-		}
-	}   	
+	} else if(!gender.match(letters)){
+		alert("Gender should be alphabetic.");  
+		return false;
+	} else if(email.length>100){
+		alert("Email is too long.");
+		return false;
+	} else if(pwd.length<5){  
+		alert("Plese enter password of length 6");  
+		return false;  
+	} else if(!no.match(numbers)){
+		alert("Number should be a numeric value");  
+		return false;
+	} else if(no.length!=10){
+		alert("Enter a valid mobile number.");
+		return false;
+	} else if(!cusNationality.match(letters)) {
+		alert("Nationality should be alphabetic.");
+		return false;
+	} else {
+		return true;
+	}
 }
 
 
 function validateform2(){  
+	var numbers = /^[0-9]+$/;
 	var id=document.myform2.cusID.value;  
-	  
-	if (id==null || id==""){  
-	  alert("User ID can't be blank");  
+	
+	if (!id.match(numbers)){  
+	  alert("User ID should be whole number.");  
 	  return false;  
-	}  
-	}  
+	}  else{
+		return true;
+	}
+}  
 
 function validateform3(){  
+	var numbers = /^[0-9]+$/;
 	var id=document.myform3.cusID.value;  
-	  
-	if (id==null || id==""){  
-	  alert("User ID can't be blank");  
+	
+	if (!id.match(numbers)){  
+	  alert("User ID should be whole number.");  
 	  return false;  
-	}  
-	}  
+	}  else{
+		return true;
+	}
+}  
 
-function validateform4(){  
+function validateform4(){ 
+	var numbers = /^[0-9]+$/;
 	var id=document.myform4.cusID.value;  
-	  
-	if (id==null || id==""){  
-	  alert("User ID can't be blank");  
+	
+	if (!id.match(numbers)){  
+	  alert("User ID should be whole number.");  
 	  return false;  
-	}  
-	}  
+	}  else{
+		return true;
+	}
+}  
 

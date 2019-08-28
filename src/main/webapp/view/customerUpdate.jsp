@@ -32,36 +32,36 @@
 		<li><a href="accountCrud">Account Management</a></li>
 		<li><a href="loanCrud">Loan Management</a></li>
 		<li><a href="transactionCrud">Transaction Management</a></li>
-		<li style="float: right"><a href="index">Logout</a></li>
+		<li style="float: right"><a href="login">Logout</a></li>
 	</ul>
 
 	<div class="content">
 		<br />
 		<form:form action="updateCustomer" method="post"
-			modelAttribute="updateCustomerForm" name="myform1" onSubmit="return validateform1()">
+			modelAttribute="customerModel" name="myform1" onSubmit="return validateform1()">
 						ID :
-						<form:input type="number" readonly="true" path="cusID" required/><br>
+						<form:input type="number" readonly="true" path="cusID" required="required"/><br>
 
 						Name :
-						<form:input type="text" path="cusName" required/><br>
+						<form:input type="text" path="cusName" required="required"/><br>
 
 						Age :
-						<form:input type="number" path="cusAge" required/><br>
+						<form:input type="number" path="cusAge" required="required"/><br>
 
 						Gender :
-						<form:input type="text" path="cusGender" required/><br>
+						<form:input type="text" path="cusGender" required="required"/><br>
 
 						Email :
-						<form:input type="email" path="cusEmail" required/><br>
+						<form:input type="email" path="cusEmail" required="required"/><br>
 
 						Address :
-						<form:input type="text" path="cusAddress" required/><br>
+						<form:input type="text" path="cusAddress" required="required"/><br>
 
 						Phone No. :
-						<form:input type="number" path="cusNo" required/><br>
+						<form:input type="number" path="cusNo" required="required"/><br>
 
 						Nationality :
-						<form:input type="text" path="cusNationality" required/><br>
+						<form:input type="text" path="cusNationality" required="required"/><br>
 			<input type="submit" value="Update">
 		</form:form>
 	</div>

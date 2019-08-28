@@ -23,7 +23,7 @@
 		<li><a href="accountCrud">Account Management</a></li>
 		<li><a href="loanCrud">Loan Management</a></li>
 		<li><a href="transactionCrud">Transaction Management</a></li>
-		<li style="float: right"><a href="index">Logout</a></li>
+		<li style="float: right"><a href="login">Logout</a></li>
 	</ul>
 		
 		<div class="content">
