@@ -16,6 +16,7 @@
 
 	<input type="hidden" id="status" value='${transactionModel.status}' />
 	<input type="hidden" id="error" value='${transactionModel.error}' />
+	<input type="hidden" id="transId" value='${transactionModel.transId}' />
 
 	<div id="header">
 		<h1 id="fancyfont">

@@ -7,10 +7,13 @@ window.onload = function(){
 	
 	var status = document.getElementById('status').value;
 	var error = document.getElementById('error').value;
+	var cusID = document.getElementById('cusID').value;
+	
+
 	if(status.localeCompare('false')==0){
 		alert("Operation failed with error:\n"+error);
-	} else if(status.localeCompare('true')==1){
-		alert("Request submitted successfully.");
+	} else if(status.localeCompare('true')==0){
+		alert("Request submitted successfully for cusID:"+cusID);
 	}
 	
 }
@@ -129,7 +132,6 @@ function validateform4(){
 
 
 function validateform5(){
-	alert("Inside");
 	var name=document.myform1.cusName.value;  
 	var age=document.myform1.cusAge.value; 
 	var gender=document.myform1.cusGender.value;

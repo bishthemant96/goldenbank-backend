@@ -17,6 +17,7 @@
 	<body>
 		<input type="hidden" id="status" value='${accModel.status}'/>
 		<input type="hidden" id="error" value='${accModel.error}'/>
+		<input type="hidden" id="accNo" value='${accModel.accNo}'/>
 	
 		<div id="header">
 			<h1 id="fancyfont">The <span id="brand-key">Golden</span> Bank</h1>

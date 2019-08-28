@@ -4,10 +4,12 @@ window.onload = function() {
 
 	var status = document.getElementById('status').value;
 	var error = document.getElementById('error').value;
+	var transId = document.getElementById('transId').value;
+	
 	if (status.localeCompare('false') == 0) {
 		alert("Operation failed with error:\n" + error);
-	} else if (status.localeCompare('true') == 1) {
-		alert("Request submitted successfully.");
+	} else if (status.localeCompare('true') == 0) {
+		alert("Request submitted successfully for transaction ID: "+transId);
 	}
 
 }
