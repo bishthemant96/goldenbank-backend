@@ -61,7 +61,7 @@
 				<br />
 				<center>Add new account:</center>
 				<br/>
-				<form action="addAccount" method="POST" modelAttribute="AccountModel">
+				<form action="addAccount" method="POST" name="accountForm" onsubmit="return validateAccountForm()" modelAttribute="AccountModel">
 					Customer ID:
 						<input type="number" name="cusID" required/> <br>
 					Branch: 
@@ -80,10 +80,10 @@
 				<br />
 				<center>Update existing account:</center>
 				<br/>
-				<form action="UpdateAccount" method="GET" modelAttribute="AccountModel">
-					Account Number: 
+				<form action="UpdateAccount" method="GET" name="updateAccountForm" onsubmit="return validateUpdateAccountForm()" modelAttribute="AccountModel">
+					<label> Account Number: </label> 
 					<input type="number" name="accNo" required/><br>
-					<input type="submit" value="Update"> 
+					<input type="submit" value="Update"/> 
 				</form>
 			</div>
 	     
@@ -91,10 +91,10 @@
 				<br />
 				<center>Delete existing account:</center>
 				<br/>
-				<form action="deleteAccount" method="post" modelAttribute="AccountModel">
-					Account Number: 
+				<form action="deleteAccount" method="post" name="deleteAccountForm" onsubmit="return validateDeleteAccountForm()" modelAttribute="AccountModel">
+						<label> Account Number: </label> 
 						<input type="number" name="accNo" required/><br>
-						<input type="submit" value="Delete">
+						<input type="submit" value="Delete"/>
 				</form>
 			</div>
 	     
@@ -102,10 +102,10 @@
 				<br />
 				<center>View existing account:</center>
 				<br/>
-				<form action="readAccount" method="GET" modelAttribute="AccountModel">
+				<form action="readAccount" method="GET" name="viewAccountForm" onsubmit="return validateViewAccountForm()" modelAttribute="AccountModel">
 					<label> Account Number: </label> 
 					<input type="number" id="accNo" name="accNo" required/><br>
-					<input type="submit" value="View"> 
+					<input type="submit" value="View"/> 
 				</form>
 			</div>
 		</div> 

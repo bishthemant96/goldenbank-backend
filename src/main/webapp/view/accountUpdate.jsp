@@ -11,6 +11,7 @@
 		<title>Update Record</title>
 		<link href="css/formStyling.css" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Lexend+Tera|Raleway&display=swap" rel="stylesheet">
+		<script type="text/javascript" src="js/accountCrud.js"></script>
 	</head>
 	<body>
 		<div id="header">
@@ -28,19 +29,19 @@
 	      
 		<div class="content">
 			<br />
-			<form:form action="UpdateAccount"  method ="post" modelAttribute="accModel">
+			<form:form action="UpdateAccount"  method ="post" name="fullUpdateAccountForm" onsubmit="return validateFullUpdateAccountForm()" modelAttribute="accModel">
 				Account No.:
-					<form:input type="number" path="accNo" readonly="true"/> <br>
+					<form:input type="number" path="accNo" name="accNo" readonly="true"/> <br>
 				Customer ID:
-					<form:input type="number" path="cusID" readonly="true"/> <br>
+					<form:input type="number" path="cusID" name="cusID" readonly="true"/> <br>
 				Branch: 
-					<form:input type="text" path="branch" required="required"/> <br>
+					<form:input type="text" path="branch"  name="branch" required="required"/> <br>
 				Amount: 
-					<form:input type="number" path="amount" required="required"/> <br>
+					<form:input type="number" path="amount" name="amount" required="required"/> <br>
 				Account Type: 
-					<form:input type="text" path="accType" required="required"/> <br>
+					<form:input type="text" path="accType" name="accType" required="required"/> <br>
 				Account Nominee: 
-					<form:input type="text" path="accNominee" required="required"/> <br>
+					<form:input type="text" path="accNominee" name="accNominee" required="required"/> <br>
 					
 					<form:input type="submit" path="" value="submit"/>
 			</form:form>
